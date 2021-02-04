@@ -1,7 +1,8 @@
 {
   "interaction": {
-    "type": "script",
-    "path": "/data/local/tmp/explore.js",
-    "on_change": "reload"
+    "type": "listen",
+    "address": "127.0.0.1",
+    "port": 27042,
+    "on_load": "wait"
   }
 }

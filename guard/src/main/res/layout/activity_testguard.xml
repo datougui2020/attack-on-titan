@@ -6,6 +6,7 @@
         android:layout_width="wrap_content"
         android:id="@+id/bt_hook_frida"
         android:text="hook frida embed"
+        android:textAllCaps="false"
         android:layout_height="wrap_content"/>
 
 </LinearLayout>

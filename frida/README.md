@@ -5,7 +5,7 @@
 frida -U -f com.sankuai.meituan --no-pause -l index.js
 ```
 ## embedded
-frida -U Gadget
+frida -U Gadget or frida -D d2d9503e  Gadget -l .\index.js
 
 
 ## object
