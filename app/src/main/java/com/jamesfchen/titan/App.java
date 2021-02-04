@@ -31,7 +31,7 @@ public class App extends Application{
         Hook.init(getClassLoader());
     }
     private void initHotFix() {
-
+        String substring = getPackageCodePath().substring(0, getPackageCodePath().lastIndexOf(47));
         try {
             ClassLoader classLoader = getClassLoader();
             File pluginFile = new File(Environment.getExternalStorageDirectory(), "yposedplugin-debug.apk");

@@ -9,7 +9,6 @@ import android.os.ServiceManager
 import android.text.TextUtils
 import android.util.Log
 import android.view.IWindowManager
-import android.view.View
 import android.widget.TextView
 import androidx.annotation.Keep
 import dalvik.system.DexFile
@@ -61,7 +60,9 @@ class TestGuardActivity : Activity() {
     }
 
     fun printAllCalsses(pkgName: String) {
-        Log.d("cjf", "p:$packageCodePath  $pkgName")
+        val substring = packageCodePath.substring(0, packageCodePath.lastIndexOf(47.toChar()))
+        Log.d("cjf", "p:$pkgName $packageCodePath $substring")
+
         val dexFile = DexFile(packageCodePath)
         val entries = dexFile.entries()
         while (entries.hasMoreElements()) {

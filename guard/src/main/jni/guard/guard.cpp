@@ -59,7 +59,7 @@ void clear_class(JNIEnv *env) {
 
 int i = 0;
 extern "C" JNIEXPORT  JNICALL
-jstring Java_com_hawksjamesf_yposed_YPosedActivity_stringFromJNI(JNIEnv *env,
+jstring Java_com_jamesfchen_guard_TestGuardActivity_stringFromJNI(JNIEnv *env,
                                                                  jobject yposedActivity /* this */) {
     std::string hello = "Hello from C++ ";
     hello.append<int>(i, 0x2E);
