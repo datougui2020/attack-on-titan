@@ -21,21 +21,21 @@ import java.util.Map;
  */
 public class Hook {
     private static void printAttrib(Class<?> clz) {
-        Log.d("cjf", "clz:" + clz.getName());
+        Log.e("cjf_attack", "clz:" + clz.getName());
         Class<?>[] declaredClasses = clz.getDeclaredClasses();
         for (Class<?> c : declaredClasses) {
-            Log.d("cjf", "inner clz:" + c.getName());
+            Log.e("cjf_attack", "inner clz:" + c.getName());
         }
         Field[] declaredFields = clz.getDeclaredFields();
         for (Field f : declaredFields) {
             f.setAccessible(true);
-            Log.d("cjf", "field name：" + f.getName() + " ");
+            Log.e("cjf_attack", "field name：" + f.getName() + " ");
 
         }
         Method[] declaredMethods = clz.getDeclaredMethods();
         for (Method m : declaredMethods) {
             m.setAccessible(true);
-            Log.d("cjf", "method name：" + m.getName() + " ");
+            Log.e("cjf_attack", "method name：" + m.getName() + " ");
 
         }
     }
@@ -58,7 +58,7 @@ public class Hook {
             sCache.remove("package");
             sCache.put("package", iBinderProxy);
         } catch (Exception e) {
-            Log.d("cjf", Log.getStackTraceString(e));
+            Log.e("cjf_attack", Log.getStackTraceString(e));
             e.printStackTrace();
         }
 

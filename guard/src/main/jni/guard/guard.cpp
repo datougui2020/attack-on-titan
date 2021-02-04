@@ -13,7 +13,7 @@
 
 #define CLASS_PATH "com/jamesfchen/guard/TestGuardActivity"
 #define   NELEM(x) ((int) (sizeof(x) / sizeof((x)[0])))
-#define   LOG_TAG    "cjf_jni"
+#define   LOG_TAG    "cjf_defense_jni"
 #define   LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG,LOG_TAG,__VA_ARGS__)
 #define   LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 #define   LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
@@ -60,7 +60,7 @@ void clear_class(JNIEnv *env) {
 int i = 0;
 extern "C" JNIEXPORT  JNICALL
 jstring Java_com_jamesfchen_guard_TestGuardActivity_stringFromJNI(JNIEnv *env,
-                                                                 jobject yposedActivity /* this */) {
+                                                                 jobject caller /* this */) {
     std::string hello = "Hello from C++ ";
     hello.append<int>(i, 0x2E);
     ++i;
@@ -90,7 +90,7 @@ jstring bytes_to_hexstring(JNIEnv *env, jbyteArray datas) {
 
 
 extern "C" JNIEXPORT JNICALL
-jstring get_sign_v2(JNIEnv *env, jobject yposedActivity /* this */, jobject contextObject) {
+jstring get_sign_v2(JNIEnv *env, jobject caller /* this */, jobject contextObject) {
 //    mPM.getPackageInfo(packageName, flags, userId);
     import_class(env);
 
@@ -144,7 +144,7 @@ jstring get_sign_v2(JNIEnv *env, jobject yposedActivity /* this */, jobject cont
 }
 
 extern "C" JNIEXPORT JNICALL
-jstring get_sign(JNIEnv *env, jobject yposedActivity /* this */, jobject contextObject) {
+jstring get_sign(JNIEnv *env, jobject caller /* this */, jobject contextObject) {
     import_class(env);
     jmethodID getPackageManagerId = env->GetMethodID(ContextClass, "getPackageManager",
                                                      "()Landroid/content/pm/PackageManager;");
@@ -164,12 +164,39 @@ jstring get_sign(JNIEnv *env, jobject yposedActivity /* this */, jobject context
 }
 
 extern "C" JNIEXPORT JNICALL
-jboolean check_sign(JNIEnv *env, jobject yposedActivity) {
+jboolean verify(JNIEnv *env, jobject caller,jobject contextObject) {
     import_class(env);
+    LOGI("jni 第一种获取签名的方法: %s",env->GetStringUTFChars(get_sign(env,caller,contextObject),0));
+    LOGI("jni 第二种获取签名的方法：%s",env->GetStringUTFChars(get_sign_v2(env,caller,contextObject),0));
     jmethodID isProxyClassMethodId = env->GetStaticMethodID(ProxyClass, "isProxyClass",
                                                             "(Ljava/lang/Class;)Z");
-//    env->CallStaticBooleanMethod(ProxyClass,isProxyClassMethodId)
-    return JNI_TRUE;
+    jmethodID getServiceId = env->GetStaticMethodID(ServiceManagerClass, "getService",
+                                                    "(Ljava/lang/String;)Landroid/os/IBinder;");
+    jmethodID asInterfaceId = env->GetStaticMethodID(IPackageManager$StubClass, "asInterface",
+                                                     "(Landroid/os/IBinder;)Landroid/content/pm/IPackageManager;");
+
+    jstring packageStr = env->NewStringUTF("package");
+
+    jobject iBinderObj = env->CallStaticObjectMethod(ServiceManagerClass, getServiceId, packageStr);
+    if (iBinderObj == nullptr) {
+        LOGE("iBinderObj  is null");
+    }
+    jobject iPackageManagerObj = env->CallStaticObjectMethod(IPackageManager$StubClass,
+                                                             asInterfaceId,
+                                                             iBinderObj);
+    if (iPackageManagerObj == nullptr) {
+        LOGE("iPackageManagerObj  is null");
+    }
+    jboolean  isProxyClass = env->CallStaticBooleanMethod(ProxyClass,isProxyClassMethodId, env->GetObjectClass(iPackageManagerObj));
+    clear_class(env);
+    if (isProxyClass){
+        LOGI("PackageManger使用了动态代理，被攻击了！！！！");
+        return JNI_FALSE;
+
+    }else{
+        LOGI("PackageManger来自系统提供，没有被攻击");
+        return JNI_FALSE;
+    }
 }
 /*
 * JNI registration.
@@ -179,9 +206,9 @@ static JNINativeMethod gMethods[] = {
 //        {"setup",         "(ZI)Z",                                                   (void *) setup},
 //        {"replaceMethod", "(Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;)V", (void *) replaceMethod},
 //        {"setFieldFlag",  "(Ljava/lang/reflect/Field;)V",                            (void *) setFieldFlag},
-        {"getSign",   "(Landroid/content/Context;)Ljava/lang/String;", (void *) get_sign},
-        {"getSignv2", "(Landroid/content/Context;)Ljava/lang/String;", (void *) get_sign_v2},
-        {"checkSign", "(Landroid/content/Context;)Z",                  (void *) check_sign}
+//        {"getSign",   "(Landroid/content/Context;)Ljava/lang/String;", (void *) get_sign},
+//        {"getSignv2", "(Landroid/content/Context;)Ljava/lang/String;", (void *) get_sign_v2},
+        {"verify", "(Landroid/content/Context;)Z",                  (void *) verify}
 };
 
 static int registerNativeMethods(JNIEnv *env, const char *className, JNINativeMethod *gMethods,

@@ -16,6 +16,14 @@ import java.lang.reflect.Proxy
 
 class TestGuardActivity : Activity() {
 
+    companion object {
+
+        init {
+            System.loadLibrary("guard")
+        }
+        const val TAG="cjf_defense"
+
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_testguard)
@@ -24,28 +32,29 @@ class TestGuardActivity : Activity() {
         }
         var info = packageManager.getPackageInfo(packageName, PackageManager.GET_SIGNATURES)
         var bs = info.signatures[0].toByteArray()
-        Log.d("cjf", "YPosedActivity firstInstallTime:${info.firstInstallTime} lastUpdateTime:${info.lastUpdateTime}")
-        Log.i("cjf", "java 第一种获取签名的方法：" + sha1ToHexString(bs))
+        var s ="java 第一种获取签名的方法：firstInstallTime:${info.firstInstallTime} lastUpdateTime:${info.lastUpdateTime} ${sha1ToHexString(bs)}"
+        Log.i(TAG, s)
+
         val package_b = ServiceManager.getService("package")
         val window_b = ServiceManager.getService("window")
-
         info = IPackageManager.Stub.asInterface(package_b).getPackageInfo(packageName, PackageManager.GET_SIGNATURES, 0)
         bs = info.signatures[0].toByteArray()
-        Log.i("cjf", "java 第二种获取签名的方法：" + sha1ToHexString(bs))
-        Log.i("cjf", "jni 第一种获取签名的方法:${getSign(this)}")
-        Log.i("cjf", "jni 第二种获取签名的方法:${getSignv2(this)}")
-        Log.d("cjf", "IPackageManager isProxyClass:${Proxy.isProxyClass(IPackageManager.Stub.asInterface(package_b)::class.java)} " +
+         s ="java 第二种获取签名的方法：firstInstallTime:${info.firstInstallTime} lastUpdateTime:${info.lastUpdateTime} ${sha1ToHexString(bs)}"
+        Log.i(TAG, s)
+
+        Log.i(TAG, "IPackageManager isProxyClass:${Proxy.isProxyClass(IPackageManager.Stub.asInterface(package_b)::class.java)} " +
                 "IBinder isProxyClass:${Proxy.isProxyClass(package_b.javaClass)} " +
                 "IWindowManager isProxyClass：${Proxy.isProxyClass(IWindowManager.Stub.asInterface(window_b).javaClass)}")
 //        printAllCalsses(packageName)
 //        isMainProcess(this)
-        Log.d("cjf", " prop:${getSysProp("ro.product.cpu.abi")}")
-//        Timer("cjf").schedule(object : TimerTask() {
+        Log.i(TAG, " prop:${getSysProp("ro.product.cpu.abi")}")
+//        Timer(TAG).schedule(object : TimerTask() {
 //            override fun run() {
 //
 //            }
 //
 //        }, 20_000, 24*3600*1000)
+        Log.i(TAG, " verify:${verify(this)}")
     }
 
     fun getSysProp(str: String): String {
@@ -61,14 +70,14 @@ class TestGuardActivity : Activity() {
 
     fun printAllCalsses(pkgName: String) {
         val substring = packageCodePath.substring(0, packageCodePath.lastIndexOf(47.toChar()))
-        Log.d("cjf", "p:$pkgName $packageCodePath $substring")
+        Log.i(TAG, "p:$pkgName $packageCodePath $substring")
 
         val dexFile = DexFile(packageCodePath)
         val entries = dexFile.entries()
         while (entries.hasMoreElements()) {
             val clzName = entries.nextElement()
             if (clzName.contains("hawksjamesf")) {
-                Log.d("cjf", "class name:$clzName")
+                Log.i(TAG, "class name:$clzName")
             }
         }
     }
@@ -83,21 +92,8 @@ class TestGuardActivity : Activity() {
     external fun main()
 
     @Keep
-    external fun getSign(ctx: Context): String
+    external fun verify(ctx:Context): Boolean
 
-    @Keep
-    external fun getSignv2(ctx: Context): String
-
-    @Keep
-    external fun checkSign(ctx: Context): Boolean
-
-    companion object {
-
-        init {
-            System.loadLibrary("guard")
-        }
-
-    }
 
 
 }

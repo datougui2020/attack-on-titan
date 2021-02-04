@@ -32,19 +32,20 @@ public class PackageManagerProxy implements InvocationHandler {
         Log.d("hook", "method name:" + method.getName());
         if ("getPackageInfo".equals(method.getName())) {
 //            if (args.length == 3 && ((String)args[0]).contains("dianping")
-            if (args.length == 3 && "com.hawksjamesf.spacecraft.debug".equals(args[0])
+            if (args.length == 3 && "com.jamesfchen.titan".equals(args[0])
                     && ((Integer) args[1] == 64 || (Integer) args[1] == 0x08000000)) {
-                Log.d("cjf", args[0] + "  " + (Integer) args[1] + " " + args[2]);
+                Log.e("cjf_attack", args[0] + "  " + (Integer) args[1] + " " + args[2]);
                 PackageInfo info = (PackageInfo) method.invoke(mPackageManager, args);
                 if (info == null) return null;
-                Log.d("cjf", "hook " + method.getName() + " before:" + info.firstInstallTime + " " + info.lastUpdateTime + " \n" + sha1ToHexString(info.signatures[0].toByteArray()));
 //                info.firstInstallTime = 1;
 //                info.lastUpdateTime = 11;
+                String before="hook " + method.getName() + "\nbefore:" + info.firstInstallTime + " " + info.lastUpdateTime + " " + sha1ToHexString(info.signatures[0].toByteArray());
                 info.signatures[0] = new Signature(qqSign);
-                Log.d("cjf", "hook " + method.getName() + " after:" + info.firstInstallTime + " " + info.lastUpdateTime + " \n" + sha1ToHexString(info.signatures[0].toByteArray()));
+                String s= before+"\nafter:" + info.firstInstallTime + " " + info.lastUpdateTime + "  " + sha1ToHexString(info.signatures[0].toByteArray());
+                Log.e("cjf_attack",   s);
                 return info;
             } else {
-                Log.d("hook", "getPackageInfo方法形参数量:" + args.length);
+                Log.e("cjf_attack", "getPackageInfo方法形参数量:" + args.length);
             }
         }
         return method.invoke(mPackageManager, args);

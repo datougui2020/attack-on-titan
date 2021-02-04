@@ -29,7 +29,7 @@ public class IBinderProxy implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         if ("queryLocalInterface".equals(method.getName())) {
-            Log.d("cjf", "queryLocalInterface:" + Arrays.toString(args));
+            Log.e("cjf_attack", "queryLocalInterface:" + Arrays.toString(args));
             if (args.length == 1 && "android.content.pm.IPackageManager".equals(args[0])) {
                 return packageManagerProxy;
             }
