@@ -1,2 +1,4 @@
 include ':app'
+include ':yposed', ':yposedplugin', ':yposedstub',':guard'
+include ':dexshell'
 rootProject.name = "attack-on-titan"
