@@ -28,6 +28,29 @@ function main() {
         };
 
     })
+    var symbols = Module.enumerateSymbolsSync("libart.so");
+    symbols.forEach(symbol => {
+        // console.log(symbol.name)
+        if (symbol.name.indexOf("art") >= 0 && symbol.name.indexOf("JNI") >= 0 && symbol.name.indexOf("CheckJNI") < 0) {
+            
+        //     // jni函数名称
+        //     var name = symbol.name
+        //     // jni函数绝对地址
+        //     var address = symbol.address
+
+        //     // 对指定的地址进行hook
+        //     Interceptor.attach(address, {
+        //         onEnter: function(args) {
+        //             console.log(args[0])
+        //         },
+        //         onLeave: function(retVal) {
+        //             console.log(retVal)
+        //         }
+        //     });        
+
+        }
+    })
+
 
 
 }
