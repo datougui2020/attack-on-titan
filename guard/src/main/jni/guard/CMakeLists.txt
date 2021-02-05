@@ -7,15 +7,10 @@ add_library(
 #        main.cpp
         guard.cpp
 )
-target_include_directories(guard PRIVATE
-        utils/include
-        )
-
 find_library(
         log-lib
         log )
 
 target_link_libraries(
         guard
-        utils/${ANDROID_ABI}/libutils.so
         ${log-lib} )
