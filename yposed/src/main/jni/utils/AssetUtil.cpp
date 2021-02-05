@@ -14,12 +14,15 @@
  * limitations under the License.
  *
  */
-#include <algorithm>
 #include <string>
+#include <vector>
+#include <android/asset_manager.h>
+#include <android/asset_manager_jni.h>
+#include <jni.h>
+#include <algorithm>
+
 #include "include/AssetUtil.h"
 #include "include/LogUtil.h"
-
-
 
 #define MODULE_NAME  "assetsutil"
 #define IS_LOW_CHAR(c) ((c) >= 'a' && (c) <= 'z')

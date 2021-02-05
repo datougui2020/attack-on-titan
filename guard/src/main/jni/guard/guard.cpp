@@ -10,7 +10,6 @@
 #include <assert.h>
 #include <time.h>
 #include "include/guard.h"
-#include "ReflectUtil.h"
 
 #define CLASS_PATH "com/jamesfchen/guard/TestGuardActivity"
 #define   NELEM(x) ((int) (sizeof(x) / sizeof((x)[0])))
@@ -65,6 +64,7 @@ jstring Java_com_jamesfchen_guard_TestGuardActivity_stringFromJNI(JNIEnv *env,
     std::string hello = "Hello from C++ ";
     hello.append<int>(i, 0x2E);
     ++i;
+
     return env->NewStringUTF(hello.c_str());
 }
 

@@ -17,11 +17,6 @@
 #ifndef __ASSET__UTIL_H__
 #define __ASSET__UTIL_H__
 
-#include <string>
-#include <vector>
-#include <android/asset_manager.h>
-#include <android/asset_manager_jni.h>
-
 enum AASSET_MODE {
     /** No specific information about how data will be accessed. **/
             _UNKNOWN = AASSET_MODE_UNKNOWN,

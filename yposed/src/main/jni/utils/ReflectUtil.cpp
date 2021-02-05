@@ -1,10 +1,15 @@
 //
 // Created by hawks.jamesf on 1/11/20.
 //
+#include <string>
+#include <vector>
+#include <android/asset_manager.h>
+#include <android/asset_manager_jni.h>
+#include <jni.h>
+#include <algorithm>
 
 #include "include/ReflectUtil.h"
 #include "include/LogUtil.h"
-
 #define MODULE_NAME  "native/utils_reflect"
 /**
  * 任何的静态成员都要在这里初始化

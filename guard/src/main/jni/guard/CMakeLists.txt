@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.4.1)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}   -Wno-format -Wno-sign-compare -Wno-unused-parameter -DHAVE_CONFIG_H")
 add_definitions(-DENABLE_ANDROID_LOG)
 add_library(
         guard
@@ -7,7 +8,7 @@ add_library(
         guard.cpp
 )
 target_include_directories(guard PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}/utils/include
+        utils/include
         )
 
 find_library(
@@ -16,6 +17,5 @@ find_library(
 
 target_link_libraries(
         guard
-
-        ${CMAKE_CURRENT_SOURCE_DIR}/utils/${ANDROID_ABI}/libutils.so
+        utils/${ANDROID_ABI}/libutils.so
         ${log-lib} )

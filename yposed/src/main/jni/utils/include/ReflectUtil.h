@@ -5,11 +5,6 @@
 #ifndef SPACECRAFTANDROID_REFLECTUTIL_H
 #define SPACECRAFTANDROID_REFLECTUTIL_H
 
-#include <jni.h>
-#include <string>
-
-#include <stdarg.h>
-
 using namespace ::std;
 
 typedef void (*RetZFunc)(jboolean);
