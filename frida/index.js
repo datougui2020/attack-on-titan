@@ -32,4 +32,7 @@ function main() {
 
 }
 setImmediate(main);
+// setTimeout(() => {
+//     console.log("setTimeout")
+// }, 10)
 //frida -U -f com.hawksjamesf.spacecraft.debug --no-pause -l index.js

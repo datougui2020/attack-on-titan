@@ -10,6 +10,7 @@
 #include <assert.h>
 #include <time.h>
 #include "include/guard.h"
+#include "ReflectUtil.h"
 
 #define CLASS_PATH "com/jamesfchen/guard/TestGuardActivity"
 #define   NELEM(x) ((int) (sizeof(x) / sizeof((x)[0])))
