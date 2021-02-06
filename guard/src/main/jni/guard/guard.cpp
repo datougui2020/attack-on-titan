@@ -60,7 +60,7 @@ void clear_class(JNIEnv *env) {
 int i = 0;
 extern "C" JNIEXPORT  JNICALL
 jstring Java_com_jamesfchen_guard_TestGuardActivity_stringFromJNI(JNIEnv *env,
-                                                                 jobject caller /* this */) {
+                                                                  jobject caller /* this */) {
     std::string hello = "Hello from C++ ";
     hello.append<int>(i, 0x2E);
     ++i;
@@ -165,10 +165,10 @@ jstring get_sign(JNIEnv *env, jobject caller /* this */, jobject contextObject) 
 }
 
 extern "C" JNIEXPORT JNICALL
-jboolean verify(JNIEnv *env, jobject caller,jobject contextObject) {
+jboolean verify(JNIEnv *env, jobject caller, jobject contextObject) {
     import_class(env);
-    LOGI("jni 第一种获取签名的方法: %s",env->GetStringUTFChars(get_sign(env,caller,contextObject),0));
-    LOGI("jni 第二种获取签名的方法：%s",env->GetStringUTFChars(get_sign_v2(env,caller,contextObject),0));
+    LOGI("jni 第一种获取签名的方法: %s", env->GetStringUTFChars(get_sign(env, caller, contextObject), 0));
+    LOGI("jni 第二种获取签名的方法：%s", env->GetStringUTFChars(get_sign_v2(env, caller, contextObject), 0));
     jmethodID isProxyClassMethodId = env->GetStaticMethodID(ProxyClass, "isProxyClass",
                                                             "(Ljava/lang/Class;)Z");
     jmethodID getServiceId = env->GetStaticMethodID(ServiceManagerClass, "getService",
@@ -188,13 +188,14 @@ jboolean verify(JNIEnv *env, jobject caller,jobject contextObject) {
     if (iPackageManagerObj == nullptr) {
         LOGE("iPackageManagerObj  is null");
     }
-    jboolean  isProxyClass = env->CallStaticBooleanMethod(ProxyClass,isProxyClassMethodId, env->GetObjectClass(iPackageManagerObj));
+    jboolean isProxyClass = env->CallStaticBooleanMethod(ProxyClass, isProxyClassMethodId,
+                                                         env->GetObjectClass(iPackageManagerObj));
     clear_class(env);
-    if (isProxyClass){
+    if (isProxyClass) {
         LOGI("PackageManger使用了动态代理，被攻击了！！！！");
         return JNI_FALSE;
 
-    }else{
+    } else {
         LOGI("PackageManger来自系统提供，没有被攻击");
         return JNI_FALSE;
     }
@@ -209,7 +210,7 @@ static JNINativeMethod gMethods[] = {
 //        {"setFieldFlag",  "(Ljava/lang/reflect/Field;)V",                            (void *) setFieldFlag},
 //        {"getSign",   "(Landroid/content/Context;)Ljava/lang/String;", (void *) get_sign},
 //        {"getSignv2", "(Landroid/content/Context;)Ljava/lang/String;", (void *) get_sign_v2},
-        {"verify", "(Landroid/content/Context;)Z",                  (void *) verify}
+        {"verify", "(Landroid/content/Context;)Z", (void *) verify}
 };
 
 static int registerNativeMethods(JNIEnv *env, const char *className, JNINativeMethod *gMethods,

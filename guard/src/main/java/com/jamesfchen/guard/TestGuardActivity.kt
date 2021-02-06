@@ -30,6 +30,10 @@ class TestGuardActivity : Activity() {
         findViewById<TextView>(R.id.bt_hook_frida).setOnClickListener {
             (it as TextView).text = stringFromJNI()
         }
+        findViewById<TextView>(R.id.bt_hook_frida2).setOnClickListener {
+
+            (it as TextView).text = verify(this).toString()
+        }
         var info = packageManager.getPackageInfo(packageName, PackageManager.GET_SIGNATURES)
         var bs = info.signatures[0].toByteArray()
         var s ="java 第一种获取签名的方法：firstInstallTime:${info.firstInstallTime} lastUpdateTime:${info.lastUpdateTime} ${sha1ToHexString(bs)}"
@@ -93,7 +97,5 @@ class TestGuardActivity : Activity() {
 
     @Keep
     external fun verify(ctx:Context): Boolean
-
-
 
 }
