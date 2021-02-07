@@ -6,14 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "npm run build",
-    "watch": "frida-compile agent/index.ts -o _agent.js -w",
-    "build": "frida-compile agent/index.ts -o _agent.js -c"
+    "watch": "frida-compile src/index.ts -o _index.js -w",
+    "build": "frida-compile src/index.ts -o _index.js -c"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "jshint": "^2.9.2",
     "@types/frida-gum": "^16.2.0",
-    "@types/node": "^14.14.2",
+    "@types/node": "^14.14.10",
     "frida-compile": "^10.0.0"
   }
 }

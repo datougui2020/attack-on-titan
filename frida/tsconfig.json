@@ -1,12 +1,12 @@
 {
     "compilerOptions": {
-        "target": "esnext",
+        "target": "es2020",
         "lib": [
-            "esnext"
+            "es2020"
         ],
         "allowJs": true,
         "noEmit": true,
         "strict": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
     }
 }
