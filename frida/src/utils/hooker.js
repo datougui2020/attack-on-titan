@@ -1,44 +1,40 @@
-function hookMethod(module = "libart.so", methodName, onEnter, onLeave) {
-  if (module == "libart.so") {
-    hookArtLib(methodName, onEnter, onLeave);
-  } else {
-    hookSepcialLib(module, methodName, onEnter, onLeave);
-  }
+function hookMethodOnArtLib(methodName, sign,onEnter, onLeave) {
+  hookMethod("libart.so",methodName,sign,onEnter,onLeave)
 }
-
-function hookArtLib(methodName, onEnter, onLeave) {
+function hookMethodOnSpecialLib(module, methodName,sig, onEnter, onLeave) {
+  hookMethod(module,methodName,sig,onEnter,onLeave)
 }
-function hookSepcialLib(module, methodName, onEnter, onLeave) {
+function hookMethod(module, methodName,sign, onEnter, onLeave) {
   const methodAddr = Module.getExportByName(module, methodName);
-    Interceptor.attach(stringFromJNI_absaddr, {
-      onEnter(args) {
-        console.log("Context information:");
-        console.log("Context  : " + JSON.stringify(this.context));
-        console.log("Return   : " + this.returnAddress);
-        console.log("ThreadId : " + this.threadId);
-        console.log("Depth    : " + this.depth);
-        console.log("Errornr  : " + this.err);
+  Interceptor.attach(methodAddr, {
+    onEnter(args) {
+      console.log("Context information:");
+      console.log("Context  : " + JSON.stringify(this.context));
+      console.log("Return   : " + this.returnAddress);
+      console.log("ThreadId : " + this.threadId);
+      console.log("Depth    : " + this.depth);
+      console.log("Errornr  : " + this.err);
 
-        // Save arguments for processing in onLeave.
-        this.fd = args[0].toInt32();
-        this.buf = args[1];
-        this.count = args[2].toInt32();
-      },
-      onLeave: function (result) {
-        console.log("----------");
-        // Show argument 1 (buf), saved during onEnter.
-        const numBytes = result.toInt32();
-        if (numBytes > 0) {
-          console.log(hexdump(this.buf, { length: numBytes, ansi: true }));
-        }
-        console.log("Result   : " + numBytes);
-        var env = Java.vm.getEnv();
-        var newRetval = env.newStringUtf(
-          "stringFromJNI native函数 被frida hook了"
-        );
-        result.replace(ptr(newRetval));
-      },
-    });
+      // Save arguments for processing in onLeave.
+      this.fd = args[0].toInt32();
+      this.buf = args[1];
+      this.count = args[2].toInt32();
+    },
+    onLeave: function (result) {
+      console.log("----------");
+      // Show argument 1 (buf), saved during onEnter.
+      const numBytes = result.toInt32();
+      if (numBytes > 0) {
+        console.log(hexdump(this.buf, { length: numBytes, ansi: true }));
+      }
+      console.log("Result   : " + numBytes);
+      var env = Java.vm.getEnv();
+      var newRetval = env.newStringUtf(
+        "stringFromJNI native函数 被frida hook了"
+      );
+      result.replace(ptr(newRetval));
+    },
+  });
 }
 function hookRegisterNatives(methodName, onEnter, onLeave) {
   var symbols = Module.enumerateSymbolsSync(art_shared_lib);
