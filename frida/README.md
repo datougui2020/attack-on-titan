@@ -11,7 +11,7 @@
 
   - embedded
 
-    `frida -U Gadget(-D d2d9503e) -l _index.js`
+    `frida -U (-D d2d9503e) Gadget -l _index.js`
 
 - npm run watch
 

@@ -5,7 +5,7 @@
  * @author jamesfchen
  *
  * Created at     : 2021-02-07 16:18:25
- * Last modified  : 2021-02-07 17:29:04
+ * Last modified  : 2021-02-07 17:44:51
  */
 
 function getFieldValue(object, fieldName) {
