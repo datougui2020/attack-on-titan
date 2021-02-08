@@ -1,4 +1,4 @@
-function js_log(tag: string, message: string): void {
+function js_log(tag: string, message: any): void {
   console.log(tag + ": " + message);
 }
 

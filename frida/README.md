@@ -23,3 +23,4 @@ objection -d -g com.sankuai.meituan explore
 > memory list exports libsigchain.so
 > android heap search instances 类名
 > android hooking list activities/services
+frida -D d2d9503e -f com.jamesfchen.titan --no-pause -l _index.js

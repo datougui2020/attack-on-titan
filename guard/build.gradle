@@ -19,6 +19,8 @@ android {
             cmake {
                 arguments "-DANDROID_ARM_NEON=TRUE", "-DANDROID_TOOLCHAIN=clang"
                 cppFlags "-std=c++14","-fexceptions", "-frtti"
+//                ,"-ffunction-sections","-fdata-sections"
+//                ,"-fvisibility=hidden"
                 cFlags "-D__STDC_FORMAT_MACROS"
 //                cppFlags "-std=gnu++11"
 //                targets "hawks","hotfix"
@@ -46,6 +48,9 @@ android {
             //path 'src/main/cpp/CMakeLists.txt'
         }
     }
+//    packagingOptions{
+//        doNotStrip "**.so"
+//    }
 }
 
 dependencies {
