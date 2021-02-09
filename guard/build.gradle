@@ -18,9 +18,8 @@ android {
         externalNativeBuild {
             cmake {
                 arguments "-DANDROID_ARM_NEON=TRUE", "-DANDROID_TOOLCHAIN=clang"
-                cppFlags "-std=c++14","-fexceptions", "-frtti"
-//                ,"-ffunction-sections","-fdata-sections"
-//                ,"-fvisibility=hidden"
+                cppFlags "-std=c++14"
+//                        , '-fno-rtti', '"-fno-exceptions"'
                 cFlags "-D__STDC_FORMAT_MACROS"
 //                cppFlags "-std=gnu++11"
 //                targets "hawks","hotfix"
@@ -30,8 +29,17 @@ android {
     }
 
     buildTypes {
+        debug {
+        }
         release {
-            minifyEnabled false
+            externalNativeBuild {
+                cmake {
+                    //https://zhuanlan.zhihu.com/p/72475595
+                    cppFlags '-s'/*去除so lib 的符号表（libguard shrink之后的size2139k -->283k 7倍）*/ \
+                            , "-fvisibility=hidden", "-ffunction-sections", "-fdata-sections"
+                }
+            }
+
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -48,8 +56,9 @@ android {
             //path 'src/main/cpp/CMakeLists.txt'
         }
     }
-//    packagingOptions{
+//    packagingOptions {
 //        doNotStrip "**.so"
+//        doNotStrip  "**/debug/obj/**/*.so"
 //    }
 }
 
@@ -58,5 +67,6 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.2.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.2.1'
-    compileOnly project(path : ':yposedstub')
+    compileOnly project(path: ':yposedstub')
+    implementation 'com.facebook.soloader:soloader:0.10.1+'
 }

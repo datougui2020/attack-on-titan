@@ -9,6 +9,7 @@
 #include <android/log.h>
 #include <assert.h>
 #include <time.h>
+#include <dlfcn.h>
 #include "include/guard.h"
 
 #define CLASS_PATH "com/jamesfchen/guard/TestGuardActivity"
@@ -163,7 +164,26 @@ jstring get_sign(JNIEnv *env, jobject caller /* this */, jobject contextObject) 
     clear_class(env);
     return hexstirng;
 }
+typedef  jboolean (*Entry)();
+extern "C" JNIEXPORT JNICALL
+jboolean dynamic_loader(JNIEnv *env, jobject caller, jstring path) {
+    void *handle = dlopen(env->GetStringUTFChars(path, 0), RTLD_LAZY | RTLD_LOCAL);
+    if (!handle) {
+        LOGI("handle 为空");
+        return false;
+    }
 
+    //dlsym()函数所做的就是解析so文件的.dynamic 通过符号表来获得函数的地址
+    Entry entry = (Entry)dlsym(handle, "entry");
+
+    if (!entry) {
+        LOGI("sym 为空");
+        dlclose(handle);
+        return false;
+    }
+    entry();
+    return true;
+}
 extern "C" JNIEXPORT JNICALL
 jboolean verify(JNIEnv *env, jobject caller, jobject contextObject) {
     import_class(env);
@@ -210,7 +230,8 @@ static JNINativeMethod gMethods[] = {
 //        {"setFieldFlag",  "(Ljava/lang/reflect/Field;)V",                            (void *) setFieldFlag},
 //        {"getSign",   "(Landroid/content/Context;)Ljava/lang/String;", (void *) get_sign},
 //        {"getSignv2", "(Landroid/content/Context;)Ljava/lang/String;", (void *) get_sign_v2},
-        {"verify", "(Landroid/content/Context;)Z", (void *) verify}
+        {"verify",        "(Landroid/content/Context;)Z", (void *) verify},
+        {"dynamicLoader", "(Ljava/lang/String;)Z",        (void *) dynamic_loader}
 };
 
 static int registerNativeMethods(JNIEnv *env, const char *className, JNINativeMethod *gMethods,
