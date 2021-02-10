@@ -15,6 +15,15 @@ android {
         versionName rootProject.ext.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+    externalNativeBuild {
+        ndkBuild {
+            // Tells Gradle to put outputs from external native
+            // builds in the path specified below.
+//            buildStagingDirectory "./outputs/ndk-build"
+            path "src/main/jni/Android.mk"
+        }
     }
 
     buildTypes {
@@ -30,6 +39,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    ndkVersion '22.0.7026061'
 }
 
 dependencies {
