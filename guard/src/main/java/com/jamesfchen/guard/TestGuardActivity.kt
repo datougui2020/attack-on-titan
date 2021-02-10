@@ -84,7 +84,7 @@ class TestGuardActivity : Activity() {
         val substring = packageCodePath.substring(0, packageCodePath.lastIndexOf(47.toChar()))
         var soLib = "${applicationInfo.nativeLibraryDir}/libdynamic_so.so"
 //        Log.i(TAG, "p $substring $packageCodePath $soLib ")
-        Log.i(TAG, " dynamicLoader:${dynamicLoader(soLib)}")
+//        Log.i(TAG, " dynamicLoader:${dynamicLoader(soLib)}")
 
     }
 

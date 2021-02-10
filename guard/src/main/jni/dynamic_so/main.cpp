@@ -15,7 +15,7 @@
 #define   LOG_TAG    "cjf_defense_jni"
 #define   LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
 extern"C"
-jboolean entry() {
+bool entry() {
     LOGE("cjf dynamicdynamic so :entry");
     return true;
 }

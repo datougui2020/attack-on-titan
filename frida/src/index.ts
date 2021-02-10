@@ -54,18 +54,18 @@ function main() {
         findModule.base
       );
       const methodInfo = fnPtr + "/" + offsetAddr + "/" + name;
-      // Interceptor.attach(fnPtr, {
-      //   onEnter(args) {
-      //     console.log(
-      //       methodInfo +
-      //         " called from:\n" +
-      //         Thread.backtrace(this.context, Backtracer.ACCURATE)
-      //           .map(DebugSymbol.fromAddress)
-      //           .join("\n")
-      //     );
-      //   },
-      //   onLeave(retsult) {},
-      // });
+      Interceptor.attach(fnPtr, {
+        onEnter(args) {
+          console.log(
+            methodInfo +
+              " called from:\n" +
+              Thread.backtrace(this.context, Backtracer.ACCURATE)
+                .map(DebugSymbol.fromAddress)
+                .join("\n")
+          );
+        },
+        onLeave(retsult) {},
+      });
     },
     (result: any) => {
       const numBytes = result.toInt32();
@@ -80,6 +80,15 @@ function main() {
       // result.replace(ptr(newRetval));
     }
   );
+
+  //  Module.ensureInitialized("libguard.so");
+  var m =Module.load("/data/app/com.jamesfchen.titan-2/lib/arm64/libdynamic_so.so");
+  var entry_addr=m.getExportByName('entry')
+  var entry = new NativeFunction(entry_addr, "bool",[]);
+  console.log("entry", entry());
+  var result = Memory.alloc(0x100);
+  console.log(result.readCString());
+
 }
 setImmediate(main);
 // setTimeout(main, 4000);
