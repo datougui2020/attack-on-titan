@@ -15,14 +15,29 @@ android {
         versionName rootProject.ext.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                arguments "-DANDROID_ARM_NEON=TRUE", "-DANDROID_TOOLCHAIN=clang"
+                cppFlags "-std=c++14"
+//                        , '-fno-rtti', '"-fno-exceptions"'
+                cFlags "-D__STDC_FORMAT_MACROS"
+//                cppFlags "-std=gnu++11"
+//                targets "hawks","hotfix"
+                abiFilters "arm64-v8a", "armeabi-v7a" /*,"x86","x86_64"*/   //输出制定三种abi体系结构下的so库
+            }
+        }
 
     }
     externalNativeBuild {
-        ndkBuild {
-            // Tells Gradle to put outputs from external native
-            // builds in the path specified below.
-//            buildStagingDirectory "./outputs/ndk-build"
-            path "src/main/jni/Android.mk"
+//        ndkBuild {
+//            // Tells Gradle to put outputs from external native
+//            // builds in the path specified below.
+////            buildStagingDirectory "./outputs/ndk-build"
+//            path "src/main/jni/Android.mk"
+//        }
+        cmake {
+            path "CMakeLists.txt"
+            //path 'src/main/cpp/CMakeLists.txt'
         }
     }
 

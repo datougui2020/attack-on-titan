@@ -1,4 +1,4 @@
-package com.hawksjamesf.dexshell;
+package com.jamesfchen.dexshell;
 
 import android.app.Application;
 import android.content.Context;

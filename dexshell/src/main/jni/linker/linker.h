@@ -1,51 +1,19 @@
-/*
- * Copyright (C) 2008 The Android Open Source Project
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *  * Redistributions of source code must retain the above copyright
- *    notice, this list of conditions and the following disclaimer.
- *  * Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in
- *    the documentation and/or other materials provided with the
- *    distribution.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
- * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
- * OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
- * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
- * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
- * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
- * SUCH DAMAGE.
- */
-
 #ifndef _LINKER_H_
 #define _LINKER_H_
 
-#include <dlfcn.h>
-#include <android/dlext.h>
 #include <elf.h>
-#include <inttypes.h>
 #include <link.h>
-#include <sys/stat.h>
 #include <unistd.h>
+#include <sys/stat.h>
 
-#include "private/bionic_page.h"
-#include "private/libc_logging.h"
+#include "elf_defines.h"
+#include "Log.h"
 #include "linked_list.h"
-#include "linker_common_types.h"
-#include "linker_logger.h"
-#include "linker_soinfo.h"
 
-#include <string>
-#include <vector>
+#define TRACE(...) GLogInfo("linker", __VA_ARGS__)
+#define DEBUG(...) GLogInfo("linker", __VA_ARGS__)
+#define DL_WARN(...) GLogWarn("linker", __VA_ARGS__)
+#define DL_ERR(...) GLogError("linker", __VA_ARGS__)
 
 #if defined(__LP64__)
 #define ELFW(what) ELF64_ ## what
@@ -67,118 +35,176 @@
 #define ELF64_R_TYPE(info)  (((info) >> 56) & 0xff)
 #endif
 
-#define SUPPORTED_DT_FLAGS_1 (DF_1_NOW | DF_1_GLOBAL | DF_1_NODELETE | DF_1_PIE)
+// Returns the address of the page containing address 'x'.
+#define PAGE_START(x)  ((x) & PAGE_MASK)
 
-// Class used construct version dependency graph.
-class VersionTracker {
+// Returns the offset of address 'x' in its page.
+#define PAGE_OFFSET(x) ((x) & ~PAGE_MASK)
+
+// Returns the address of the next page after address 'x', unless 'x' is
+// itself at the start of a page.
+#define PAGE_END(x)    PAGE_START((x) + (PAGE_SIZE-1))
+
+#define FLAG_LINKED     0x00000001
+#define FLAG_EXE        0x00000004 // The main executable
+#define FLAG_LINKER     0x00000010 // The linker itself
+#define FLAG_NEW_SOINFO 0x40000000 // new soinfo format
+
+#define SOINFO_NAME_LEN 128
+
+typedef void (*linker_function_t)();
+
+// Android uses RELA for aarch64 and x86_64. mips64 still uses REL.
+#if defined(__aarch64__) || defined(__x86_64__)
+#define USE_RELA 1
+#endif
+
+struct soinfo;
+
+class SoinfoListAllocator {
+public:
+  static LinkedListEntry<soinfo>* alloc();
+  static void free(LinkedListEntry<soinfo>* entry);
+private:
+  // unconstructable
+  DISALLOW_IMPLICIT_CONSTRUCTORS(SoinfoListAllocator);
+};
+
+struct soinfo {
  public:
-  VersionTracker() = default;
-  bool init(const soinfo* si_from);
+  typedef LinkedList<soinfo, SoinfoListAllocator> soinfo_list_t;
+ public:
+  char name[SOINFO_NAME_LEN];
+  const ElfW(Phdr)* phdr;
+  size_t phnum;
+  ElfW(Addr) entry;
+  ElfW(Addr) base;
+  size_t size;
 
-  const version_info* get_version_info(ElfW(Versym) source_symver) const;
+#ifndef __LP64__
+  uint32_t unused1;  // DO NOT USE, maintained for compatibility.
+#endif
+
+  ElfW(Dyn)* dynamic;
+
+#ifndef __LP64__
+  uint32_t unused2; // DO NOT USE, maintained for compatibility
+  uint32_t unused3; // DO NOT USE, maintained for compatibility
+#endif
+
+  soinfo* next;
+  unsigned flags;
+
+  const char* strtab;
+  ElfW(Sym)* symtab;
+
+  size_t nbucket;
+  size_t nchain;
+  unsigned* bucket;
+  unsigned* chain;
+
+#if defined(__mips__) || !defined(__LP64__)
+  // This is only used by mips and mips64, but needs to be here for
+  // all 32-bit architectures to preserve binary compatibility.
+  ElfW(Addr)** plt_got;
+#endif
+
+#if defined(USE_RELA)
+  ElfW(Rela)* plt_rela;
+  size_t plt_rela_count;
+
+  ElfW(Rela)* rela;
+  size_t rela_count;
+#else
+  ElfW(Rel)* plt_rel;
+  size_t plt_rel_count;
+
+  ElfW(Rel)* rel;
+  size_t rel_count;
+#endif
+
+  linker_function_t* preinit_array;
+  size_t preinit_array_count;
+
+  linker_function_t* init_array;
+  size_t init_array_count;
+  linker_function_t* fini_array;
+  size_t fini_array_count;
+
+  linker_function_t init_func;
+  linker_function_t fini_func;
+
+#if defined(__arm__)
+  // ARM EABI section used for stack unwinding.
+  unsigned* ARM_exidx;
+  size_t ARM_exidx_count;
+#elif defined(__mips__)
+  unsigned mips_symtabno;
+  unsigned mips_local_gotno;
+  unsigned mips_gotsym;
+#endif
+
+  size_t ref_count;
+  link_map link_map_head;
+
+  bool constructors_called;
+
+  // When you read a virtual address from the ELF file, add this
+  // value to get the corresponding address in the process' address space.
+  ElfW(Addr) load_bias;
+
+#if !defined(__LP64__)
+  bool has_text_relocations;
+#endif
+  bool has_DT_SYMBOLIC;
+  void CallConstructors();
+  void CallDestructors();
+  void CallPreInitConstructors();
+
+  void add_child(soinfo* child);
+  void remove_all_links();
+
+  void set_st_dev(dev_t st_dev);
+  void set_st_ino(ino_t st_ino);
+  ino_t get_st_ino();
+  dev_t get_st_dev();
+
+  soinfo_list_t& get_children();
+
  private:
-  bool init_verneed(const soinfo* si_from);
-  bool init_verdef(const soinfo* si_from);
-  void add_version_info(size_t source_index, ElfW(Word) elf_hash,
-      const char* ver_name, const soinfo* target_si);
+  void CallArray(const char* array_name, linker_function_t* functions, size_t count, bool reverse);
+  void CallFunction(const char* function_name, linker_function_t function);
 
-  std::vector<version_info> version_infos;
+ private:
+  // This part of the structure is only available
+  // when FLAG_NEW_SOINFO is set in this->flags.
+  unsigned int version;
 
-  DISALLOW_COPY_AND_ASSIGN(VersionTracker);
+  dev_t st_dev;
+  ino_t st_ino;
+
+  // dependency graph
+  soinfo_list_t children;
+  soinfo_list_t parents;
+
 };
 
-bool soinfo_do_lookup(soinfo* si_from, const char* name, const version_info* vi,
-                      soinfo** si_found_in, const soinfo_list_t& global_group,
-                      const soinfo_list_t& local_group, const ElfW(Sym)** symbol);
-
-enum RelocationKind {
-  kRelocAbsolute = 0,
-  kRelocRelative,
-  kRelocCopy,
-  kRelocSymbol,
-  kRelocMax
-};
-
-void count_relocation(RelocationKind kind);
-
-soinfo* get_libdl_info(const char* linker_path);
-
-soinfo* find_containing_library(const void* p);
+extern soinfo* get_libdl_info();
 
 void do_android_get_LD_LIBRARY_PATH(char*, size_t);
 void do_android_update_LD_LIBRARY_PATH(const char* ld_library_path);
-void* do_dlopen(const char* name,
-                int flags,
-                const android_dlextinfo* extinfo,
-                const void* caller_addr);
+soinfo* do_dlopen(const char* name, int flags, const android_dlextinfo* extinfo, ElfW(Off) offset);
+void do_dlclose(soinfo* si);
 
-int do_dlclose(void* handle);
+ElfW(Sym)* dlsym_linear_lookup(const char* name, soinfo** found, soinfo* start);
+soinfo* find_containing_library(const void* addr);
 
-int do_dl_iterate_phdr(int (*cb)(dl_phdr_info* info, size_t size, void* data), void* data);
+ElfW(Sym)* dladdr_find_symbol(soinfo* si, const void* addr);
+ElfW(Sym)* dlsym_handle_lookup(soinfo* si, soinfo** found, const char* name);
 
-#if defined(__arm__)
-_Unwind_Ptr do_dl_unwind_find_exidx(_Unwind_Ptr pc, int* pcount);
-#endif
+void debuggerd_init();
 
-bool do_dlsym(void* handle, const char* sym_name,
-              const char* sym_ver,
-              const void* caller_addr,
-              void** symbol);
-
-int do_dladdr(const void* addr, Dl_info* info);
-
-// void ___cfi_slowpath(uint64_t CallSiteTypeId, void *Ptr, void *Ret);
-// void ___cfi_slowpath_diag(uint64_t CallSiteTypeId, void *Ptr, void *DiagData, void *Ret);
-void ___cfi_fail(uint64_t CallSiteTypeId, void* Ptr, void *DiagData, void *Ret);
-
-void set_application_target_sdk_version(uint32_t target);
-uint32_t get_application_target_sdk_version();
-
-enum {
-  /* A regular namespace is the namespace with a custom search path that does
-   * not impose any restrictions on the location of native libraries.
-   */
-  ANDROID_NAMESPACE_TYPE_REGULAR = 0,
-
-  /* An isolated namespace requires all the libraries to be on the search path
-   * or under permitted_when_isolated_path. The search path is the union of
-   * ld_library_path and default_library_path.
-   */
-  ANDROID_NAMESPACE_TYPE_ISOLATED = 1,
-
-  /* The shared namespace clones the list of libraries of the caller namespace upon creation
-   * which means that they are shared between namespaces - the caller namespace and the new one
-   * will use the same copy of a library if it was loaded prior to android_create_namespace call.
-   *
-   * Note that libraries loaded after the namespace is created will not be shared.
-   *
-   * Shared namespaces can be isolated or regular. Note that they do not inherit the search path nor
-   * permitted_path from the caller's namespace.
-   */
-  ANDROID_NAMESPACE_TYPE_SHARED = 2,
-
-  /* This flag instructs linker to enable grey-list workaround for the namespace.
-   * See http://b/26394120 for details.
-   */
-  ANDROID_NAMESPACE_TYPE_GREYLIST_ENABLED = 0x08000000,
-
-  ANDROID_NAMESPACE_TYPE_SHARED_ISOLATED = ANDROID_NAMESPACE_TYPE_SHARED |
-                                           ANDROID_NAMESPACE_TYPE_ISOLATED,
-};
-
-bool init_anonymous_namespace(const char* shared_lib_sonames, const char* library_search_path);
-android_namespace_t* create_namespace(const void* caller_addr,
-                                      const char* name,
-                                      const char* ld_library_path,
-                                      const char* default_library_path,
-                                      uint64_t type,
-                                      const char* permitted_when_isolated_path,
-                                      android_namespace_t* parent_namespace);
-
-bool link_namespaces(android_namespace_t* namespace_from,
-                     android_namespace_t* namespace_to,
-                     const char* shared_lib_sonames);
-
-android_namespace_t* get_exported_namespace(const char* name);
+char* linker_get_error_buffer();
+size_t linker_get_error_buffer_size();
 
 #endif
