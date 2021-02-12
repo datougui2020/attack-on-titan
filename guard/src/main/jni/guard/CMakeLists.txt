@@ -4,7 +4,7 @@ add_definitions(-DENABLE_ANDROID_LOG)
 add_library(
         guard
         SHARED
-        main.cpp
+        so_protector.cpp
         guard.cpp
 )
 find_library(

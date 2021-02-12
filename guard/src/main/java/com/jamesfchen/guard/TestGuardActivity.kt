@@ -85,6 +85,7 @@ class TestGuardActivity : Activity() {
         var soLib = "${applicationInfo.nativeLibraryDir}/libdynamic_so.so"
 //        Log.i(TAG, "p $substring $packageCodePath $soLib ")
 //        Log.i(TAG, " dynamicLoader:${dynamicLoader(soLib)}")
+        main(this)
 
     }
 
@@ -120,7 +121,7 @@ class TestGuardActivity : Activity() {
     external fun stringFromJNI(): String
 
     @Keep
-    external fun main()
+    external fun main(ctx: Context):Boolean
 
     @Keep
     external fun verify(ctx: Context): Boolean
