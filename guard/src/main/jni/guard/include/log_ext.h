@@ -26,7 +26,7 @@
 //#define LOGE(tag, ...) __android_log_print(ANDROID_LOG_ERROR,tag, __VA_ARGS__)
 #define LOGF(tag, ...) __android_log_print(ANDROID_LOG_FATAL,tag, __VA_ARGS__)
 
-#define ASSERT(tag, cond, ...) if (!(cond)) {__android_log_assert(#cond, tag, __VA_ARGS__);}
+//#define ASSERT(tag, cond, ...) if (!(cond)) {__android_log_assert(#cond, tag, __VA_ARGS__);}
 //内联函数必须放在 .h 文件中,如果内联函数比较短, 就直接放在 .h 中
 inline int LogV(const char *tag, const char *fmt, ...) {
     va_list args;
@@ -66,5 +66,4 @@ inline int LogF(const char *tag, const char *fmt, ...) {
     return __android_log_print(ANDROID_LOG_FATAL, tag,fmt, args);
     va_end (args);
 }
-
 #endif // __SAMPLE_ANDROID_DEBUG_H__

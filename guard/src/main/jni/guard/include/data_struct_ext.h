@@ -1,10 +1,13 @@
 //
 // Created by hawks.jamesf on 2/12/21.
 //
-#include <sys/types.h>
 
 #ifndef ATTACK_ON_TITAN_DATA_STRUCT_EXT_H
 #define ATTACK_ON_TITAN_DATA_STRUCT_EXT_H
+
+#include <sys/types.h>
+#include <string.h>
+#include <map>
 //[预处理宏](https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/others/#preprocessor-macros)
 /**
  *
@@ -127,19 +130,25 @@ typedef int int32_t __attribute__((aligned (8)));
 
 //使用宏时要非常谨慎, 尽量以内联函数, 枚举和常量代替之.
 //#define MAX_NAME_LENGTH 256
-const int kMaxName_Length=265;
+//const int kMaxNameLength=265;
+//typedef struct {
+//    char name[MAX_NAME_LENGTH];
+//    ulong start, end;
+//} MemoryMap;
+//class MemoryMap {
+//public:
+//    char name[MAX_NAME_LENGTH];
+//    ulong start, end;
+//    int size(){
+//        return strlen(name);
+//    }
+//};
 typedef struct {
-    char name[kMaxName_Length];
     ulong start, end;
-} MemoryMap;
-//#ifdef __cplusplus
-//extern  "C"{
-//
-//#endif __cplusplus
-//int loadMemoryMap(pid_t pid, MemoryMap *map, int *count);
-//#ifdef __cplusplus
-//}
-//#endif __cplusplus
+} AddressRegion;
+using MemoryMap = std::map<std::string, AddressRegion>;
+using Pair = std::pair<std::string, AddressRegion>;
+//using String = std::string;
 
 
 #endif //ATTACK_ON_TITAN_DATA_STRUCT_EXT_H

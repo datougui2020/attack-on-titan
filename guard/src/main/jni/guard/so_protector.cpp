@@ -1,36 +1,117 @@
-#include <string.h>
 #include <jni.h>
-#include <string.h>
-#include <inttypes.h>
+#include <cstring>
+#include <cinttypes>
 #include <pthread.h>
 #include <android/log.h>
-#include <assert.h>
-#include <time.h>
+#include <cassert>
+#include <ctime>
 #include <sched.h>
 #include <cstdio>
 #include <cstdlib>
 #include <unistd.h>
+#include <fcntl.h>
+#include <cerrno>
 #include "include/so_protector.h"
+#include "include/log_ext.h"
+#include <string>
 
-#define   LOG_TAG    "cjf_defense_jni"
-#define   LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
+#define   LOG_TAG    "cjf_os_protector"
 
 jboolean verify(JNIEnv *env, jobject caller, jobject contextObject) {
-    LOGE("cjf main:verify");
+    LogE(LOG_TAG, "cjf main:verify");
     return false;
 }
 
 using namespace so_protector;
 
 void module_init() {
-    LOGE("cjf main module:init");
+    int pid = getpid();
+    LogE(LOG_TAG, "cjf main module:init %d", pid);
+}
+int read_filev2() {
+#ifdef __LP64__
+    char raw[64000];
+#else
+    char raw[8000];
+#endif
+    char *p;
+    unsigned long start, end;
+    int itemCount = 0, fd, returnValue;
+    int pid = getpid();
+    sprintf(raw, "/proc/%d/maps", pid);
+    fd = open(raw, O_RDONLY);
+    if (fd < 0) {
+        return -1;
+    }
+
+    memset(raw, 0, sizeof(raw));
+    p = raw;
+    while (true) {
+        returnValue = read(fd, p, sizeof(raw) - (p - raw));
+        if (returnValue < 0) {
+            return -1;
+        }
+        if (returnValue == 0) {
+            break;
+        }
+        p += returnValue;
+        if (p > raw + sizeof(raw)) {
+            return -1;
+        }
+    }
+    close(fd);
+    p = strtok(raw, "\n");
+    LogE(LOG_TAG, "entry pid:%d size:%d \n %s", pid, strlen(p), p);
+    return 0;
+}
+
+void read_file(char *file_name, char *buffer) {
+    int fd = open(file_name, O_RDONLY);
+    if (fd < 0) {
+        LogE(LOG_TAG, "Open process map file failed. ");
+        return;
+    }
+    int ret;
+    while ((ret = read(fd, buffer, sizeof(buffer)) != 0)) {
+        buffer += ret;
+    }
+    close(fd);
+}
+
+MemoryMap load_memorymap(pid_t pid) {
+#ifdef __LP64__
+    char file_name[64000];
+#else
+    char file_name[8000];
+#endif
+    //[Understanding Linux /proc/id/maps](https://stackoverflow.com/questions/1401359/understanding-linux-proc-id-maps)
+    sprintf(file_name, "/proc/%d/maps", pid);//字符串格式化
+//    printf("cjf %s", file_name);//打印到终端
+    char buffer[sizeof(file_name)];
+    read_file(file_name, buffer);
+    char *p = strtok(buffer, "\n");
+    LogE(LOG_TAG, "entry11 pid:%d size:%d \n %s", pid, strlen(p), p);
+    read_filev2();
+
+    MemoryMap map = MemoryMap();
+    map.size();
+    AddressRegion region = AddressRegion();
+    region.start = 1;
+    region.end = 2;
+    std::string key("cjf");
+    map[key] = region;
 }
 
 bool so_protector::entry() {
-    LOGE("cjf main module:entry");
+    int pid = getpid();
+    MemoryMap map = load_memorymap(pid);
+    if (!map.empty()) {
+        LogE(LOG_TAG, "memory map is empty");
+        return false;
+    }
     return true;
 }
 
 void module_fini() {
-    LOGE("cjf main module:fini");
+    LogE(LOG_TAG, "cjf main module:fini");
 }
