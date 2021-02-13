@@ -14,11 +14,12 @@
 #include "include/so_protector.h"
 #include "include/log_ext.h"
 #include <string>
+#include <dlfcn.h>
 
 #define   LOG_TAG    "cjf_os_protector"
 
 jboolean verify(JNIEnv *env, jobject caller, jobject contextObject) {
-    LogE(LOG_TAG, "cjf main:verify");
+    LOG_E(LOG_TAG, "cjf main:verify");
     return false;
 }
 
@@ -26,8 +27,9 @@ using namespace so_protector;
 
 void module_init() {
     int pid = getpid();
-    LogE(LOG_TAG, "cjf main module:init %d", pid);
+    LOG_E(LOG_TAG, "cjf main module:init %d", pid);
 }
+
 int read_filev2() {
 #ifdef __LP64__
     char raw[64000];
@@ -61,14 +63,14 @@ int read_filev2() {
     }
     close(fd);
     p = strtok(raw, "\n");
-    LogE(LOG_TAG, "entry pid:%d size:%d \n %s", pid, strlen(p), p);
+    LOG_E(LOG_TAG, "entry pid:%d size:%d \n %s", pid, strlen(p), p);
     return 0;
 }
 
 void read_file(char *file_name, char *buffer) {
     int fd = open(file_name, O_RDONLY);
     if (fd < 0) {
-        LogE(LOG_TAG, "Open process map file failed. ");
+        LOG_E(LOG_TAG, "Open process map file failed. ");
         return;
     }
     int ret;
@@ -79,6 +81,11 @@ void read_file(char *file_name, char *buffer) {
 }
 
 MemoryMap load_memorymap(pid_t pid) {
+    ulong module_init_addr = reinterpret_cast<ulong>(module_init);
+    ulong start=0X7f75040000;
+    ulong end=0X7f75080000;
+
+    LOG_E(LOG_TAG, "load_memorymap pid:%d module_init_addr:%lx %012lx-%012lx", pid, module_init_addr,start,end);
 #ifdef __LP64__
     char file_name[64000];
 #else
@@ -87,31 +94,31 @@ MemoryMap load_memorymap(pid_t pid) {
     //[Understanding Linux /proc/id/maps](https://stackoverflow.com/questions/1401359/understanding-linux-proc-id-maps)
     sprintf(file_name, "/proc/%d/maps", pid);//字符串格式化
 //    printf("cjf %s", file_name);//打印到终端
-    char buffer[sizeof(file_name)];
-    read_file(file_name, buffer);
-    char *p = strtok(buffer, "\n");
-    LogE(LOG_TAG, "entry11 pid:%d size:%d \n %s", pid, strlen(p), p);
-    read_filev2();
+//    char buffer[sizeof(file_name)];
+//    read_file(file_name, buffer);
+//    char *p = strtok(buffer, "\n");
+//    LOG_E(LOG_TAG, "entry11 pid:%d size:%d \n %s", pid, strlen(p), p);
+//    read_filev2();
 
     MemoryMap map = MemoryMap();
-    map.size();
-    AddressRegion region = AddressRegion();
-    region.start = 1;
-    region.end = 2;
-    std::string key("cjf");
-    map[key] = region;
+//    AddressRegion region = AddressRegion();
+//    region.start = 1;
+//    region.end = 2;
+//    std::string key("cjf");
+//    map[key] = region;
+    return map;
 }
 
 bool so_protector::entry() {
     int pid = getpid();
     MemoryMap map = load_memorymap(pid);
     if (!map.empty()) {
-        LogE(LOG_TAG, "memory map is empty");
+        LOG_E(LOG_TAG, "memory map is empty");
         return false;
     }
     return true;
 }
 
 void module_fini() {
-    LogE(LOG_TAG, "cjf main module:fini");
+    LOG_E(LOG_TAG, "cjf main module:fini");
 }

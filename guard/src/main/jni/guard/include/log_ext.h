@@ -19,51 +19,13 @@
 
 #include <android/log.h>
 
-#define LOGV(tag, ...) __android_log_print(ANDROID_LOG_VERBOSE, tag, __VA_ARGS__)
-#define LOGD(tag, ...) __android_log_print(ANDROID_LOG_DEBUG, tag, __VA_ARGS__)
-//#define LOGI(tag, ...) __android_log_print(ANDROID_LOG_INFO, tag, __VA_ARGS__)
-//#define LOGW(tag, ...) __android_log_print(ANDROID_LOG_WARN,tag, __VA_ARGS__)
-//#define LOGE(tag, ...) __android_log_print(ANDROID_LOG_ERROR,tag, __VA_ARGS__)
-#define LOGF(tag, ...) __android_log_print(ANDROID_LOG_FATAL,tag, __VA_ARGS__)
+#define LOG_V(tag, ...) __android_log_print(ANDROID_LOG_VERBOSE, tag, __VA_ARGS__)
+#define LOG_D(tag, ...) __android_log_print(ANDROID_LOG_DEBUG, tag, __VA_ARGS__)
+#define LOG_I(tag, ...) __android_log_print(ANDROID_LOG_INFO, tag, __VA_ARGS__)
+#define LOG_W(tag, ...) __android_log_print(ANDROID_LOG_WARN,tag, __VA_ARGS__)
+#define LOG_E(tag, ...) __android_log_print(ANDROID_LOG_ERROR,tag, __VA_ARGS__)
+#define LOG_F(tag, ...) __android_log_print(ANDROID_LOG_FATAL,tag, __VA_ARGS__)
 
-//#define ASSERT(tag, cond, ...) if (!(cond)) {__android_log_assert(#cond, tag, __VA_ARGS__);}
+#define ASSERT(tag, cond, ...) if (!(cond)) {__android_log_assert(#cond, tag, __VA_ARGS__);}
 //内联函数必须放在 .h 文件中,如果内联函数比较短, 就直接放在 .h 中
-inline int LogV(const char *tag, const char *fmt, ...) {
-    va_list args;
-    va_start (args, fmt);
-    return __android_log_print(ANDROID_LOG_VERBOSE, tag,fmt, args);
-    va_end (args);
-}
-
-inline int LogD(const char *tag, const char *fmt, ...) {
-    va_list args;
-    va_start (args, fmt);
-    return __android_log_print(ANDROID_LOG_DEBUG, tag,fmt, args);
-    va_end (args);
-}
-inline int LogI(const char *tag, const char *fmt, ...) {
-    va_list args;
-    va_start (args, fmt);
-    return __android_log_print(ANDROID_LOG_INFO, tag,fmt, args);
-    va_end (args);
-}
-
-inline int LogW(const char *tag, const char *fmt, ...) {
-    va_list args;
-    va_start (args, fmt);
-    return __android_log_print(ANDROID_LOG_WARN, tag,fmt, args);
-    va_end (args);
-}
-inline int LogE(const char *tag, const char *fmt, ...) {
-    va_list args;
-    va_start (args, fmt);
-    return __android_log_print(ANDROID_LOG_ERROR, tag,fmt, args);
-    va_end (args);
-}
-inline int LogF(const char *tag, const char *fmt, ...) {
-    va_list args;
-    va_start (args, fmt);
-    return __android_log_print(ANDROID_LOG_FATAL, tag,fmt, args);
-    va_end (args);
-}
 #endif // __SAMPLE_ANDROID_DEBUG_H__

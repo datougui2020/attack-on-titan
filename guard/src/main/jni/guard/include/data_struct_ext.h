@@ -83,8 +83,8 @@
 #ifdef __LP64__
 typedef unsigned long ulong;//8btes
 #else
-typedef using
-long long ulong;
+typedef long long ulong;
+typedef unsigned long long ulong;
 #endif
 typedef unsigned int uint;//4bytes
 typedef unsigned short ushort;//2bytes
