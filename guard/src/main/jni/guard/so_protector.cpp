@@ -81,9 +81,9 @@ void read_file(char *file_name, char *buffer) {
 }
 
 MemoryMap load_memorymap(pid_t pid) {
-    ulong module_init_addr = reinterpret_cast<ulong>(module_init);
-    ulong start=0X7f75040000;
-    ulong end=0X7f75080000;
+    auto module_init_addr = reinterpret_cast<u_long>(module_init);
+    u_long start=0X7f75040000;
+    u_long end=0X7f75080000;
 
     LOG_E(LOG_TAG, "load_memorymap pid:%d module_init_addr:%lx %012lx-%012lx", pid, module_init_addr,start,end);
 #ifdef __LP64__

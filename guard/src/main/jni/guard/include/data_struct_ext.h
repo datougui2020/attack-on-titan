@@ -80,30 +80,6 @@
 * void* 为对象地址
 *
 */
-#ifdef __LP64__
-typedef unsigned long ulong;//8btes
-#else
-typedef long long ulong;
-typedef unsigned long long ulong;
-#endif
-typedef unsigned int uint;//4bytes
-typedef unsigned short ushort;//2bytes
-typedef unsigned char uchar;//1bytes
-
-// int start
-typedef unsigned char uint8_t;
-typedef short int16_t;
-typedef unsigned short uint16_t;
-typedef int int32_t;
-typedef unsigned int uint32_t;
-#if defined(__LP64__)
-typedef long int64_t;
-typedef unsigned long uint64_t;
-#else
-typedef long long int64_t;
-typedef unsigned long long uint64_t;
-#endif
-// int end
 
 //该声明将强制编译器确保（尽它所能）变量类 型为struct S 或者int32_t 的变量在分配空间时采用8字节对齐方式。
 //aligned 属性使被设置的对象占用更多的空间，相反的，使用packed 可以减小对象占用的空间。
@@ -144,7 +120,7 @@ typedef int int32_t __attribute__((aligned (8)));
 //    }
 //};
 typedef struct {
-    ulong start, end;
+    u_long  start, end;
 } AddressRegion;
 using MemoryMap = std::map<std::string, AddressRegion>;
 using Pair = std::pair<std::string, AddressRegion>;
