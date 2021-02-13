@@ -3,12 +3,12 @@
 //
 #include <string>
 #include <jni.h>
-#include <string.h>
-#include <inttypes.h>
+#include <cstring>
+#include <cinttypes>
 #include <pthread.h>
 #include <android/log.h>
-#include <assert.h>
-#include <time.h>
+#include <cassert>
+#include <ctime>
 #include <dlfcn.h>
 #include <search.h>
 #include "include/so_protector.h"
