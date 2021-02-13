@@ -12,13 +12,11 @@
 #include <dlfcn.h>
 #include <search.h>
 #include "include/so_protector.h"
+#include "include/log_ext.h"
 
 #define CLASS_PATH "com/jamesfchen/guard/TestGuardActivity"
 #define   NELEM(x) ((int) (sizeof(x) / sizeof((x)[0])))
 #define   LOG_TAG    "cjf_defense_jni"
-#define   LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG,LOG_TAG,__VA_ARGS__)
-#define   LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
-#define   LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
 const char *RELEASE_SIGN = "E5:1B:40:36:1E:5E:E0:FF:82:54:64:65:06:B2:0F:93:6E:D4:17:77";
 static jboolean auth = JNI_FALSE;
 //import class
@@ -72,7 +70,7 @@ jstring Java_com_jamesfchen_guard_TestGuardActivity_stringFromJNI(JNIEnv *env,
 
 jbyteArray get_sign_byteArray(JNIEnv *env, jobject packageInfoObject) {
     if (packageInfoObject == nullptr) {
-        LOGE("packageinfo object is null");
+        LogE(LOG_TAG,"packageinfo object is null");
         return env->NewByteArray(0);
     }
     jfieldID signaturefieldID = env->GetFieldID(PackageInfoClass, "signatures",
@@ -115,7 +113,7 @@ jstring get_sign_v2(JNIEnv *env, jobject caller /* this */, jobject contextObjec
 
     jint userid = (jint) env->GetIntField(applicationInfoObject, useridId);
     const char *pkgName = env->GetStringUTFChars(packNameString, 0);
-    LOGI("package name:%s uid:%d", pkgName, userid);
+    LogE(LOG_TAG,"package name:%s uid:%d", pkgName, userid);
 
 
     jmethodID getServiceId = env->GetStaticMethodID(ServiceManagerClass, "getService",
@@ -127,13 +125,13 @@ jstring get_sign_v2(JNIEnv *env, jobject caller /* this */, jobject contextObjec
 
     jobject iBinderObj = env->CallStaticObjectMethod(ServiceManagerClass, getServiceId, packageStr);
     if (iBinderObj == nullptr) {
-        LOGE("iBinderObj  is null");
+        LogE(LOG_TAG,"iBinderObj  is null");
     }
     jobject iPackageManagerObj = env->CallStaticObjectMethod(IPackageManager$StubClass,
                                                              asInterfaceId,
                                                              iBinderObj);
     if (iPackageManagerObj == nullptr) {
-        LOGE("iPackageManagerObj  is null");
+        LogE(LOG_TAG,"iPackageManagerObj  is null");
     }
     jmethodID getPackageInfoId = env->GetMethodID(IPackageManagerClass, "getPackageInfo",
                                                   "(Ljava/lang/String;II)Landroid/content/pm/PackageInfo;");
@@ -170,14 +168,14 @@ extern "C" JNIEXPORT JNICALL
 jboolean dynamic_loader(JNIEnv *env, jobject caller, jstring path) {
     void *handle = dlopen(env->GetStringUTFChars(path, 0), RTLD_LAZY | RTLD_LOCAL);
     if (!handle) {
-        LOGI("handle 为空");
+        LogI(LOG_TAG,"handle 为空");
         return false;
     }
     //dlsym()函数所做的就是解析so文件的.dynamic 通过符号表来获得函数的地址
     Entry entry = (Entry)dlsym(handle, "entry");
 
     if (!entry) {
-        LOGI("sym 为空");
+        LogI(LOG_TAG,"sym 为空");
         dlclose(handle);
         return false;
     }
@@ -188,8 +186,8 @@ jboolean dynamic_loader(JNIEnv *env, jobject caller, jstring path) {
 extern "C" JNIEXPORT JNICALL
 jboolean verify(JNIEnv *env, jobject caller, jobject contextObject) {
     import_class(env);
-    LOGI("jni 第一种获取签名的方法: %s", env->GetStringUTFChars(get_sign(env, caller, contextObject), 0));
-    LOGI("jni 第二种获取签名的方法：%s", env->GetStringUTFChars(get_sign_v2(env, caller, contextObject), 0));
+    LogI(LOG_TAG,"jni 第一种获取签名的方法: %s", env->GetStringUTFChars(get_sign(env, caller, contextObject), 0));
+    LogI(LOG_TAG,"jni 第二种获取签名的方法：%s", env->GetStringUTFChars(get_sign_v2(env, caller, contextObject), 0));
     jmethodID isProxyClassMethodId = env->GetStaticMethodID(ProxyClass, "isProxyClass",
                                                             "(Ljava/lang/Class;)Z");
     jmethodID getServiceId = env->GetStaticMethodID(ServiceManagerClass, "getService",
@@ -201,23 +199,23 @@ jboolean verify(JNIEnv *env, jobject caller, jobject contextObject) {
 
     jobject iBinderObj = env->CallStaticObjectMethod(ServiceManagerClass, getServiceId, packageStr);
     if (iBinderObj == nullptr) {
-        LOGE("iBinderObj  is null");
+        LogE(LOG_TAG,"iBinderObj  is null");
     }
     jobject iPackageManagerObj = env->CallStaticObjectMethod(IPackageManager$StubClass,
                                                              asInterfaceId,
                                                              iBinderObj);
     if (iPackageManagerObj == nullptr) {
-        LOGE("iPackageManagerObj  is null");
+        LogE(LOG_TAG,"iPackageManagerObj  is null");
     }
     jboolean isProxyClass = env->CallStaticBooleanMethod(ProxyClass, isProxyClassMethodId,
                                                          env->GetObjectClass(iPackageManagerObj));
     clear_class(env);
     if (isProxyClass) {
-        LOGI("PackageManger使用了动态代理，被攻击了！！！！");
+        LogE(LOG_TAG,"PackageManger使用了动态代理，被攻击了！！！！");
         return JNI_FALSE;
 
     } else {
-        LOGI("PackageManger来自系统提供，没有被攻击");
+        LogE(LOG_TAG,"PackageManger来自系统提供，没有被攻击");
         return JNI_FALSE;
     }
 }
@@ -265,18 +263,18 @@ static int registerNatives(JNIEnv *env) {
 
 JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
 
-    LOGI("JNI_ONLOAD");
+    LogI(LOG_TAG,"JNI_ONLOAD");
 
     JNIEnv *env = NULL;
     jint result = -1;
 
     if (vm->GetEnv((void **) &env, JNI_VERSION_1_6) != JNI_OK) {
-        LOGE("JNI_ONLOAD:%s", "failed");
+        LogI(LOG_TAG,"JNI_ONLOAD:%s", "failed");
         return JNI_ERR;
     }
     assert(env != NULL);
     if (!registerNatives(env)) {//注册
-        LOGI("registerNatives -1");
+        LogI(LOG_TAG,"registerNatives -1");
         return -1;
     }
     result = JNI_VERSION_1_6;

@@ -1,10 +1,11 @@
 //
 // Created by hawks.jamesf on 2/12/21.
 //
+#include <sys/types.h>
 
 #ifndef ATTACK_ON_TITAN_DATA_STRUCT_EXT_H
 #define ATTACK_ON_TITAN_DATA_STRUCT_EXT_H
-
+//[预处理宏](https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/others/#preprocessor-macros)
 /**
  *
  *  java    | jni     | 内存分配
@@ -79,7 +80,8 @@
 #ifdef __LP64__
 typedef unsigned long ulong;//8btes
 #else
-typedef using  long long ulong;
+typedef using
+long long ulong;
 #endif
 typedef unsigned int uint;//4bytes
 typedef unsigned short ushort;//2bytes
@@ -102,10 +104,44 @@ typedef unsigned long long uint64_t;
 
 //该声明将强制编译器确保（尽它所能）变量类 型为struct S 或者int32_t 的变量在分配空间时采用8字节对齐方式。
 //aligned 属性使被设置的对象占用更多的空间，相反的，使用packed 可以减小对象占用的空间。
-struct S {
+struct FakeData {
 
     short b[3];//2btes
 
 } __attribute__((aligned (8)));
 typedef int int32_t __attribute__((aligned (8)));
+
+// 类型定义
+//typedef hash_map<UrlTableProperties *, string> PropertiesMap;
+//
+// using 别名
+//using PropertiesMap = hash_map<UrlTableProperties *, string>;
+//enum UrlTableErrors {
+//    kOK = 0,
+//    kErrorOutOfMemory,
+//    kErrorMalformedInput,
+//};
+//常量，所有具有静态存储类型的变量 (例如静态变量或全局变量) 都应当以此方式命名
+//const int kDaysInAWeek = 7;
+
+
+//使用宏时要非常谨慎, 尽量以内联函数, 枚举和常量代替之.
+//#define MAX_NAME_LENGTH 256
+const int kMaxName_Length=265;
+typedef struct {
+    char name[kMaxName_Length];
+    ulong start, end;
+} MemoryMap;
+//#ifdef __cplusplus
+//extern  "C"{
+//
+//#endif __cplusplus
+//int loadMemoryMap(pid_t pid, MemoryMap *map, int *count);
+//#ifdef __cplusplus
+//}
+//#endif __cplusplus
+
+
 #endif //ATTACK_ON_TITAN_DATA_STRUCT_EXT_H
+
+
