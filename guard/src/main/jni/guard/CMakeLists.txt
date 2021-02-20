@@ -6,6 +6,7 @@ add_library(
         SHARED
         so_protector.cpp
         guard.cpp
+        event.cpp
 )
 find_library(
         log-lib

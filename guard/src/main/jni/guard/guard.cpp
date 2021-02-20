@@ -12,6 +12,7 @@
 #include <dlfcn.h>
 #include <search.h>
 #include "include/so_protector.h"
+#include "include/event.h"
 #include "include/log_ext.h"
 
 #define CLASS_PATH "com/jamesfchen/guard/TestGuardActivity"
@@ -226,9 +227,17 @@ jboolean verify(JNIEnv *env, jobject caller, jobject contextObject) {
 JNIEXPORT JNICALL
 jboolean entry(JNIEnv *env, jobject caller, jobject contextObject) {
     so_protector::entry();
+    jamesfchen_event::entry();
+
     return JNI_TRUE;
 
 }
+JNIEXPORT JNICALL
+jboolean test_event(JNIEnv *env, jobject caller, jobject contextObject) {
+    jamesfchen_event::TestEvent();
+    return JNI_TRUE;
+}
+
 /*
 * JNI registration.
 */
@@ -239,6 +248,7 @@ static JNINativeMethod gMethods[] = {
 //        {"setFieldFlag",  "(Ljava/lang/reflect/Field;)V",                            (void *) setFieldFlag},
 //        {"getSign",   "(Landroid/content/Context;)Ljava/lang/String;", (void *) get_sign},
 //        {"getSignv2", "(Landroid/content/Context;)Ljava/lang/String;", (void *) get_sign_v2},
+        {"testEvent",        "(Landroid/content/Context;)Z", (void *) test_event},
         {"verify",        "(Landroid/content/Context;)Z", (void *) verify},
         {"dynamicLoader", "(Ljava/lang/String;)Z",        (void *) dynamic_loader},
         {"main",        "(Landroid/content/Context;)Z", (void *) entry}

@@ -31,6 +31,7 @@ class TestGuardActivity : Activity() {
         setContentView(R.layout.activity_testguard)
         findViewById<TextView>(R.id.bt_hook_frida).setOnClickListener {
             (it as TextView).text = stringFromJNI()
+            testEvent(this)
         }
         findViewById<TextView>(R.id.bt_hook_frida2).setOnClickListener {
 
@@ -128,5 +129,7 @@ class TestGuardActivity : Activity() {
 
     @Keep
     external fun dynamicLoader(path: String): Boolean
+    @Keep
+    external fun testEvent(ctx: Context): Boolean
 
 }
