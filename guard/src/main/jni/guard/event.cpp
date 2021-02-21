@@ -60,8 +60,8 @@ Epoller::~Epoller() {
 void Epoller::RecWakeEvent() const {
     uint64_t counter;
 //    TEMP_FAILURE_RETRY(read(wake_event_fd_, &counter, sizeof(uint64_t)));
-    size_t  s = read(wake_event_fd_, &counter, sizeof(uint64_t));
-    LOG_E(LOG_TAG, "RecWakeEvent counter:%d %d", counter,s);
+    size_t s = read(wake_event_fd_, &counter, sizeof(uint64_t));
+    LOG_E(LOG_TAG, "RecWakeEvent counter:%d %d", counter, s);
 
 }
 
@@ -108,10 +108,29 @@ void *run_thread(void *args) {
     epollerRef.run();
 }
 
+void threadDestructor(void *st) {
+//   Looper* const self = static_cast<Looper*>(st);
+//    if (self != NULL) {
+//        self->decStrong((void*)threadDestructor);
+//    }
+}
+
+static pthread_key_t gTLSKey = 0;
+static pthread_once_t gTLSOnce = PTHREAD_ONCE_INIT;
+
+void initTLSKey() {
+    int result = pthread_key_create(&gTLSKey, threadDestructor);
+    if (result != 0)LOG_E(LOG_TAG, "Could not allocate TLS key.");
+}
+
 bool jamesfchen_event::entry() {
     epollerPtr = new Epoller();
     pthread_t tid;
     pthread_create(&tid, nullptr, run_thread, nullptr);
+    int result = pthread_once(&gTLSOnce, initTLSKey);
+    if (result != 0) LOG_E(LOG_TAG, "pthread_once failed");
+//    pthread_setspecific(gTLSKey, looper.get());
+//    pthread_getspecific(gTLSKey);
     return true;
 }
 
