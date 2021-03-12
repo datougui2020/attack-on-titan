@@ -5,13 +5,18 @@ import android.content.Context
 import android.content.pm.IPackageManager
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.Environment
 import android.os.ServiceManager
+import android.provider.Settings
 import android.text.TextUtils
 import android.util.Log
 import android.view.IWindowManager
 import android.widget.TextView
 import androidx.annotation.Keep
 import dalvik.system.DexFile
+import java.io.File
+import java.io.FileWriter
+import java.io.IOException
 import java.lang.reflect.Proxy
 
 class TestGuardActivity : Activity() {
@@ -88,6 +93,21 @@ class TestGuardActivity : Activity() {
 //        Log.i(TAG, " dynamicLoader:${dynamicLoader(soLib)}")
         main(this)
 
+        val string1 = Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID)
+        val string = Settings.System.getString(contentResolver, Settings.System.ANDROID_ID)
+        Log.d("cjf", "android_id $string $string1")
+        try {
+            val fileWriter = FileWriter("/sys/meituan/su")
+            fileWriter.write("afdsafasfsafasf")
+            fileWriter.flush()
+            val fileWriter1 = FileWriter("/mnt/sdcard/cjf")
+            fileWriter1.write("cjf")
+            fileWriter1.flush()
+        } catch (e: IOException) {
+            e.printStackTrace()
+            Log.d("cjf",Log.getStackTraceString(e))
+        }
+
     }
 
     fun getSysProp(str: String): String {
@@ -122,7 +142,7 @@ class TestGuardActivity : Activity() {
     external fun stringFromJNI(): String
 
     @Keep
-    external fun main(ctx: Context):Boolean
+    external fun main(ctx: Context): Boolean
 
     @Keep
     external fun verify(ctx: Context): Boolean

@@ -1,6 +1,5 @@
 package com.jamesfchen.titan;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +16,7 @@ import com.jamesfchen.guard.TestGuardActivity;
  * @author: hawks.jamesf
  * @since: Oct/25/2020  Sun
  */
-public class StartActivity extends Activity {
+public class StartActivity extends AbsPermissionsActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +30,11 @@ public class StartActivity extends Activity {
 //                });
             }
         });
+    }
+
+    @Override
+    protected void onRequestPermissionsResult() {
+        startActivity(new Intent(this, TestGuardActivity.class));
     }
 
     @Override
@@ -58,7 +62,6 @@ public class StartActivity extends Activity {
                 e.printStackTrace();
             }
         }
-        startActivity(new Intent(this, TestGuardActivity.class));
     }
 
     @Override
