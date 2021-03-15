@@ -5,7 +5,8 @@ import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
 
-import com.dianping.v1.Hook;
+import com.hawksjamesf.yposed.Hooker;
+import com.jamesfchen.common.Utils;
 
 import java.io.File;
 
@@ -23,12 +24,14 @@ public class App extends Application{
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
+        Utils.init(base);
         initHotFix();
 //        System.loadLibrary("gadget");
        haha();
     }
     private void haha(){
-        Hook.init(getClassLoader());
+//        Hook.init(getClassLoader(),this);
+        Hooker.init(getClassLoader(),this);
     }
     private void initHotFix() {
         String substring = getPackageCodePath().substring(0, getPackageCodePath().lastIndexOf(47));
