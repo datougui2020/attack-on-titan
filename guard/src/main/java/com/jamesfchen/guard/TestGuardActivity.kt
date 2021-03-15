@@ -13,6 +13,7 @@ import android.util.Log
 import android.view.IWindowManager
 import android.widget.TextView
 import androidx.annotation.Keep
+import com.jamesfchen.common.sha1ToHexString
 import dalvik.system.DexFile
 import java.io.File
 import java.io.FileWriter

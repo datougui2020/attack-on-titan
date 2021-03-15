@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 
-import com.jamesfchen.guard.TestGuardActivity;
+import com.hawksjamesf.yposed.YPosedActivity;
 
 /**
  * Copyright ® $ 2017
@@ -34,7 +34,7 @@ public class StartActivity extends AbsPermissionsActivity {
 
     @Override
     protected void onRequestPermissionsResult() {
-        startActivity(new Intent(this, TestGuardActivity.class));
+        startActivity(new Intent(this, YPosedActivity.class));
     }
 
     @Override

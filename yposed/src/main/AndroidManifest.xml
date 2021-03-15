@@ -9,7 +9,7 @@
             android:launchMode="singleTop"
             android:theme="@style/Theme.AppCompat"
             android:windowSoftInputMode="adjustPan">
-
         </activity>
+        <activity android:name=".StubActivity"/>
     </application>
 </manifest>
