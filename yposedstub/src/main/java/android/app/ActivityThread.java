@@ -66,7 +66,6 @@ public final class ActivityThread {
     final Handler getHandler() {
         throw new RuntimeException("Stub!");
     }
-
 //    private class ApplicationThread extends ApplicationThreadNative {
 //
 //

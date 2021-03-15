@@ -40,4 +40,5 @@ android.libraryVariants.all { variant ->
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.annotation:annotation:1.1.0"
 }
