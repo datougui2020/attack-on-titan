@@ -1,6 +1,0 @@
-com/jamesfchen/yposedplugin2/MyActivity.java
- com.jamesfchen.yposedplugin2.MyActivity
-com/jamesfchen/yposedplugin2/BuildConfig.java
- com.jamesfchen.yposedplugin2.BuildConfig
-com/jamesfchen/yposed/NetClient.java
- com.jamesfchen.yposed.NetClient

@@ -1,6 +1,6 @@
 include ':common'
 include ':app'
 include ':yposed', ':yposedstub', ':guard'
-include ':yposedplugin', ':yposedplugin2'
+include ':yposedplugin', ':yposedplugin2',':yposedplugin3'
 include ':dexshell'
 rootProject.name = "attack-on-titan"

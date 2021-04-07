@@ -12,11 +12,11 @@ class YPosedActivity : Activity() {
 
     override fun attachBaseContext(newBase: Context?) {
         super.attachBaseContext(newBase)
-        Hooker.loadApk(classLoader, getFileStreamPath("yposedplugin-debug.apk"))
         Utils.extractAssets(newBase, "yposedplugin2-debug.apk")
         val dexFile = getFileStreamPath("yposedplugin2-debug.apk")
         val optDexFile = getFileStreamPath("yposedplugin2-debug.dex")
         Hooker.loadDex(classLoader, dexFile, optDexFile)
+        Hooker.loadApk(classLoader, getFileStreamPath("yposedplugin3-debug.apk"))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +25,8 @@ class YPosedActivity : Activity() {
         findViewById<Button>(R.id.bt_load_plugin).setOnClickListener {
             val int = Intent()
             int.component = ComponentName(
-                "com.jamesfchen.yposedplugin",
-                "com.jamesfchen.yposedplugin.MyActivity"
+                "com.jamesfchen.yposedplugin3",
+                "com.jamesfchen.yposedplugin3.MyActivity"
             )
             startActivity(int)
         }

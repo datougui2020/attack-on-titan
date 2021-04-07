@@ -1,4 +1,0 @@
-#Wed Apr 07 21:37:10 CST 2021
-base.0=E\:\\Spacecraft\\attack-on-titan\\yposedplugin2\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
