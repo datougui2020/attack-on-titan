@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 
-import com.hawksjamesf.yposed.YPosedActivity;
+import com.jamesfchen.yposed.YPosedActivity;
 
 /**
  * Copyright ® $ 2017

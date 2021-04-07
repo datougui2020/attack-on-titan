@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hawksjamesf.yposedplugin">
+    package="com.jamesfchen.yposedplugin">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.SpacecraftAndroid">
+        android:theme="@style/Theme.AppCompat"
+        android:supportsRtl="true">
         <activity android:name=".MyActivity" />
     </application>
 

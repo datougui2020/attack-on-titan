@@ -4,8 +4,18 @@
     android:layout_height="match_parent">
     <Button
         android:layout_width="wrap_content"
-        android:id="@+id/bt_hook_frida"
-        android:text="hook frida embed"
+        android:id="@+id/bt_load_plugin"
+        android:text="load plugin"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/bt_load_dex"
+        android:text="load dex"
         android:layout_height="wrap_content"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/bt_send"
+        android:text="send net"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

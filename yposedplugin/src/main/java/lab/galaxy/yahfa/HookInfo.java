@@ -1,7 +1,7 @@
 package lab.galaxy.yahfa;
 
-import com.hawksjamesf.yposedplugin.Hook_PackageManager_getPackageInfo;
-import com.hawksjamesf.yposedplugin.NetClient_sendRequest;
+import com.jamesfchen.yposedplugin.Hook_PackageManager_getPackageInfo;
+import com.jamesfchen.yposedplugin.NetClient_sendRequest;
 
 public class HookInfo {
     public static final String TAG = "HookInfo";

@@ -68,11 +68,11 @@ static JNINativeMethod gMethods[] = {
 JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
     JNIEnv *env;
     if (vm->GetEnv((void **) &env, JNI_VERSION_1_6) != JNI_OK) return JNI_ERR;
-    jclass srcNetClientclazz = env->FindClass("com/hawksjamesf/yposed/NetClient");
+    jclass srcNetClientclazz = env->FindClass("com/jamesfchen/yposed/NetClient");
     art::ArtMethod *srcArtMethod = (art::ArtMethod *) env->GetMethodID(srcNetClientclazz,
                                                                        "sendRequest", "()V");
 
-    jclass destNetClientclazz = env->FindClass("com/hawksjamesf/yposedplugin/NetClient_sendRequest");
+    jclass destNetClientclazz = env->FindClass("com/jamesfchen/yposedplugin/NetClient_sendRequest");
     art::ArtMethod *destArtMethod = (art::ArtMethod *) env->GetMethodID(destNetClientclazz,
                                                                         "sendRequest", "()V");
 //    srcArtMethod->declaring_class_ = destArtMethod->declaring_class_;
@@ -97,7 +97,7 @@ JNIEXPORT void JNI_OnUnload(JavaVM *vm, void *reserved) {
 extern "C" JNIEXPORT jstring JNICALL Java_com_hawksjamesf_yposed_YPosedActivity_stringFromJNI(
         JNIEnv *env, jobject ypostActivity /* this */) {
     std::string hello = "Hello from C++";
-    jclass clz = env->FindClass("com/hawksjamesf/yposed/YPosedActivity");
+    jclass clz = env->FindClass("com/jamesfchen/yposed/YPosedActivity");
     jobject gloablRef = env->NewGlobalRef(ypostActivity);
     jmethodID stringFromJavaFun = env->GetMethodID(clz, "stringFromJava", "()Ljava/lang/String;");
     jstring result = static_cast<jstring>(env->CallObjectMethod(ypostActivity, stringFromJavaFun));
