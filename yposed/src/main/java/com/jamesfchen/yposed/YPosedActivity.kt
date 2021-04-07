@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import com.jamesfchen.common.Loader
 import com.jamesfchen.common.Utils
 
 class YPosedActivity : Activity() {
@@ -15,8 +16,8 @@ class YPosedActivity : Activity() {
         Utils.extractAssets(newBase, "yposedplugin2-debug.apk")
         val dexFile = getFileStreamPath("yposedplugin2-debug.apk")
         val optDexFile = getFileStreamPath("yposedplugin2-debug.dex")
-        Hooker.loadDex(classLoader, dexFile, optDexFile)
-        Hooker.loadApk(classLoader, getFileStreamPath("yposedplugin3-debug.apk"))
+        Loader.loadDex(classLoader, dexFile, optDexFile)
+        Loader.loadApk(classLoader, getFileStreamPath("yposedplugin3-debug.apk"))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
