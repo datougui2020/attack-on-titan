@@ -30,7 +30,7 @@ Java.perform(function () {
         sb.append('\t')
         sb.append(getFieldValue(packageInfo, 'lastUpdateTime'))
         Log.v("cjf", sb.toString());
-        if ("com.hawksjamesf.spacecraft.debug" == args[0] && args[1] == 64.0) {
+        if ("com.jamesfchen.spacecraft.debug" == args[0] && args[1] == 64.0) {
             //'android.content.pm.PackageInfo'
             var Long = Java.use('java.lang.Long')
             setFieldValue(packageInfo, 'firstInstallTime', Long.valueOf(1))

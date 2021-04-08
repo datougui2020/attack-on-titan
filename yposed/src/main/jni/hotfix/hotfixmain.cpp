@@ -94,7 +94,7 @@ JNIEXPORT void JNI_OnUnload(JavaVM *vm, void *reserved) {
 }
 
 
-extern "C" JNIEXPORT jstring JNICALL Java_com_hawksjamesf_yposed_YPosedActivity_stringFromJNI(
+extern "C" JNIEXPORT jstring JNICALL Java_com_jamesfchen_yposed_YPosedActivity_stringFromJNI(
         JNIEnv *env, jobject ypostActivity /* this */) {
     std::string hello = "Hello from C++";
     jclass clz = env->FindClass("com/jamesfchen/yposed/YPosedActivity");

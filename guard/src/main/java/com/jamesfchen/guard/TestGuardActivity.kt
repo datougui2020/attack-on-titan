@@ -130,7 +130,7 @@ class TestGuardActivity : Activity() {
         val entries = dexFile.entries()
         while (entries.hasMoreElements()) {
             val clzName = entries.nextElement()
-            if (clzName.contains("hawksjamesf")) {
+            if (clzName.contains("jamesfchen")) {
                 Log.i(TAG, "class name:$clzName")
             }
         }
