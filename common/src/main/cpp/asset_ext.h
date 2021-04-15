@@ -14,8 +14,8 @@
  * limitations under the License.
  *
  */
-#ifndef __ASSET__UTIL_H__
-#define __ASSET__UTIL_H__
+#ifndef ATTACK_ON_TITAN_ASSET_EXT_H
+#define ATTACK_ON_TITAN_ASSET_EXT_H
 
 enum AASSET_MODE {
     /** No specific information about how data will be accessed. **/
@@ -36,4 +36,4 @@ bool AssetReadFile(AAssetManager *assetManager,
 
 AAsset *aasset_create(AAssetManager *aAssetManager, char *assetName, AASSET_MODE mode);
 
-#endif // __ASSET__UTIL_H__
+#endif // ATTACK_ON_TITAN_ASSET_EXT_H

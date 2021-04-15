@@ -11,9 +11,9 @@
 #include <ctime>
 #include <dlfcn.h>
 #include <search.h>
-#include "include/so_protector.h"
-#include "include/event.h"
-#include "include/log_ext.h"
+#include "so_protector.h"
+#include "event.h"
+#include "log_ext.h"
 
 #define CLASS_PATH "com/jamesfchen/guard/TestGuardActivity"
 #define   NELEM(x) ((int) (sizeof(x) / sizeof((x)[0])))
@@ -41,7 +41,7 @@ void import_class(JNIEnv *env) {
     IPackageManager$StubClass = env->FindClass("android/content/pm/IPackageManager$Stub");
     ApplicationInfoClass = env->FindClass("android/content/pm/ApplicationInfo");
     ServiceManagerClass = env->FindClass("android/os/ServiceManager");
-    UtilClass = env->FindClass("com/jamesfchen/guard/Util");
+    UtilClass = env->FindClass("com/jamesfchen/common/Util");
     ProxyClass = env->FindClass("java/lang/reflect/Proxy");
 }
 

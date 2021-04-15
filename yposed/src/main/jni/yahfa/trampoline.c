@@ -5,8 +5,8 @@
 #include <string.h>
 #include <errno.h>
 
-#include "include/common.h"
-#include "include/trampoline.h"
+#include "common.h"
+#include "trampoline.h"
 
 static unsigned char *trampolineCode; // place where trampolines are saved
 static unsigned int trampolineSize; // trampoline size required for each hook

@@ -1,9 +1,9 @@
 //
-// Created by hawks.jamesf on 1/11/20.
+// Created by jamesfchen on 1/11/20.
 //
 
-#ifndef SPACECRAFTANDROID_REFLECTUTIL_H
-#define SPACECRAFTANDROID_REFLECTUTIL_H
+#ifndef ATTACK_ON_TITAN_REFLECT_EXT_H
+#define ATTACK_ON_TITAN_REFLECT_EXT_H
 
 using namespace ::std;
 
@@ -130,4 +130,4 @@ public:
 };
 
 
-#endif //SPACECRAFTANDROID_REFLECTUTIL_H
+#endif //ATTACK_ON_TITAN_REFLECT_EXT_H

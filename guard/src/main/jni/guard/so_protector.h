@@ -24,6 +24,8 @@ __attribute__((constructor())) void module_init();
 // 模块析构器
 __attribute__((destructor)) void module_fini();
 
+
+//__attribute__((section("so_p"))) void module_init();
 #ifdef __cplusplus
 extern "C" {
 

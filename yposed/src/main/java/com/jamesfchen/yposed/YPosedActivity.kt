@@ -10,6 +10,14 @@ import com.jamesfchen.common.Loader
 import com.jamesfchen.common.Utils
 
 class YPosedActivity : Activity() {
+    companion object {
+
+        init {
+            System.loadLibrary("gotplthook")
+        }
+
+        const val TAG = "cjf_attack"
+    }
 
     override fun attachBaseContext(newBase: Context?) {
         super.attachBaseContext(newBase)
@@ -43,7 +51,10 @@ class YPosedActivity : Activity() {
         findViewById<Button>(R.id.bt_send).setOnClickListener {
             NetClient.getInstance().sendRequest()
         }
+        plthook_init()
     }
 
     fun stringFromJava() = "string  from java"
+    external fun plthook_init()
+    external fun gothook_init()
 }

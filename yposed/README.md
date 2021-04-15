@@ -16,3 +16,8 @@ application classloader(android BaseDexClassloder)
 如果bootstrap加载器和extension classloader说加载不了那么BaseDexClassloader就会通过find尝试加载。
 
 DexPathList#findClass 会遍历dex数组，如果发现class在dex文件中，BaseDexClassloader就会加载这个类
+
+
+链接器/加载器
+- 在link阶段，系统按照elf的section分段
+- 在load阶段，系统按照elf的segment映射到进程空间

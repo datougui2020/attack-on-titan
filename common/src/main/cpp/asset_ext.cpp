@@ -21,9 +21,7 @@
 #include <jni.h>
 #include <algorithm>
 
-#include "include/AssetUtil.h"
-#include "include/LogUtil.h"
-
+#include "asset_ext.h"
 #define MODULE_NAME  "assetsutil"
 #define IS_LOW_CHAR(c) ((c) >= 'a' && (c) <= 'z')
 #define TO_UPPER_CHAR(c) (c + 'A' - 'a')
@@ -60,7 +58,7 @@ bool AssetEnumerateFileType(AAssetManager *assetManager,
             files.push_back(assetName);
         }
     }
-    LOGI(MODULE_NAME, "Found %d PNG Files", static_cast<uint32_t>(files.size()));
+//    LOGI(MODULE_NAME, "Found %d PNG Files", static_cast<uint32_t>(files.size()));
 
     AAssetDir_close(dir);
     return true;

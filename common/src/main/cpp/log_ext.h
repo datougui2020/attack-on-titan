@@ -14,8 +14,8 @@
  * limitations under the License.
  *
  */
-#ifndef __SAMPLE_ANDROID_DEBUG_H__
-#define __SAMPLE_ANDROID_DEBUG_H__
+#ifndef __SAMPLE_ANDROID_LOG_EXT_H__
+#define __SAMPLE_ANDROID_LOG_EXT_H__
 
 #include <android/log.h>
 
@@ -28,4 +28,4 @@
 
 #define ASSERT(tag, cond, ...) if (!(cond)) {__android_log_assert(#cond, tag, __VA_ARGS__);}
 //内联函数必须放在 .h 文件中,如果内联函数比较短, 就直接放在 .h 中
-#endif // __SAMPLE_ANDROID_DEBUG_H__
+#endif // __SAMPLE_ANDROID_LOG_EXT_H__

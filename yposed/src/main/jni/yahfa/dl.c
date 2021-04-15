@@ -8,7 +8,7 @@
 #include <elf.h>
 #include <string.h>
 #include <dlfcn.h>
-#include "include/common.h"
+#include "common.h"
 
 #define LINKER "/system/bin/linker"
 

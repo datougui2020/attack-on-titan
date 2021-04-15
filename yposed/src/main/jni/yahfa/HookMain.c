@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <dlfcn.h>
 
-#include "include/common.h"
-#include "include/trampoline.h"
+#include "common.h"
+#include "trampoline.h"
 #include "dl.h"
 
 typedef void *(*decodeMethodFunc)(void *, void *);

@@ -11,8 +11,8 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <cerrno>
-#include "include/so_protector.h"
-#include "include/log_ext.h"
+#include "so_protector.h"
+#include "log_ext.h"
 #include <string>
 #include <dlfcn.h>
 

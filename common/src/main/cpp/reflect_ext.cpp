@@ -8,8 +8,7 @@
 #include <jni.h>
 #include <algorithm>
 
-#include "include/ReflectUtil.h"
-#include "include/LogUtil.h"
+#include "reflect_ext.h"
 #define MODULE_NAME  "native/utils_reflect"
 /**
  * 任何的静态成员都要在这里初始化
@@ -328,7 +327,6 @@ ReflectUtil::method(bool isStatic, string name, string sig, RetBFunc retFunc, ..
 
 ReflectUtil *
 ReflectUtil::method(bool isStatic, string name, string sig, ...) {
-    LOGI(MODULE_NAME, "object: %d", object);
     va_list args;
     va_start(args, isStatic);
     if (isStatic) {
