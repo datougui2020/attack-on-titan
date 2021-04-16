@@ -17,7 +17,7 @@
 #include "sharedlibs.h"
 #include "locks.h"
 
-#include "build.h"
+#include "build/build.h"
 
 #include <stdlib.h>
 #include <dlfcn.h>

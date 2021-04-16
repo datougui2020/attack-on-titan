@@ -13,7 +13,7 @@
 #include <search.h>
 #include "so_protector.h"
 #include "event.h"
-#include "log_ext.h"
+#include "util/log_ext.h"
 
 #define CLASS_PATH "com/jamesfchen/guard/TestGuardActivity"
 #define   NELEM(x) ((int) (sizeof(x) / sizeof((x)[0])))

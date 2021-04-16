@@ -71,8 +71,8 @@ bool AssetReadFile(AAssetManager *assetManager,
     AAsset *assetDescriptor = AAssetManager_open(assetManager,
                                                  assetName.c_str(),
                                                  AASSET_MODE_BUFFER);
-    ASSERT(MODULE_NAME, assetDescriptor, "%s does not exist in %s",
-           assetName.c_str(), __FUNCTION__);
+//    ASSERT(MODULE_NAME, assetDescriptor, "%s does not exist in %s",
+//           assetName.c_str(), __FUNCTION__);
     size_t fileLength = AAsset_getLength(assetDescriptor);
 
     buf.resize(fileLength);

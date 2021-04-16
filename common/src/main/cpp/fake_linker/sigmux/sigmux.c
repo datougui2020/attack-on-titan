@@ -32,9 +32,9 @@
 # endif
 #endif
 
-//#if USE_RT_SIGPROCMASK
-//# include <linux_syscall_support.h>
-//#endif
+#if USE_RT_SIGPROCMASK
+# include <linux_syscall_support.h>
+#endif
 
 #define ARRAY_SIZE(a) ((sizeof ((a)) / (sizeof ((a)[0]))))
 static inline bool verify_dummy(bool b) {return b;}
@@ -199,14 +199,14 @@ static void
 set_signal_handler_to_default(int signum)
 {
 #if USE_RT_SIGPROCMASK
-//  // sigchain has a bug in Android 5.0.x where it ignores attempts to
-//  // reset to SIG_DFL; just use the system call directly in this case.
-//  struct kernel_sigaction sa;
-//  memset(&sa, 0, sizeof(sa));
-//  sys_sigemptyset(&sa.sa_mask);
-//  sa.sa_handler_ = SIG_DFL;
-//  sa.sa_flags = SA_RESTART;
-//  sys_rt_sigaction(signum, &sa, NULL, sizeof(struct kernel_sigset_t));
+  // sigchain has a bug in Android 5.0.x where it ignores attempts to
+  // reset to SIG_DFL; just use the system call directly in this case.
+  struct kernel_sigaction sa;
+  memset(&sa, 0, sizeof(sa));
+  sys_sigemptyset(&sa.sa_mask);
+  sa.sa_handler_ = SIG_DFL;
+  sa.sa_flags = SA_RESTART;
+  sys_rt_sigaction(signum, &sa, NULL, sizeof(struct kernel_sigset_t));
 #else
   struct sigaction sa;
   memset(&sa, 0, sizeof (sa));

@@ -12,7 +12,7 @@
 #include <fcntl.h>
 #include <cerrno>
 #include "so_protector.h"
-#include "log_ext.h"
+#include "util/log_ext.h"
 #include <string>
 #include <dlfcn.h>
 
