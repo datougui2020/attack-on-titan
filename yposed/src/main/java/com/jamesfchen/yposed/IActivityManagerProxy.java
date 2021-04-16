@@ -20,6 +20,8 @@ import java.util.Arrays;
 public class IActivityManagerProxy implements InvocationHandler {
     IActivityManager origin;
 
+    public static final String EXTRA_RAW_INTENT = "extra_raw_intent";
+
     public IActivityManagerProxy(IActivityManager origin) {
         this.origin = origin;
     }
@@ -33,20 +35,45 @@ public class IActivityManagerProxy implements InvocationHandler {
             String callingPackage = (String) args[1];
             Intent raw = (Intent) args[2];
             Log.e("cjf_attack", "startActivity:" + Arrays.toString(args));
-            String stubPackage ="com.jamesfchen.titan";//StubActivity所在的包
-            Intent stubIntent = new Intent();
-            ComponentName componentName = new ComponentName(stubPackage, StubActivity.class.getName());
-            stubIntent.setComponent(componentName);
-            stubIntent.putExtra("extra_raw_intent",raw);
-            args[2] = stubIntent;
-        }else if ("startService".equals(method.getName())) {
+            if (!"com.jamesfchen.yposed.StubActivity".equals(raw.getComponent().getClassName()) && !"android.content.pm.action.REQUEST_PERMISSIONS".equals(raw.getAction())) {
+                String stubPackage = Hooker.SELF_PACKAGE;//StubActivity所在的包
+                Intent stubIntent = new Intent();
+                ComponentName componentName = new ComponentName(stubPackage, StubActivity.class.getName());
+                stubIntent.setComponent(componentName);
+                stubIntent.putExtra(EXTRA_RAW_INTENT, raw);
+                args[2] = stubIntent;
+            }
+        } else if ("startService".equals(method.getName())) {
+            Log.e("cjf_attack", "startService:" + Arrays.toString(args));
+            Intent raw = (Intent) args[1];
+            if (!"com.jamesfchen.yposed.StubService".equals(raw.getComponent().getClassName())) {
+                Intent stubIntent = new Intent();
+                ComponentName componentName = new ComponentName(Hooker.SELF_PACKAGE, StubService.class.getName());
+                stubIntent.setComponent(componentName);
+                stubIntent.putExtra(EXTRA_RAW_INTENT, raw);
+                args[1] = stubIntent;
+            }
         } else if ("stopService".equals(method.getName())) {
+            Log.e("cjf_attack", "stopService:" + Arrays.toString(args));
+            Intent raw = (Intent) args[1];
+            if (!Hooker.SELF_PACKAGE.equals(raw.getComponent().getPackageName())) {
+                return ServiceManager.INSTANCE.stopService(raw);
+            }
+
         } else if ("stopServiceToken".equals(method.getName())) {
         } else if ("bindService".equals(method.getName())) {
         } else if ("unbindService".equals(method.getName())) {
         } else if ("getIntentSender".equals(method.getName())) {
-        } else if ("overridePendingTransition".equals(method.getName())){
+        } else if ("overridePendingTransition".equals(method.getName())) {
         }
-        return method.invoke(origin,args);
+        if ("stopService".equals(method.getName())) {
+            Log.e("cjf_attack", "stopService:" + Arrays.toString(args));
+            Intent raw = (Intent) args[1];
+            if (!Hooker.SELF_PACKAGE.equals(raw.getComponent().getPackageName())) {
+                return ServiceManager.INSTANCE.stopService(raw);
+            }
+
+        }
+        return method.invoke(origin, args);
     }
 }

@@ -5,30 +5,19 @@ import android.app.ActivityManagerNative;
 import android.app.ActivityThread;
 import android.app.Application;
 import android.app.IActivityManager;
-import android.app.LoadedApk;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.IPackageManager;
-import android.content.res.CompatibilityInfo;
 import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.ServiceManager;
-import android.util.ArrayMap;
 import android.util.Log;
 import android.util.Singleton;
 
-import com.jamesfchen.common.Utils;
-
-import java.io.File;
-import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.HashMap;
 import java.util.Map;
-
-import dalvik.system.DexClassLoader;
 
 /**
  * Copyright ® $ 2021
@@ -39,7 +28,7 @@ import dalvik.system.DexClassLoader;
  * @since: 三月/15/2021  星期一
  */
 public class Hooker {
-
+    public static final String SELF_PACKAGE = "com.jamesfchen.titan";
     private static void printAttrib(Class<?> clz) {
         Log.e("cjf_attack", "clz:" + clz.getName());
         Class<?>[] declaredClasses = clz.getDeclaredClasses();

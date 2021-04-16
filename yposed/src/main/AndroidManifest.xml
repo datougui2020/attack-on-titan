@@ -10,6 +10,8 @@
             android:theme="@style/Theme.AppCompat"
             android:windowSoftInputMode="adjustPan">
         </activity>
-        <activity android:name=".StubActivity"/>
+        <activity android:name=".StubActivity" android:launchMode="standard"/>
+        <service android:name=".StubService"/>
+        <service android:name=".TestService"/>
     </application>
 </manifest>

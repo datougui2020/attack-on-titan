@@ -3,6 +3,8 @@ package android.app;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.IPackageManager;
+import android.content.pm.ServiceInfo;
+import android.content.res.CompatibilityInfo;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
@@ -11,6 +13,7 @@ public final class ActivityThread {
     public static ActivityThread currentActivityThread() {
         throw new RuntimeException("Stub!");
     }
+
     public static IPackageManager getPackageManager() {
         throw new RuntimeException("Stub!");
     }
@@ -66,7 +69,8 @@ public final class ActivityThread {
     final Handler getHandler() {
         throw new RuntimeException("Stub!");
     }
-//    private class ApplicationThread extends ApplicationThreadNative {
+
+    //    private class ApplicationThread extends ApplicationThreadNative {
 //
 //
 //    }

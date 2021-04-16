@@ -33,6 +33,11 @@ import java.lang.reflect.Method;
 public class InstrumentationProxy extends Instrumentation implements Handler.Callback {
     Instrumentation instrumentation;
     public static final int LAUNCH_ACTIVITY = 100;
+    public static final int CREATE_SERVICE = 114;
+    public static final int SERVICE_ARGS = 115;
+    public static final int STOP_SERVICE = 116;
+    public static final int BIND_SERVICE = 121;
+    public static final int UNBIND_SERVICE = 122;
     Handler mH;
     public InstrumentationProxy(Instrumentation instrumentation,Handler mH) {
         this.instrumentation = instrumentation;
@@ -158,7 +163,7 @@ public class InstrumentationProxy extends Instrumentation implements Handler.Cal
                 intent.setAccessible(true);
                 Intent stubIntent = (Intent) intent.get(obj);
                 Intent raw = stubIntent.getParcelableExtra("extra_raw_intent");
-                if (raw != null) {//来自于StubActivity
+                if (raw != null && raw.getComponent() !=null) {//来自于StubActivity
                     stubIntent.setComponent(raw.getComponent());
 
                     Field activityInfoField = obj.getClass().getDeclaredField("activityInfo");
@@ -170,6 +175,14 @@ public class InstrumentationProxy extends Instrumentation implements Handler.Cal
                             raw.getComponent().getPackageName() : raw.getPackage();
                 }
                 // Caused by: java.lang.RuntimeException: Unable to instantiate application android.app.Application: java.lang.IllegalStateException: Unable to get package info for com.hawksjamesf.yposedplugin; is package not installed?
+            }else if (msg.what == CREATE_SERVICE){
+                Log.e("cjf_attack", "CREATE_SERVICE");
+            }else if (msg.what == STOP_SERVICE){
+                Log.e("cjf_attack", "STOP_SERVICE");
+            }else if (msg.what == BIND_SERVICE){
+                Log.e("cjf_attack", "BIND_SERVICE");
+            }else if (msg.what == UNBIND_SERVICE){
+                Log.e("cjf_attack", "UNBIND_SERVICE");
             }
         } catch (NoSuchFieldException | IllegalAccessException e) {
             e.printStackTrace();
