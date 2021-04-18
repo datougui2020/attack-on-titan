@@ -3,11 +3,15 @@
 package com.jamesfchen.common
 
 import android.app.ActivityManager
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Process
 import android.text.TextUtils
+import android.util.Log
 import androidx.annotation.Keep
+import dalvik.system.DexFile
+import java.io.File
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 import java.util.*
@@ -28,7 +32,7 @@ fun sha1ToHexString(cert: ByteArray): String? {
         val hexString = StringBuffer()
         for (i in publicKey.indices) {
             val appendString = Integer.toHexString(0xFF and publicKey[i].toInt())
-                    .toUpperCase(Locale.US)
+                .toUpperCase(Locale.US)
             if (appendString.length == 1) hexString.append("0")
             hexString.append(appendString)
             hexString.append(":")
@@ -42,6 +46,7 @@ fun sha1ToHexString(cert: ByteArray): String? {
     }
     return null
 }
+
 fun isMainProcess(context: Context): Boolean {
     val processName = getProcessName(context, Process.myPid())
     val packageName = context.applicationContext.packageName
@@ -56,7 +61,8 @@ private fun getProcessName(context: Context, i: Int): String? {
     if (activityManager == null || activityManager.runningAppProcesses == null) {
         return null
     }
-    val runningAppProcesses: List<ActivityManager.RunningAppProcessInfo> = activityManager.runningAppProcesses
+    val runningAppProcesses: List<ActivityManager.RunningAppProcessInfo> =
+        activityManager.runningAppProcesses
     for (next in runningAppProcesses) {
 //        Log.d("cjf","process name:${next.processName}")
         if (next.pid == i) {
@@ -65,6 +71,7 @@ private fun getProcessName(context: Context, i: Int): String? {
     }
     return null
 }
+
 fun getSysProp(str: String): String {
     return if (TextUtils.isEmpty(str)) {
         ""
@@ -73,5 +80,39 @@ fun getSysProp(str: String): String {
         cls.getDeclaredMethod("get", String::class.java).invoke(cls, str) as String
     } catch (th: Throwable) {
         ""
+    }
+}
+
+fun printAllCalsses(packageCodePath: String) {
+    printAllCalsses(File(packageCodePath))
+}
+
+fun printAllCalsses(pathFile: File) {
+    val dexFile = DexFile(pathFile)
+    val entries = dexFile.entries()
+    Log.i("cjf_attack", "dexFile entries:${entries.hasMoreElements()}")
+    while (entries.hasMoreElements()) {
+        val clzName = entries.nextElement()
+        if (clzName.contains("jamesfchen")) {
+            Log.i("cjf_attack", "class name:$clzName")
+        }
+    }
+}
+
+private fun printAttrib(clz: Class<*>) {
+    Log.e("cjf_attack", "clz:" + clz.name)
+    val declaredClasses = clz.declaredClasses
+    for (c in declaredClasses) {
+        Log.e("cjf_attack", "inner clz:" + c.name)
+    }
+    val declaredFields = clz.declaredFields
+    for (f in declaredFields) {
+        f.isAccessible = true
+        Log.e("cjf_attack", "field name：" + f.name + " ")
+    }
+    val declaredMethods = clz.declaredMethods
+    for (m in declaredMethods) {
+        m.isAccessible = true
+        Log.e("cjf_attack", "method name：" + m.name + " ")
     }
 }

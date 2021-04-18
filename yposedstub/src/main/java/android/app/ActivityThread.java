@@ -2,12 +2,16 @@ package android.app;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.IPackageManager;
 import android.content.pm.ServiceInfo;
 import android.content.res.CompatibilityInfo;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
+import android.util.ArrayMap;
+
+import java.lang.ref.WeakReference;
 
 public final class ActivityThread {
     public static ActivityThread currentActivityThread() {
@@ -74,4 +78,9 @@ public final class ActivityThread {
 //
 //
 //    }
+    public final LoadedApk getPackageInfoNoCheck(ApplicationInfo ai,
+                                                 CompatibilityInfo compatInfo) {
+        throw new RuntimeException("Stub!");
+    }
+    final ArrayMap<String, WeakReference<LoadedApk>> mPackages = new ArrayMap<>();
 }

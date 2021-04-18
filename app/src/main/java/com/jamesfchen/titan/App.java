@@ -2,12 +2,18 @@ package com.jamesfchen.titan;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.util.Log;
 
-import com.jamesfchen.yposed.Hooker;
+import com.jamesfchen.common.Loader;
 import com.jamesfchen.common.Utils;
+import com.jamesfchen.yposed.Hooker;
+import com.jamesfchen.yposed.ProviderHelper;
+import com.jamesfchen.yposed.ServiceManager;
 
 import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 import dalvik.system.DexClassLoader;
 import lab.galaxy.yahfa.HookMain;
@@ -24,10 +30,29 @@ public class App extends Application {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         Utils.init(base);
-        Utils.extractAssets(base, "yposedplugin-debug.apk");
+//        Utils.extractAssets(base, "yposedplugin-debug.apk");
 //        adfasf();
-        System.loadLibrary("gadget");
+//        System.loadLibrary("gadget");
         haha();
+        AsyncTask.execute(() -> {
+            try {
+                Utils.extractAssets(base, "yposedplugin2-debug.apk");
+                Utils.extractAssets(base, "yposedplugin3-debug.apk");
+
+                File dexFile = getFileStreamPath("yposedplugin2-debug.apk");
+                File optDexFile = getFileStreamPath("yposedplugin2-debug.dex");
+                Loader.loadDex(getClassLoader(), dexFile, optDexFile);
+                Loader.loadApk(getClassLoader(), getFileStreamPath("yposedplugin3-debug.apk"));
+
+                ProviderHelper.installProviders(base, getFileStreamPath("yposedplugin2-debug.apk"));
+//                ProviderHelper.installProviders(base, getFileStreamPath("yposedplugin3-debug.apk"));
+                ServiceManager.parseServices(getFileStreamPath("yposedplugin2-debug.apk"));
+//                ServiceManager.parseServices(getFileStreamPath("yposedplugin3-debug.apk"));
+
+            } catch (NoSuchFieldException | IllegalAccessException | NoSuchMethodException | IOException | InvocationTargetException | InstantiationException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     private void haha() {

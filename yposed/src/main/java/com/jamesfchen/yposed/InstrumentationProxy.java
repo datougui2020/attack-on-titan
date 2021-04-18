@@ -38,6 +38,7 @@ public class InstrumentationProxy extends Instrumentation implements Handler.Cal
     public static final int STOP_SERVICE = 116;
     public static final int BIND_SERVICE = 121;
     public static final int UNBIND_SERVICE = 122;
+    public static final int INSTALL_PROVIDER = 145;
     Handler mH;
     public InstrumentationProxy(Instrumentation instrumentation,Handler mH) {
         this.instrumentation = instrumentation;
@@ -183,6 +184,8 @@ public class InstrumentationProxy extends Instrumentation implements Handler.Cal
                 Log.e("cjf_attack", "BIND_SERVICE");
             }else if (msg.what == UNBIND_SERVICE){
                 Log.e("cjf_attack", "UNBIND_SERVICE");
+            }else if (msg.what == INSTALL_PROVIDER){
+                Log.e("cjf_attack", "INSTALL_PROVIDER");
             }
         } catch (NoSuchFieldException | IllegalAccessException e) {
             e.printStackTrace();

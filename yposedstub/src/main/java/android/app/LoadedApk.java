@@ -11,7 +11,7 @@ import android.os.Handler;
 import java.io.File;
 
 public final class LoadedApk {
-
+    private ClassLoader mClassLoader;
     public String getPackageName() {
         throw new RuntimeException("Stub!");
     }

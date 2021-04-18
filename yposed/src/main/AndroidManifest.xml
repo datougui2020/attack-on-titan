@@ -1,17 +1,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jamesfchen.yposed" >
+    package="com.jamesfchen.yposed">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <application >
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application>
         <activity
-            android:label="yposed activity"
             android:name="com.jamesfchen.yposed.YPosedActivity"
+            android:label="yposed activity"
             android:launchMode="singleTop"
             android:theme="@style/Theme.AppCompat"
-            android:windowSoftInputMode="adjustPan">
-        </activity>
-        <activity android:name=".StubActivity" android:launchMode="standard"/>
-        <service android:name=".StubService"/>
-        <service android:name=".TestService"/>
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".StubActivity"
+            android:launchMode="standard" />
+
+        <service android:name=".StubService" />
+        <service android:name=".TestService" />
+
+        <provider
+            android:name=".StubContentProvider"
+            android:authorities="com.jamesfchen.yposed.stub_provider"
+            android:exported="true" />
     </application>
 </manifest>

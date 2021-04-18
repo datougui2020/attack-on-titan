@@ -1,6 +1,7 @@
 package com.jamesfchen.guard
 
 import android.app.Activity
+import android.content.ContentValues
 import android.content.Context
 import android.content.pm.IPackageManager
 import android.content.pm.PackageManager
@@ -108,7 +109,6 @@ class TestGuardActivity : Activity() {
             e.printStackTrace()
             Log.d("cjf",Log.getStackTraceString(e))
         }
-
     }
 
     fun getSysProp(str: String): String {
@@ -121,21 +121,6 @@ class TestGuardActivity : Activity() {
             ""
         }
     }
-
-    fun printAllCalsses(pkgName: String) {
-        val substring = packageCodePath.substring(0, packageCodePath.lastIndexOf(47.toChar()))
-        Log.i(TAG, "p:$pkgName $packageCodePath $substring")
-
-        val dexFile = DexFile(packageCodePath)
-        val entries = dexFile.entries()
-        while (entries.hasMoreElements()) {
-            val clzName = entries.nextElement()
-            if (clzName.contains("jamesfchen")) {
-                Log.i(TAG, "class name:$clzName")
-            }
-        }
-    }
-
 
     fun stringFromJava() = "string  from java"
 

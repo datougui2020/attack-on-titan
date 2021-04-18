@@ -9,15 +9,15 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageParser;
 import android.content.pm.PackageUserState;
 import android.content.pm.ServiceInfo;
+import android.content.res.CompatibilityInfo;
 import android.os.Binder;
 import android.os.IBinder;
+import android.os.UserHandle;
 import android.util.Log;
 
 import com.jamesfchen.common.Reflector;
 
 import java.io.File;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -62,20 +62,19 @@ public class ServiceManager {
             Reflector.with(serviceData).field("token").set(token);
             serviceInfo.applicationInfo.packageName = Hooker.SELF_PACKAGE;
             Reflector.with(serviceData).field("info").set(serviceInfo);
-
-            Reflector.with(serviceData).field("compatInfo").set(Reflector.on("android.content.res.CompatibilityInfo").field("DEFAULT_COMPATIBILITY_INFO").get());
+            Reflector.with(serviceData).field("compatInfo").set(CompatibilityInfo.DEFAULT_COMPATIBILITY_INFO);
 //            Reflector.with(serviceData).set("intent", token);
             ActivityThread activityThread = ActivityThread.currentActivityThread();
-//            Reflector.with(activityThread).method("handleCreateService",serviceData.getClass()).call(activityThread,serviceData);
-            Method handleCreateServiceMethod = activityThread.getClass().getDeclaredMethod("handleCreateService", serviceData.getClass());
-            handleCreateServiceMethod.setAccessible(true);
-            handleCreateServiceMethod.invoke(activityThread, serviceData);
+            Reflector.with(activityThread).method("handleCreateService",serviceData.getClass()).call(serviceData);
+//            Method handleCreateServiceMethod = activityThread.getClass().getDeclaredMethod("handleCreateService", serviceData.getClass());
+//            handleCreateServiceMethod.setAccessible(true);
+//            handleCreateServiceMethod.invoke(activityThread, serviceData);
             Map mServices = Reflector.with(activityThread).field("mServices").get();
             Service service = (Service) mServices.get(token);
             mServices.remove(token);
             mServiceMap.put(serviceInfo.name, service);
             return service;
-        } catch (Reflector.ReflectedException | NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+        } catch (Reflector.ReflectedException e) {
             Log.e("cjf_attack", Log.getStackTraceString(e));
             e.printStackTrace();
             return null;
@@ -83,16 +82,17 @@ public class ServiceManager {
     }
 
     public static void parseServices(File apkFile) {
-        PackageParser pkgParser = new PackageParser();
+
         PackageUserState packageUserState = new PackageUserState();
         try {
 //        int userId = UserHandle.getCallingUserId();
             int userId = Reflector.on("android.os.UserHandle").method("getCallingUserId").call();
+            PackageParser pkgParser = new PackageParser();
             PackageParser.Package pkg = pkgParser.parsePackage(apkFile, PackageManager.GET_SERVICES);
             ArrayList<PackageParser.Service> services = pkg.services;
 
             for (PackageParser.Service service : services) {
-                ServiceInfo info = pkgParser.generateServiceInfo(service, 0, packageUserState, userId);
+                ServiceInfo info = PackageParser.generateServiceInfo(service, 0, packageUserState, userId);
                 Log.e("cjf_attack",info.packageName+" "+service.className);
                 mServiceInfoMap.put(new ComponentName(info.packageName, info.name), info);
             }

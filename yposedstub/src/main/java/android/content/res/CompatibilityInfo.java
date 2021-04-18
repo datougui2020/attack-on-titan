@@ -10,7 +10,11 @@ public class CompatibilityInfo implements Parcelable {
                              boolean forceCompat) {
         throw new RuntimeException("Stub!");
     }
-    
+
+    private CompatibilityInfo() {
+        throw new RuntimeException("Stub!");
+    }
+    public static final CompatibilityInfo DEFAULT_COMPATIBILITY_INFO = new CompatibilityInfo() {};
     @Override
     public int describeContents() {
         throw new RuntimeException("Stub!");

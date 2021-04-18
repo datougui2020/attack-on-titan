@@ -29,25 +29,6 @@ import java.util.Map;
  */
 public class Hooker {
     public static final String SELF_PACKAGE = "com.jamesfchen.titan";
-    private static void printAttrib(Class<?> clz) {
-        Log.e("cjf_attack", "clz:" + clz.getName());
-        Class<?>[] declaredClasses = clz.getDeclaredClasses();
-        for (Class<?> c : declaredClasses) {
-            Log.e("cjf_attack", "inner clz:" + c.getName());
-        }
-        Field[] declaredFields = clz.getDeclaredFields();
-        for (Field f : declaredFields) {
-            f.setAccessible(true);
-            Log.e("cjf_attack", "field name：" + f.getName() + " ");
-
-        }
-        Method[] declaredMethods = clz.getDeclaredMethods();
-        for (Method m : declaredMethods) {
-            m.setAccessible(true);
-            Log.e("cjf_attack", "method name：" + m.getName() + " ");
-
-        }
-    }
     public static Application sApplication;
     public static void init(ClassLoader classLoader,Application app) {
         sApplication = app;

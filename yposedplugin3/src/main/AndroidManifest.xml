@@ -12,6 +12,9 @@
         >
         <activity android:name=".MyActivity" />
         <service android:name=".MyService" />
+        <provider
+            android:name=".MyContentProvider"
+            android:authorities="com.jamesfchen.yposedplugin3.my_provider" />
     </application>
 
 </manifest>

@@ -97,3 +97,8 @@ dependencies {
 //        }
 //    }
 //}
+
+task pushAssets(type: Exec) {
+    commandLine "${project.projectDir}/push_assets.sh"
+    args "${rootProject}/yposedplugin/build/outputs/apk/debug/app-debug.apk", "/sdcard/yposedplugin-debug.apk"
+}

@@ -4,12 +4,18 @@ import android.app.Activity
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.widget.Button
 import com.jamesfchen.common.Loader
 import com.jamesfchen.common.Utils
+import java.lang.StringBuilder
+import android.content.ContentValues
+import com.jamesfchen.common.printAllCalsses
+
 
 class YPosedActivity : Activity() {
     companion object {
@@ -24,14 +30,6 @@ class YPosedActivity : Activity() {
     override fun attachBaseContext(newBase: Context?) {
         super.attachBaseContext(newBase)
         AsyncTask.execute {
-            Utils.extractAssets(newBase, "yposedplugin2-debug.apk")
-            val dexFile = getFileStreamPath("yposedplugin2-debug.apk")
-            val optDexFile = getFileStreamPath("yposedplugin2-debug.dex")
-            ServiceManager.parseServices(getFileStreamPath("yposedplugin2-debug.apk"))
-            Loader.loadDex(classLoader, dexFile, optDexFile)
-            Utils.extractAssets(newBase, "yposedplugin3-debug.apk")
-            ServiceManager.parseServices(getFileStreamPath("yposedplugin3-debug.apk"))
-            Loader.loadApk(classLoader, getFileStreamPath("yposedplugin3-debug.apk"))
         }
     }
 
@@ -56,6 +54,8 @@ class YPosedActivity : Activity() {
                     )
                 )
             )
+//            val uri = Uri.parse("content://com.jamesfchen.yposedplugin3.my_provider")
+//            H.a(uri,this@YPosedActivity,"yposedplugin3")
         }
 
         findViewById<Button>(R.id.bt_load_dex).setOnClickListener {
@@ -76,6 +76,8 @@ class YPosedActivity : Activity() {
         }
         startService(Intent(this, TestService::class.java))
         findViewById<Button>(R.id.bt_send).setOnClickListener {
+            val uri = Uri.parse("content://com.jamesfchen.yposedplugin2.my_provider")
+            H.a(uri,this@YPosedActivity,"yposedplugin2")
             NetClient.getInstance().sendRequest()
             stopService(Intent(this, TestService::class.java))
             stopService(
@@ -96,6 +98,8 @@ class YPosedActivity : Activity() {
             )
         }
         plthook_init()
+//        printAllCalsses(getFileStreamPath("yposedplugin2-debug.apk"))
+
     }
 
     fun stringFromJava() = "string  from java"
