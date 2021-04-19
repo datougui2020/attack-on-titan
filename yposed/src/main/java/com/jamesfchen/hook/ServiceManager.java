@@ -5,20 +5,20 @@ import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.pm.PackageParser;
-import android.content.pm.PackageUserState;
 import android.content.pm.ServiceInfo;
 import android.content.res.CompatibilityInfo;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
+import com.jamesfchen.common.PackageHelper;
 import com.jamesfchen.common.Reflector;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,7 +32,7 @@ import java.util.Map;
 public class ServiceManager {
     public static ServiceManager INSTANCE = new ServiceManager();
     private Map<String, Service> mServiceMap = new HashMap<String, Service>();
-    private static Map<ComponentName, ServiceInfo> mServiceInfoMap = new HashMap<ComponentName, ServiceInfo>();
+    private static Map<ComponentName, ServiceInfo> mServiceInfoMap = new HashMap<>();
 
     public int createService(Intent intent, int flags, int startId) {
         Intent raw = intent.getParcelableExtra("extra_raw_intent");
@@ -64,7 +64,7 @@ public class ServiceManager {
             Reflector.with(serviceData).field("compatInfo").set(CompatibilityInfo.DEFAULT_COMPATIBILITY_INFO);
 //            Reflector.with(serviceData).set("intent", token);
             ActivityThread activityThread = ActivityThread.currentActivityThread();
-            Reflector.with(activityThread).method("handleCreateService",serviceData.getClass()).call(serviceData);
+            Reflector.with(activityThread).method("handleCreateService", serviceData.getClass()).call(serviceData);
 //            Method handleCreateServiceMethod = activityThread.getClass().getDeclaredMethod("handleCreateService", serviceData.getClass());
 //            handleCreateServiceMethod.setAccessible(true);
 //            handleCreateServiceMethod.invoke(activityThread, serviceData);
@@ -81,20 +81,8 @@ public class ServiceManager {
     }
 
     public static void parseServices(File apkFile) {
-
-        PackageUserState packageUserState = new PackageUserState();
         try {
-//        int userId = UserHandle.getCallingUserId();
-            int userId = Reflector.on("android.os.UserHandle").method("getCallingUserId").call();
-            PackageParser pkgParser = new PackageParser();
-            PackageParser.Package pkg = pkgParser.parsePackage(apkFile, PackageManager.GET_SERVICES);
-            ArrayList<PackageParser.Service> services = pkg.services;
-
-            for (PackageParser.Service service : services) {
-                ServiceInfo info = PackageParser.generateServiceInfo(service, 0, packageUserState, userId);
-                Log.e("cjf_attack",info.packageName+" "+service.className);
-                mServiceInfoMap.put(new ComponentName(info.packageName, info.name), info);
-            }
+            PackageHelper.parseServices(apkFile, mServiceInfoMap);
         } catch (PackageParser.PackageParserException | Reflector.ReflectedException e) {
             e.printStackTrace();
             Log.e("cjf_attack", Log.getStackTraceString(e));

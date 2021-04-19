@@ -11,6 +11,11 @@
         android:theme="@style/Theme.AppCompat">
         <activity android:name=".MyActivity" />
         <service android:name=".MyService" />
+        <receiver android:name=".MyReceiver">
+            <intent-filter>
+                <action android:name="com.jamesfchen.yposedplugin2.MyReceiver" />
+            </intent-filter>
+        </receiver>
 
         <provider
             android:name=".MyContentProvider"
