@@ -1,4 +1,4 @@
-package com.jamesfchen.yposed;
+package com.jamesfchen.hook;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

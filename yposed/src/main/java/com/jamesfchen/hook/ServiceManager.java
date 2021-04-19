@@ -1,4 +1,4 @@
-package com.jamesfchen.yposed;
+package com.jamesfchen.hook;
 
 import android.app.ActivityThread;
 import android.app.Service;
@@ -12,7 +12,6 @@ import android.content.pm.ServiceInfo;
 import android.content.res.CompatibilityInfo;
 import android.os.Binder;
 import android.os.IBinder;
-import android.os.UserHandle;
 import android.util.Log;
 
 import com.jamesfchen.common.Reflector;

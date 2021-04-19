@@ -10,14 +10,14 @@
             android:theme="@style/Theme.AppCompat"
             android:windowSoftInputMode="adjustPan"></activity>
         <activity
-            android:name=".StubActivity"
+            android:name="com.jamesfchen.hook.StubActivity"
             android:launchMode="standard" />
 
-        <service android:name=".StubService" />
+        <service android:name="com.jamesfchen.hook.StubService" />
         <service android:name=".TestService" />
 
         <provider
-            android:name=".StubContentProvider"
+            android:name="com.jamesfchen.hook.StubContentProvider"
             android:authorities="com.jamesfchen.yposed.stub_provider"
             android:exported="true" />
     </application>

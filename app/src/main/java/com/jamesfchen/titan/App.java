@@ -7,9 +7,9 @@ import android.util.Log;
 
 import com.jamesfchen.common.Loader;
 import com.jamesfchen.common.Utils;
-import com.jamesfchen.yposed.Hooker;
-import com.jamesfchen.yposed.ProviderHelper;
-import com.jamesfchen.yposed.ServiceManager;
+import com.jamesfchen.hook.Hooker;
+import com.jamesfchen.hook.ProviderHelper;
+import com.jamesfchen.hook.ServiceManager;
 
 import java.io.File;
 import java.io.IOException;

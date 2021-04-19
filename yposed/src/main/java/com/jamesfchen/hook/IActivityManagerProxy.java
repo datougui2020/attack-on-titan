@@ -1,4 +1,4 @@
-package com.jamesfchen.yposed;
+package com.jamesfchen.hook;
 
 import android.app.IActivityManager;
 import android.content.ComponentName;
@@ -36,7 +36,7 @@ public class IActivityManagerProxy implements InvocationHandler {
             Intent raw = (Intent) args[2];
             Log.e("cjf_attack", "startActivity:" + Arrays.toString(args));
             if (raw.getComponent() != null
-                    && !"com.jamesfchen.yposed.StubActivity".equals(raw.getComponent().getClassName())
+                    && !"com.jamesfchen.hook.StubActivity".equals(raw.getComponent().getClassName())
                     && !"android.content.pm.action.REQUEST_PERMISSIONS".equals(raw.getAction())) {
                 String stubPackage = Hooker.SELF_PACKAGE;//StubActivity所在的包
                 Intent stubIntent = new Intent();

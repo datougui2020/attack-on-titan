@@ -1,4 +1,4 @@
-package com.jamesfchen.yposed;
+package com.jamesfchen.hook;
 
 import android.content.pm.IPackageManager;
 import android.content.pm.PackageInfo;
