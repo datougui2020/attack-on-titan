@@ -53,9 +53,6 @@
  *
  *
  */
-
-
-
 /*
 * JNI registration.
 */

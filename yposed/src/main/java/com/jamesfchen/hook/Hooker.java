@@ -27,37 +27,44 @@ import java.util.Map;
  * @since: 三月/15/2021  星期一
  */
 public class Hooker {
-    public static final String SELF_PACKAGE = "com.jamesfchen.titan";
+    public static String SELF_PACKAGE;//"com.jamesfchen.titan"
     public static Application sApplication;
-    public static void init(ClassLoader classLoader,Application app) {
+    public static ClassLoader baseLoader;
+
+    public static void init(Application app) {
         sApplication = app;
-
-        IPackageManager pkgMgrOrigin = ActivityThread.getPackageManager();
-        ActivityThread activityThread = ActivityThread.currentActivityThread();
-        IPackageManager packageManagerProxy = (IPackageManager) Proxy.newProxyInstance(classLoader, new Class[]{IPackageManager.class}, new PackageManagerProxy(pkgMgrOrigin));
+        SELF_PACKAGE = sApplication.getPackageName();
+        baseLoader = app.getClassLoader();
         try {
-            Field sPackageManagerField = activityThread.getClass().getDeclaredField("sPackageManager");
-            sPackageManagerField.setAccessible(true);
-            sPackageManagerField.set(activityThread, packageManagerProxy);
-
-            IBinder iBinderOrigin = ServiceManager.getService("package");
-
-            IBinder iBinderProxy = (IBinder) Proxy.newProxyInstance(classLoader, new Class[]{IBinder.class}, new IBinderProxy(iBinderOrigin, packageManagerProxy, classLoader));
-            Field sCacheField = ServiceManager.class.getDeclaredField("sCache");
-            sCacheField.setAccessible(true);
-            Map<String, IBinder> sCache = (Map<String, IBinder>) sCacheField.get(null);
-            sCache.remove("package");
-            sCache.put("package", iBinderProxy);
-
-            hook_ams(classLoader);
-            hook_instrumentation(classLoader);
+            hook_pm(baseLoader);
+            hook_am(baseLoader);
+            hook_instrumentation(baseLoader);
+            hook_h(baseLoader);
         } catch (Exception e) {
             Log.e("cjf_attack", Log.getStackTraceString(e));
             e.printStackTrace();
         }
     }
 
-    static void hook_ams(ClassLoader classLoader) throws NoSuchFieldException, IllegalAccessException {
+    static void hook_pm(ClassLoader classLoader) throws NoSuchFieldException, IllegalAccessException {
+        //1.hook pms第一种
+        IPackageManager pkgMgrOrigin = ActivityThread.getPackageManager();
+        IPackageManager packageManagerProxy = (IPackageManager) Proxy.newProxyInstance(classLoader, new Class[]{IPackageManager.class}, new PackageManagerProxy(pkgMgrOrigin));
+        //2.hook pms第二种
+        ActivityThread activityThread = ActivityThread.currentActivityThread();
+        Field sPackageManagerField = activityThread.getClass().getDeclaredField("sPackageManager");
+        sPackageManagerField.setAccessible(true);
+        sPackageManagerField.set(activityThread, packageManagerProxy);
+        IBinder iBinderOrigin = ServiceManager.getService("package");
+        IBinder iBinderProxy = (IBinder) Proxy.newProxyInstance(classLoader, new Class[]{IBinder.class}, new IBinderProxy(iBinderOrigin, packageManagerProxy, classLoader));
+        Field sCacheField = ServiceManager.class.getDeclaredField("sCache");
+        sCacheField.setAccessible(true);
+        Map<String, IBinder> sCache = (Map<String, IBinder>) sCacheField.get(null);
+        sCache.remove("package");
+        sCache.put("package", iBinderProxy);
+    }
+
+    static void hook_am(ClassLoader classLoader) throws NoSuchFieldException, IllegalAccessException {
         Field gDefaultField;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             //android 10 hook不了
@@ -81,23 +88,18 @@ public class Hooker {
         ActivityThread activityThread = ActivityThread.currentActivityThread();
         Field mInstrumentationField = activityThread.getClass().getDeclaredField("mInstrumentation");
         mInstrumentationField.setAccessible(true);
+        InstrumentationProxy instrumentationProxy = new InstrumentationProxy(activityThread.getInstrumentation());
+        mInstrumentationField.set(activityThread, instrumentationProxy);
+    }
 
-
-//        Method getHandlerMethod = activityThread.getClass().getMethod("getHandler");
-//        getHandlerMethod.setAccessible(true);
-//        Handler mH = (Handler) getHandlerMethod.invoke(activityThread);
+    static void hook_h(ClassLoader classLoader) throws NoSuchFieldException, IllegalAccessException {
+        ActivityThread activityThread = ActivityThread.currentActivityThread();
         Field handlerField = activityThread.getClass().getDeclaredField("mH");
         handlerField.setAccessible(true);
         Handler mH = (Handler) handlerField.get(activityThread);
-//        Field mCallbackField = mH.getClass().getDeclaredField("mCallback");
-//        mCallbackField.setAccessible(true);
-//        mCallbackField.set(mH,instrumentationProxy);
         Field mCallBackField = Handler.class.getDeclaredField("mCallback");
         mCallBackField.setAccessible(true);
-
-        InstrumentationProxy instrumentationProxy = new InstrumentationProxy(activityThread.getInstrumentation(),mH);
-        mInstrumentationField.set(activityThread,instrumentationProxy);
-        mCallBackField.set(mH, instrumentationProxy);
+        mCallBackField.set(mH, new HProxy(mH));
     }
 
 }

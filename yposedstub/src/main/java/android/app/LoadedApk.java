@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.IIntentReceiver;
 import android.content.pm.ApplicationInfo;
 import android.content.res.AssetManager;
+import android.content.res.CompatibilityInfo;
 import android.content.res.Resources;
 import android.os.Handler;
 
@@ -12,10 +13,13 @@ import java.io.File;
 
 public final class LoadedApk {
     private ClassLoader mClassLoader;
-    public String getPackageName() {
-        throw new RuntimeException("Stub!");
-    }
+    public LoadedApk(ActivityThread activityThread, ApplicationInfo aInfo, CompatibilityInfo compatInfo,
+                     ClassLoader baseLoader,boolean securityViolation,
+                     boolean includeCode,boolean registerPackage){ throw new RuntimeException("Stub!");}
+    public LoadedApk(ActivityThread activityThread){throw new RuntimeException("Stub!");}
 
+    Application getApplication(){throw new RuntimeException("Stub!");}
+    public String getPackageName() { throw new RuntimeException("Stub!"); }
     public ApplicationInfo getApplicationInfo() {
         throw new RuntimeException("Stub!");
     }

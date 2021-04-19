@@ -71,30 +71,25 @@ public final class Loader {
 
     public static void loadApk(ClassLoader classLoader, File apkFile) throws NoSuchFieldException, IllegalAccessException {
         ActivityThread currentActivityThread = ActivityThread.currentActivityThread();
-        Field mPackagesField = ActivityThread.class.getDeclaredField("mPackages");
-        mPackagesField.setAccessible(true);
-        ArrayMap<String, WeakReference<LoadedApk>> mPackages = (ArrayMap<String, WeakReference<LoadedApk>>) mPackagesField.get(currentActivityThread);
-
-        ApplicationInfo applicationInfo = null;
         try {
-            applicationInfo = generateApplicationInfo(apkFile);
+            Field mPackagesField = ActivityThread.class.getDeclaredField("mPackages");
+            mPackagesField.setAccessible(true);
+            ArrayMap<String, WeakReference<LoadedApk>> mPackages = (ArrayMap<String, WeakReference<LoadedApk>>) mPackagesField.get(currentActivityThread);
+            ApplicationInfo applicationInfo = generateApplicationInfo(apkFile);
+            LoadedApk loadedApk = currentActivityThread.getPackageInfoNoCheck(applicationInfo, CompatibilityInfo.DEFAULT_COMPATIBILITY_INFO);
+            String odexPath = Utils.getPluginOptDexDir(applicationInfo.packageName).getPath();
+            String libDir = Utils.getPluginLibDir(applicationInfo.packageName).getPath();
+            DexClassLoader dexClassLoader = new DexClassLoader(apkFile.getPath(), odexPath, libDir, ClassLoader.getSystemClassLoader());
+            Field mClassLoaderField = LoadedApk.class.getDeclaredField("mClassLoader");
+            mClassLoaderField.setAccessible(true);
+            mClassLoaderField.set(loadedApk, dexClassLoader);
+            sLoadedApk.put(applicationInfo.packageName, loadedApk);
+            WeakReference<LoadedApk> weakReference = new WeakReference<>(loadedApk);
+            mPackages.put(applicationInfo.packageName, weakReference);
         } catch (PackageParser.PackageParserException e) {
             e.printStackTrace();
             Log.e("cjf_attack", Log.getStackTraceString(e));
         }
-        LoadedApk loadedApk = currentActivityThread.getPackageInfoNoCheck(applicationInfo, CompatibilityInfo.DEFAULT_COMPATIBILITY_INFO);
-
-        String odexPath = Utils.getPluginOptDexDir(applicationInfo.packageName).getPath();
-        String libDir = Utils.getPluginLibDir(applicationInfo.packageName).getPath();
-
-        DexClassLoader dexClassLoader = new DexClassLoader(apkFile.getPath(), odexPath, libDir, ClassLoader.getSystemClassLoader());
-        Field mClassLoaderField = LoadedApk.class.getDeclaredField("mClassLoader");
-        mClassLoaderField.setAccessible(true);
-        mClassLoaderField.set(loadedApk, dexClassLoader);
-
-        sLoadedApk.put(applicationInfo.packageName, loadedApk);
-        WeakReference<LoadedApk> weakReference = new WeakReference<>(loadedApk);
-        mPackages.put(applicationInfo.packageName, weakReference);
     }
 
     public static ApplicationInfo generateApplicationInfo(File apkFile) throws PackageParser.PackageParserException {

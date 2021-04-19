@@ -58,7 +58,7 @@ public class App extends Application {
 
     private void haha() {
 //        Hook.init(getClassLoader(),this);
-        Hooker.init(getClassLoader(), this);
+        Hooker.init(this);
     }
 
     private void adfasf() {
