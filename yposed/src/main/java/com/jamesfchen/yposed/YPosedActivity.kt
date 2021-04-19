@@ -53,31 +53,33 @@ class YPosedActivity : Activity() {
                     )
                 )
             )
-//            val uri = Uri.parse("content://com.jamesfchen.yposedplugin3.my_provider")
-//            H.a(uri,this@YPosedActivity,"yposedplugin3")
         }
 
         findViewById<Button>(R.id.bt_load_dex).setOnClickListener {
-//            startService(
-//                Intent().setComponent(
-//                    ComponentName(
-//                        "com.jamesfchen.yposedplugin2",
-//                        "com.jamesfchen.yposedplugin2.MyService"
-//                    )
-//                )
-//            )
-//            val int = Intent()
-//            int.component = ComponentName(
-//                "com.jamesfchen.yposedplugin2",
-//                "com.jamesfchen.yposedplugin2.MyActivity"
-//            )
-//            startActivity(int)
-            sendBroadcast(Intent("com.jamesfchen.yposedplugin2.MyReceiver"))
+            startService(
+                Intent().setComponent(
+                    ComponentName(
+                        "com.jamesfchen.yposedplugin2",
+                        "com.jamesfchen.yposedplugin2.MyService"
+                    )
+                )
+            )
+            val int = Intent()
+            int.component = ComponentName(
+                "com.jamesfchen.yposedplugin2",
+                "com.jamesfchen.yposedplugin2.MyActivity"
+            )
+            startActivity(int)
+
         }
         startService(Intent(this, TestService::class.java))
         findViewById<Button>(R.id.bt_send).setOnClickListener {
-            val uri = Uri.parse("content://com.jamesfchen.yposedplugin2.my_provider")
+            var uri = Uri.parse("content://com.jamesfchen.yposedplugin2.my_provider")
             H.a(uri, this@YPosedActivity, "yposedplugin2")
+//            uri = Uri.parse("content://com.jamesfchen.yposedplugin3.my_provider")
+//            H.a(uri, this@YPosedActivity, "yposedplugin3")
+            sendBroadcast(Intent("com.jamesfchen.yposedplugin2.MyReceiver"))
+
             NetClient.getInstance().sendRequest()
             stopService(Intent(this, TestService::class.java))
             stopService(
@@ -98,7 +100,7 @@ class YPosedActivity : Activity() {
             )
         }
         plthook_init()
-        ReceiverHelper.parseReceivers(this,getFileStreamPath("yposedplugin2-debug.apk"))
+        ReceiverHelper.parseReceivers(this, getFileStreamPath("yposedplugin2-debug.apk"))
         registerReceiver(mReceiver, IntentFilter("com.jamesfchen.titan.br_test"))
 //        printAllCalsses(getFileStreamPath("yposedplugin2-debug.apk"))
     }

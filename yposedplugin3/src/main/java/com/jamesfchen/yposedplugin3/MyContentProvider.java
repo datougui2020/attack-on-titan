@@ -13,7 +13,7 @@ public class MyContentProvider extends ContentProvider {
     @Override
     public boolean onCreate() {
         Log.e("cjf_attack", "yposedplugin3 onCreate");
-        return false;
+        return true;
     }
 
     @Nullable
