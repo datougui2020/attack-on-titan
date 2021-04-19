@@ -87,7 +87,7 @@ public final class Loader {
         String odexPath = Utils.getPluginOptDexDir(applicationInfo.packageName).getPath();
         String libDir = Utils.getPluginLibDir(applicationInfo.packageName).getPath();
 
-        DexClassLoader dexClassLoader = new DexClassLoader(apkFile.getPath(), odexPath, libDir, classLoader);
+        DexClassLoader dexClassLoader = new DexClassLoader(apkFile.getPath(), odexPath, libDir, ClassLoader.getSystemClassLoader());
         Field mClassLoaderField = LoadedApk.class.getDeclaredField("mClassLoader");
         mClassLoaderField.setAccessible(true);
         mClassLoaderField.set(loadedApk, dexClassLoader);
