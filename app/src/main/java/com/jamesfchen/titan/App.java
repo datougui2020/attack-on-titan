@@ -30,6 +30,7 @@ public class App extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
+        Log.e("cjf_attack", "App attachBaseContext");
         Utils.init(base);
 //        Utils.extractAssets(base, "yposedplugin-debug.apk");
 //        adfasf();
@@ -54,6 +55,12 @@ public class App extends Application {
                 e.printStackTrace();
             }
         });
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Log.e("cjf_attack", "App onCreate");
     }
 
     private void haha() {

@@ -36,7 +36,7 @@ public class InstrumentationProxy extends Instrumentation {
         this.instrumentation = instrumentation;
     }
 
-    //    @Override
+//    @Override
     public ActivityResult execStartActivity(Context who, IBinder contextThread, IBinder token, Activity target, Intent intent, int requestCode) {
         try {
             Method execStartActivity = Instrumentation.class.getDeclaredMethod(

@@ -1,4 +1,4 @@
-package com.jamesfchen.yposed;
+package com.jamesfchen.hook;
 
 import android.app.Activity;
 import android.app.AppComponentFactory;
@@ -9,6 +9,7 @@ import android.content.ContentProvider;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,18 +20,21 @@ public class MyCoreComponentFactory extends AppComponentFactory {
     @NonNull
     @Override
     public ClassLoader instantiateClassLoader(@NonNull ClassLoader cl, @NonNull ApplicationInfo aInfo) {
+        Log.e("cjf_attack", "MyCoreComponentFactory instantiateClassLoader "+aInfo.packageName);
         return super.instantiateClassLoader(cl, aInfo);
     }
 
     @NonNull
     @Override
     public Application instantiateApplication(@NonNull ClassLoader cl, @NonNull String className) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+        Log.e("cjf_attack", "MyCoreComponentFactory instantiateApplication");
         return super.instantiateApplication(cl, className);
     }
 
     @NonNull
     @Override
     public Activity instantiateActivity(@NonNull ClassLoader cl, @NonNull String className, @Nullable Intent intent) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+        Log.e("cjf_attack", "MyCoreComponentFactory instantiateActivity");
         return super.instantiateActivity(cl, className, intent);
     }
 

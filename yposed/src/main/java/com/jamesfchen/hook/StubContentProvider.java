@@ -12,9 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class StubContentProvider extends ContentProvider {
+
     @Override
     public void attachInfo(Context context, ProviderInfo info) {
         super.attachInfo(context, info);
+        Log.e("cjf_attack", "StubContentProvider attachInfo");
     }
 
     @Override

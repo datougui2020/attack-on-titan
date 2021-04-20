@@ -37,9 +37,11 @@ public class Hooker {
         baseLoader = app.getClassLoader();
         try {
             hook_pm(baseLoader);
-            hook_am(baseLoader);
-            hook_instrumentation(baseLoader);
-            hook_h(baseLoader);
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
+//                hook_instrumentation(baseLoader);
+                hook_am(baseLoader);
+                hook_h(baseLoader);
+            }
         } catch (Exception e) {
             Log.e("cjf_attack", Log.getStackTraceString(e));
             e.printStackTrace();

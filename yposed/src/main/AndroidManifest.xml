@@ -8,7 +8,7 @@
             android:label="yposed activity"
             android:launchMode="singleTop"
             android:theme="@style/Theme.AppCompat"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name="com.jamesfchen.hook.StubActivity"
             android:launchMode="standard" />

@@ -3,9 +3,7 @@ package com.jamesfchen.yposed
 import android.app.Activity
 import android.content.*
 import android.net.Uri
-import android.os.AsyncTask
-import android.os.Bundle
-import android.os.Handler
+import android.os.*
 import android.util.Log
 import android.widget.Button
 import com.jamesfchen.common.Loader
@@ -64,12 +62,18 @@ class YPosedActivity : Activity() {
                     )
                 )
             )
-            val int = Intent()
-            int.component = ComponentName(
-                "com.jamesfchen.yposedplugin2",
-                "com.jamesfchen.yposedplugin2.MyActivity"
-            )
-            startActivity(int)
+            startActivity(Intent().setComponent(
+                ComponentName(
+                    "com.jamesfchen.titan",
+                    "com.jamesfchen.yposed.YPosedActivity"
+                )
+            ))
+//            startActivity(Intent().setComponent(
+//                ComponentName(
+//                    "com.jamesfchen.yposedplugin2",
+//                    "com.jamesfchen.yposedplugin2.MyActivity"
+//                )
+//            ))
 
         }
         startService(Intent(this, TestService::class.java))
@@ -103,6 +107,14 @@ class YPosedActivity : Activity() {
         ReceiverHelper.parseReceivers(this, getFileStreamPath("yposedplugin2-debug.apk"))
         registerReceiver(mReceiver, IntentFilter("com.jamesfchen.titan.br_test"))
 //        printAllCalsses(getFileStreamPath("yposedplugin2-debug.apk"))
+        Looper.myQueue().addIdleHandler(mGcIdler)
+    }
+    val mGcIdler = object : MessageQueue.IdleHandler {
+        override fun queueIdle(): Boolean {
+            Log.i("cjf_attack", "idle")
+            return false
+        }
+
     }
 
     override fun onDestroy() {

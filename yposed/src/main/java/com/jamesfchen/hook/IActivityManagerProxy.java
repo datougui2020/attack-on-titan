@@ -28,13 +28,14 @@ public class IActivityManagerProxy implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        Log.e("cjf_attack", method.getName()+" " + Arrays.toString(args));
         if ("startActivity".equals(method.getName())) {
             //    int startActivity(in IApplicationThread caller, in String callingPackage, in Intent intent,
             //            in String resolvedType, in IBinder resultTo, in String resultWho, int requestCode,
             //            int flags, in ProfilerInfo profilerInfo, in Bundle options);
             String callingPackage = (String) args[1];
             Intent raw = (Intent) args[2];
-            Log.e("cjf_attack", "startActivity:" + Arrays.toString(args));
+//            Log.e("cjf_attack", "startActivity:" + Arrays.toString(args));
             if (raw.getComponent() != null
                     && !"com.jamesfchen.hook.StubActivity".equals(raw.getComponent().getClassName())
                     && !"android.content.pm.action.REQUEST_PERMISSIONS".equals(raw.getAction())) {
@@ -46,7 +47,7 @@ public class IActivityManagerProxy implements InvocationHandler {
                 args[2] = stubIntent;
             }
         } else if ("startService".equals(method.getName())) {
-            Log.e("cjf_attack", "startService:" + Arrays.toString(args));
+//            Log.e("cjf_attack", "startService:" + Arrays.toString(args));
             Intent raw = (Intent) args[1];
             if (!"com.jamesfchen.yposed.StubService".equals(raw.getComponent().getClassName())) {
                 Intent stubIntent = new Intent();
@@ -56,7 +57,7 @@ public class IActivityManagerProxy implements InvocationHandler {
                 args[1] = stubIntent;
             }
         } else if ("stopService".equals(method.getName())) {
-            Log.e("cjf_attack", "stopService:" + Arrays.toString(args));
+//            Log.e("cjf_attack", "stopService:" + Arrays.toString(args));
             Intent raw = (Intent) args[1];
             if (!Hooker.SELF_PACKAGE.equals(raw.getComponent().getPackageName())) {
                 return ServiceManager.INSTANCE.stopService(raw);
@@ -67,14 +68,6 @@ public class IActivityManagerProxy implements InvocationHandler {
         } else if ("unbindService".equals(method.getName())) {
         } else if ("getIntentSender".equals(method.getName())) {
         } else if ("overridePendingTransition".equals(method.getName())) {
-        }
-        if ("stopService".equals(method.getName())) {
-            Log.e("cjf_attack", "stopService:" + Arrays.toString(args));
-            Intent raw = (Intent) args[1];
-            if (!Hooker.SELF_PACKAGE.equals(raw.getComponent().getPackageName())) {
-                return ServiceManager.INSTANCE.stopService(raw);
-            }
-
         }
         return method.invoke(origin, args);
     }
