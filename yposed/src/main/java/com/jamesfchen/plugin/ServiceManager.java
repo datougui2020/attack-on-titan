@@ -1,4 +1,4 @@
-package com.jamesfchen.hook;
+package com.jamesfchen.plugin;
 
 import android.app.ActivityThread;
 import android.app.Service;
@@ -16,9 +16,7 @@ import com.jamesfchen.common.PackageHelper;
 import com.jamesfchen.common.Reflector;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

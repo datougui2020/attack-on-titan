@@ -1,4 +1,4 @@
-package com.jamesfchen.hook;
+package com.jamesfchen.plugin;
 
 import android.app.IActivityManager;
 import android.content.ComponentName;

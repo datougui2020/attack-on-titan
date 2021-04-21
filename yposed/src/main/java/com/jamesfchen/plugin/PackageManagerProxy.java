@@ -1,4 +1,4 @@
-package com.jamesfchen.hook;
+package com.jamesfchen.plugin;
 
 import android.content.pm.IPackageManager;
 import android.content.pm.PackageInfo;

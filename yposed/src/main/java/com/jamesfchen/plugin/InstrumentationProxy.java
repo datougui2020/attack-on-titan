@@ -1,4 +1,4 @@
-package com.jamesfchen.hook;
+package com.jamesfchen.plugin;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -8,18 +8,11 @@ import android.app.Instrumentation;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.IBinder;
-import android.os.Message;
 import android.os.PersistableBundle;
-import android.util.Log;
 
-import androidx.annotation.NonNull;
-
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
