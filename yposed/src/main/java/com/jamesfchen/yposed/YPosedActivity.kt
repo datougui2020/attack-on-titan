@@ -6,12 +6,7 @@ import android.net.Uri
 import android.os.*
 import android.util.Log
 import android.widget.Button
-import com.jamesfchen.common.Loader
-import com.jamesfchen.common.Utils
-import java.lang.StringBuilder
-import com.jamesfchen.common.printAllCalsses
-import com.jamesfchen.hook.ReceiverHelper
-import android.widget.Toast
+import com.jamesfchen.plugin.ReceiverHelper
 
 
 class YPosedActivity : Activity() {
