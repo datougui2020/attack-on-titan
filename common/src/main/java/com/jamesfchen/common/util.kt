@@ -89,6 +89,7 @@ fun printAllCalsses(packageCodePath: String) {
 
 fun printAllCalsses(pathFile: File) {
     val dexFile = DexFile(pathFile)
+
     val entries = dexFile.entries()
     Log.i("cjf_attack", "dexFile entries:${entries.hasMoreElements()}")
     while (entries.hasMoreElements()) {

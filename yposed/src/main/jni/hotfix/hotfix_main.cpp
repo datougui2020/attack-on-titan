@@ -6,9 +6,9 @@
 #include <android/log.h>
 #include <assert.h>
 #include <time.h>
-#include "include/art_8.0r1.h"
-//#include "include/art_10.h"
-#include "include/HotFix.h"
+#include "art_8.0r1.h"
+//#include "art_10.h"
+#include "HotFix.h"
 
 /**
  *
@@ -65,10 +65,10 @@ static JNINativeMethod gMethods[] = {
 JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
     JNIEnv *env;
     if (vm->GetEnv((void **) &env, JNI_VERSION_1_6) != JNI_OK) return JNI_ERR;
+//    env->FromReflectedMethod()
     jclass srcNetClientclazz = env->FindClass("com/jamesfchen/yposed/NetClient");
     art::ArtMethod *srcArtMethod = (art::ArtMethod *) env->GetMethodID(srcNetClientclazz,
                                                                        "sendRequest", "()V");
-
     jclass destNetClientclazz = env->FindClass("com/jamesfchen/yposedplugin/NetClient_sendRequest");
     art::ArtMethod *destArtMethod = (art::ArtMethod *) env->GetMethodID(destNetClientclazz,
                                                                         "sendRequest", "()V");

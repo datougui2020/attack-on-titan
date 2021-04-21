@@ -2,7 +2,7 @@
 // Created by hawks.jamesf on 12/30/19.
 //
 
-#include "include/HotFix.h"
+#include "HotFix.h"
 #include <iostream>
 #include <jni.h>
 using namespace std;

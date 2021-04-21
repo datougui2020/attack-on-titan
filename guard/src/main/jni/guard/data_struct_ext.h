@@ -84,7 +84,6 @@
 //该声明将强制编译器确保（尽它所能）变量类 型为struct S 或者int32_t 的变量在分配空间时采用8字节对齐方式。
 //aligned 属性使被设置的对象占用更多的空间，相反的，使用packed 可以减小对象占用的空间。
 struct FakeData {
-
     short b[3];//2btes
 
 } __attribute__((aligned (8)));
