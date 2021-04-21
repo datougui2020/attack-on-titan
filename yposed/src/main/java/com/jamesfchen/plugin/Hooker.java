@@ -51,7 +51,7 @@ public class Hooker {
     static void hook_pm(ClassLoader classLoader) throws NoSuchFieldException, IllegalAccessException {
         //1.hook pms第一种
         IPackageManager pkgMgrOrigin = ActivityThread.getPackageManager();
-        IPackageManager packageManagerProxy = (IPackageManager) Proxy.newProxyInstance(classLoader, new Class[]{IPackageManager.class}, new PackageManagerProxy(pkgMgrOrigin));
+        IPackageManager packageManagerProxy = (IPackageManager) Proxy.newProxyInstance(classLoader, new Class[]{IPackageManager.class}, new IPackageManagerProxy(pkgMgrOrigin));
         //2.hook pms第二种
         ActivityThread activityThread = ActivityThread.currentActivityThread();
         Field sPackageManagerField = activityThread.getClass().getDeclaredField("sPackageManager");

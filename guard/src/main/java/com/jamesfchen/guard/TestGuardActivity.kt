@@ -15,6 +15,7 @@ import android.view.IWindowManager
 import android.widget.TextView
 import androidx.annotation.Keep
 import com.jamesfchen.common.sha1ToHexString
+import com.jamesfchen.guard.security.SecurityChecker
 import dalvik.system.DexFile
 import java.io.File
 import java.io.FileWriter
@@ -65,11 +66,7 @@ class TestGuardActivity : Activity() {
 
         Log.i(
             TAG,
-            "IPackageManager isProxyClass:${
-                Proxy.isProxyClass(
-                    IPackageManager.Stub.asInterface(package_b)::class.java
-                )
-            } " +
+            "IPackageManager isProxyClass:${Proxy.isProxyClass(IPackageManager.Stub.asInterface(package_b)::class.java)} " +
                     "IBinder isProxyClass:${Proxy.isProxyClass(package_b.javaClass)} " +
                     "IWindowManager isProxyClass：${
                         Proxy.isProxyClass(
@@ -86,7 +83,6 @@ class TestGuardActivity : Activity() {
 //            override fun run() {
 //
 //            }
-//
 //        }, 20_000, 24*3600*1000)
         Log.i(TAG, " verify:${verify(this)}")
         val substring = packageCodePath.substring(0, packageCodePath.lastIndexOf(47.toChar()))
@@ -109,6 +105,8 @@ class TestGuardActivity : Activity() {
             e.printStackTrace()
             Log.d("cjf",Log.getStackTraceString(e))
         }
+        val securityChecker = SecurityChecker(this)
+        Log.d("cjf_defense","verify apk:"+securityChecker.verifyApk(File(packageCodePath)))
     }
 
     fun getSysProp(str: String): String {
