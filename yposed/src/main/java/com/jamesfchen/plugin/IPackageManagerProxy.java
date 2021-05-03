@@ -1,14 +1,13 @@
-package com.jamesfchen.hook;
-
-import static com.dianping.v1.PackageManagerProxy.sha1ToHexString;
+package com.jamesfchen.plugin;
 
 import android.content.pm.IPackageManager;
 import android.content.pm.PackageInfo;
-import android.content.pm.Signature;
 import android.util.Log;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+
+import static com.dianping.v1.PackageManagerProxy.sha1ToHexString;
 
 /**
  * Copyright ® $ 2020

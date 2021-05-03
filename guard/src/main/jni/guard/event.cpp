@@ -28,7 +28,6 @@ Epoller::Epoller() {
         return;
     }
     wake_event_fd_ = eventfd(0, EFD_NONBLOCK | EFD_CLOEXEC);
-//    wake_event_fd_ = eventfd(0, 0);
     if (wake_event_fd_ == -1) {
         LOG_E(LOG_TAG, "mWakeEventFd == -1 ");
         return;
@@ -85,7 +84,9 @@ void Epoller::run() {
     int running = 1;
     while (running) {
         LOG_E(LOG_TAG, "\nPolling for input...\n");
-        int event_count = epoll_wait(epoll_fd_, events, EPOLL_MAX_EVENTS, 30000);//30s
+        int event_count = epoll_wait(epoll_fd_, events, EPOLL_MAX_EVENTS, -1);//30s
+//        int event_count = epoll_wait(epoll_fd_, events, EPOLL_MAX_EVENTS, 30000);//30s
+//        int event_count = epoll_wait(epoll_fd_, events, EPOLL_MAX_EVENTS, 300);//30s
         LOG_E(LOG_TAG, "%d ready events\n", event_count);
         RecWakeEvent();
         for (int i = 0; i < event_count; i++) {
@@ -102,7 +103,7 @@ void Epoller::run() {
 }
 
 Epoller *epollerPtr;
-Epoller epollerRef;
+Epoller epollerRef;//已经被初始化
 
 void *run_thread(void *args) {
     epollerRef.run();
@@ -124,7 +125,7 @@ void initTLSKey() {
 }
 
 bool jamesfchen_event::entry() {
-    epollerPtr = new Epoller();
+//    epollerPtr = new Epoller();
     pthread_t tid;
     pthread_create(&tid, nullptr, run_thread, nullptr);
     int result = pthread_once(&gTLSOnce, initTLSKey);

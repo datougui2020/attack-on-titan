@@ -1,0 +1,1126 @@
+12c00000-12db9000 rw-p 00000000 00:04 5401573                            /dev/ashmem/dalvik-main space (deleted)
+12db9000-12fb9000 rw-p 001b9000 00:04 5401573                            /dev/ashmem/dalvik-main space (deleted)
+12fb9000-22c00000 ---p 003b9000 00:04 5401573                            /dev/ashmem/dalvik-main space (deleted)
+32c00000-32c01000 rw-p 00000000 00:04 5401574                            /dev/ashmem/dalvik-main space 1 (deleted)
+32c01000-42c00000 ---p 00001000 00:04 5401574                            /dev/ashmem/dalvik-main space 1 (deleted)
+6f25f000-6ffda000 rw-p 00000000 103:0e 2121734                           /data/dalvik-cache/arm64/system@framework@boot.art
+6ffda000-72036000 r--p 00000000 103:0e 2121732                           /data/dalvik-cache/arm64/system@framework@boot.oat
+72036000-7437c000 r-xp 0205c000 103:0e 2121732                           /data/dalvik-cache/arm64/system@framework@boot.oat
+7437c000-7437d000 rw-p 043a2000 103:0e 2121732                           /data/dalvik-cache/arm64/system@framework@boot.oat
+7437d000-744b6000 rw-p 00000000 00:04 5401572                            /dev/ashmem/dalvik-zygote space (deleted)
+744b6000-744b7000 rw-p 00000000 00:04 5413918                            /dev/ashmem/dalvik-non moving space (deleted)
+744b7000-744b8000 rw-p 00001000 00:04 5413918                            /dev/ashmem/dalvik-non moving space (deleted)
+744b8000-7737e000 ---p 00002000 00:04 5413918                            /dev/ashmem/dalvik-non moving space (deleted)
+7737e000-7837d000 rw-p 02ec8000 00:04 5413918                            /dev/ashmem/dalvik-non moving space (deleted)
+7837d000-9837d000 rw-p 00000000 00:04 5401583                            /dev/ashmem/dalvik-free list large object space (deleted)
+be8df000-be8f0000 rw-s 00070000 00:0b 11598                              /dev/kgsl-3d0
+be8f0000-be911000 rw-s 0006e000 00:0b 11598                              /dev/kgsl-3d0
+be920000-be941000 rw-s 0006d000 00:0b 11598                              /dev/kgsl-3d0
+be950000-bea51000 rw-s 00060000 00:0b 11598                              /dev/kgsl-3d0
+bea5b000-bea60000 rw-s 00071000 00:0b 11598                              /dev/kgsl-3d0
+bea60000-beb21000 rw-s 0005f000 00:0b 11598                              /dev/kgsl-3d0
+beb21000-beb26000 rw-s 0006f000 00:0b 11598                              /dev/kgsl-3d0
+beb26000-beb2b000 rw-s 0006c000 00:0b 11598                              /dev/kgsl-3d0
+beb2b000-beb30000 rw-s 0006b000 00:0b 11598                              /dev/kgsl-3d0
+beb30000-bec31000 rw-s 0005b000 00:0b 11598                              /dev/kgsl-3d0
+bec34000-bec37000 rw-s 0006a000 00:0b 11598                              /dev/kgsl-3d0
+bec37000-bec3a000 rw-s 00069000 00:0b 11598                              /dev/kgsl-3d0
+bec3a000-bec3d000 rw-s 00068000 00:0b 11598                              /dev/kgsl-3d0
+bec3d000-bec40000 rw-s 00067000 00:0b 11598                              /dev/kgsl-3d0
+bec40000-bec61000 rw-s 0005a000 00:0b 11598                              /dev/kgsl-3d0
+bec61000-bec64000 rw-s 00066000 00:0b 11598                              /dev/kgsl-3d0
+bec64000-bec67000 rw-s 00065000 00:0b 11598                              /dev/kgsl-3d0
+bec67000-bec6a000 rw-s 00064000 00:0b 11598                              /dev/kgsl-3d0
+bec6a000-bec6d000 rw-s 00063000 00:0b 11598                              /dev/kgsl-3d0
+bec6d000-bec70000 rw-s 00062000 00:0b 11598                              /dev/kgsl-3d0
+bec70000-bed71000 rw-s 00058000 00:0b 11598                              /dev/kgsl-3d0
+bed71000-bed73000 rw-s 00061000 00:0b 11598                              /dev/kgsl-3d0
+bed73000-bed76000 rw-s 0005e000 00:0b 11598                              /dev/kgsl-3d0
+bed76000-bed79000 rw-s 0005d000 00:0b 11598                              /dev/kgsl-3d0
+bed79000-bed7c000 rw-s 0005c000 00:0b 11598                              /dev/kgsl-3d0
+bed7c000-bed85000 rw-s 00057000 00:0b 11598                              /dev/kgsl-3d0
+bed85000-bed87000 rw-s 00056000 00:0b 11598                              /dev/kgsl-3d0
+bed87000-bed89000 rw-s 00055000 00:0b 11598                              /dev/kgsl-3d0
+bed89000-bed8b000 rw-s 00054000 00:0b 11598                              /dev/kgsl-3d0
+bed8b000-bed90000 rw-s 00053000 00:0b 11598                              /dev/kgsl-3d0
+bed90000-bed92000 rw-s 00052000 00:0b 11598                              /dev/kgsl-3d0
+bed92000-bed97000 rw-s 00051000 00:0b 11598                              /dev/kgsl-3d0
+bed97000-bed9c000 rw-s 00050000 00:0b 11598                              /dev/kgsl-3d0
+bed9c000-beda1000 rw-s 0004f000 00:0b 11598                              /dev/kgsl-3d0
+beda1000-beda6000 rw-s 0004e000 00:0b 11598                              /dev/kgsl-3d0
+beda6000-bedab000 rw-s 0004d000 00:0b 11598                              /dev/kgsl-3d0
+bedab000-bedb0000 rw-s 0004c000 00:0b 11598                              /dev/kgsl-3d0
+bedb0000-bedb5000 rw-s 0004b000 00:0b 11598                              /dev/kgsl-3d0
+bedb5000-bedba000 rw-s 0004a000 00:0b 11598                              /dev/kgsl-3d0
+bedba000-bedbf000 rw-s 00049000 00:0b 11598                              /dev/kgsl-3d0
+bedbf000-bedc4000 rw-s 00048000 00:0b 11598                              /dev/kgsl-3d0
+bedc4000-bedc9000 rw-s 00047000 00:0b 11598                              /dev/kgsl-3d0
+bedc9000-bedce000 rw-s 00046000 00:0b 11598                              /dev/kgsl-3d0
+bedce000-bedd3000 rw-s 00045000 00:0b 11598                              /dev/kgsl-3d0
+bedd3000-bedd8000 rw-s 00044000 00:0b 11598                              /dev/kgsl-3d0
+bedd8000-beddd000 rw-s 00043000 00:0b 11598                              /dev/kgsl-3d0
+beddd000-bede2000 rw-s 00042000 00:0b 11598                              /dev/kgsl-3d0
+bede2000-bede7000 rw-s 00041000 00:0b 11598                              /dev/kgsl-3d0
+bede7000-bedec000 rw-s 00040000 00:0b 11598                              /dev/kgsl-3d0
+bedec000-bedf1000 rw-s 0003f000 00:0b 11598                              /dev/kgsl-3d0
+bedf1000-bedf6000 rw-s 0003e000 00:0b 11598                              /dev/kgsl-3d0
+bedf6000-bedfb000 rw-s 0003d000 00:0b 11598                              /dev/kgsl-3d0
+bedfb000-bee00000 rw-s 0003c000 00:0b 11598                              /dev/kgsl-3d0
+bee00000-bee05000 rw-s 0003b000 00:0b 11598                              /dev/kgsl-3d0
+bee05000-bee0a000 rw-s 0003a000 00:0b 11598                              /dev/kgsl-3d0
+bee0a000-bee0f000 rw-s 00039000 00:0b 11598                              /dev/kgsl-3d0
+bee0f000-bee14000 rw-s 00038000 00:0b 11598                              /dev/kgsl-3d0
+bee14000-bee19000 rw-s 00037000 00:0b 11598                              /dev/kgsl-3d0
+bee19000-bee1e000 rw-s 00036000 00:0b 11598                              /dev/kgsl-3d0
+bee1e000-bee23000 rw-s 00035000 00:0b 11598                              /dev/kgsl-3d0
+bee23000-bee28000 rw-s 00034000 00:0b 11598                              /dev/kgsl-3d0
+bee28000-bee2d000 rw-s 00033000 00:0b 11598                              /dev/kgsl-3d0
+bee2d000-bee32000 rw-s 00032000 00:0b 11598                              /dev/kgsl-3d0
+bee32000-bee34000 rw-s 00031000 00:0b 11598                              /dev/kgsl-3d0
+bee34000-bee36000 rw-s 00030000 00:0b 11598                              /dev/kgsl-3d0
+bee36000-bee38000 rw-s 0002f000 00:0b 11598                              /dev/kgsl-3d0
+bee38000-bee3a000 rw-s 0002e000 00:0b 11598                              /dev/kgsl-3d0
+bee3a000-bee3c000 rw-s 0002d000 00:0b 11598                              /dev/kgsl-3d0
+bee3c000-bee3e000 rw-s 0002c000 00:0b 11598                              /dev/kgsl-3d0
+bee3e000-bee4f000 rw-s 0002b000 00:0b 11598                              /dev/kgsl-3d0
+bee4f000-bee60000 rw-s 0002a000 00:0b 11598                              /dev/kgsl-3d0
+bee60000-bee69000 rw-s 00029000 00:0b 11598                              /dev/kgsl-3d0
+bee69000-bee72000 rw-s 00028000 00:0b 11598                              /dev/kgsl-3d0
+bee72000-bee74000 rw-s 00027000 00:0b 11598                              /dev/kgsl-3d0
+bee74000-bee76000 rw-s 00026000 00:0b 11598                              /dev/kgsl-3d0
+bee76000-bee87000 rw-s 00021000 00:0b 11598                              /dev/kgsl-3d0
+bee87000-bee98000 rw-s 00020000 00:0b 11598                              /dev/kgsl-3d0
+bee98000-beea9000 rw-s 0001f000 00:0b 11598                              /dev/kgsl-3d0
+beea9000-beeba000 rw-s 0001e000 00:0b 11598                              /dev/kgsl-3d0
+beeba000-beecb000 rw-s 0001d000 00:0b 11598                              /dev/kgsl-3d0
+beecb000-beedc000 rw-s 0001c000 00:0b 11598                              /dev/kgsl-3d0
+beedc000-beeed000 rw-s 0001b000 00:0b 11598                              /dev/kgsl-3d0
+beeed000-beefe000 rw-s 0001a000 00:0b 11598                              /dev/kgsl-3d0
+beefe000-bef0f000 rw-s 00019000 00:0b 11598                              /dev/kgsl-3d0
+bef0f000-bef20000 rw-s 00018000 00:0b 11598                              /dev/kgsl-3d0
+bef20000-bef41000 rw-s 00011000 00:0b 11598                              /dev/kgsl-3d0
+bef41000-bef46000 rw-s 00025000 00:0b 11598                              /dev/kgsl-3d0
+bef46000-bef4b000 rw-s 00024000 00:0b 11598                              /dev/kgsl-3d0
+bef4b000-bef50000 rw-s 00023000 00:0b 11598                              /dev/kgsl-3d0
+bef50000-bef71000 rw-s 00010000 00:0b 11598                              /dev/kgsl-3d0
+bef71000-bef76000 rw-s 00022000 00:0b 11598                              /dev/kgsl-3d0
+bef76000-bef7b000 rw-s 00017000 00:0b 11598                              /dev/kgsl-3d0
+bef7b000-bef80000 rw-s 00016000 00:0b 11598                              /dev/kgsl-3d0
+bef80000-befa1000 rw-s 0000f000 00:0b 11598                              /dev/kgsl-3d0
+befa1000-befa6000 rw-s 00015000 00:0b 11598                              /dev/kgsl-3d0
+befa6000-befab000 rw-s 00014000 00:0b 11598                              /dev/kgsl-3d0
+befab000-befb0000 rw-s 00013000 00:0b 11598                              /dev/kgsl-3d0
+befb0000-befd1000 rw-s 0000e000 00:0b 11598                              /dev/kgsl-3d0
+befd2000-befd7000 rw-s 00012000 00:0b 11598                              /dev/kgsl-3d0
+befd7000-befdc000 rw-s 0000d000 00:0b 11598                              /dev/kgsl-3d0
+befdc000-befe1000 rw-s 0000c000 00:0b 11598                              /dev/kgsl-3d0
+befe1000-befe3000 rw-s 0000b000 00:0b 11598                              /dev/kgsl-3d0
+befe3000-befe8000 rw-s 0000a000 00:0b 11598                              /dev/kgsl-3d0
+befe8000-befea000 rw-s 00009000 00:0b 11598                              /dev/kgsl-3d0
+befea000-befec000 rw-s 00008000 00:0b 11598                              /dev/kgsl-3d0
+befec000-befee000 rw-s 00007000 00:0b 11598                              /dev/kgsl-3d0
+befee000-beff0000 rw-s 00006000 00:0b 11598                              /dev/kgsl-3d0
+beff0000-beff2000 rw-s 00005000 00:0b 11598                              /dev/kgsl-3d0
+beff2000-beff4000 rw-s 00004000 00:0b 11598                              /dev/kgsl-3d0
+beff4000-beff6000 rw-s 00003000 00:0b 11598                              /dev/kgsl-3d0
+beff6000-beffb000 rw-s 00002000 00:0b 11598                              /dev/kgsl-3d0
+beffb000-bf000000 rw-s 00001000 00:0b 11598                              /dev/kgsl-3d0
+5556671000-5556680000 r-xp 00000000 b3:18 131436                         /system/bin/app_process64_xposed
+5556690000-5556693000 r--p 0000f000 b3:18 131436                         /system/bin/app_process64_xposed
+5556693000-5556694000 rw-p 00012000 b3:18 131436                         /system/bin/app_process64_xposed
+7f5f988000-7f60180000 rw-s 00000000 00:08 10672                          anon_inode:dmabuf
+7f60180000-7f60240000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f60340000-7f603c0000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f603c8000-7f60bc0000 rw-s 00000000 00:08 10672                          anon_inode:dmabuf
+7f60bc0000-7f60c00000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f60c02000-7f60c03000 ---p 00000000 00:00 0 
+7f60c03000-7f60c04000 ---p 00000000 00:00 0 
+7f60c04000-7f60d01000 rw-p 00000000 00:00 0                              [stack:22272]
+7f60d01000-7f60d02000 ---p 00000000 00:00 0 
+7f60d02000-7f60d03000 ---p 00000000 00:00 0 
+7f60d03000-7f60e00000 rw-p 00000000 00:00 0                              [stack:22271]
+7f60e00000-7f60f00000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f60f35000-7f616b9000 r--p 00000000 103:0e 1034102                       /data/app/com.jamesfchen.titan-2/oat/arm64/base.odex
+7f616b9000-7f62267000 r-xp 00784000 103:0e 1034102                       /data/app/com.jamesfchen.titan-2/oat/arm64/base.odex
+7f62267000-7f62268000 rw-p 01332000 103:0e 1034102                       /data/app/com.jamesfchen.titan-2/oat/arm64/base.odex
+7f62268000-7f623ed000 r--p 01675000 103:0e 1034102                       /data/app/com.jamesfchen.titan-2/oat/arm64/base.odex
+7f623ed000-7f62bed000 rw-p 00000000 00:04 5413917                        /dev/ashmem/dalvik-allocspace main rosalloc space mark-bitmap 3 (deleted)
+7f62bed000-7f633ed000 rw-p 00000000 00:04 5413916                        /dev/ashmem/dalvik-allocspace main rosalloc space live-bitmap 3 (deleted)
+7f633ed000-7f697ed000 ---p 00000000 00:00 0 
+7f697ed000-7f697ef000 r-xp 00000000 b3:18 115070                         /system/lib64/libwebviewchromium_loader.so
+7f697ef000-7f697fe000 ---p 00000000 00:00 0 
+7f697fe000-7f697ff000 r--p 00001000 b3:18 115070                         /system/lib64/libwebviewchromium_loader.so
+7f697ff000-7f69800000 rw-p 00002000 b3:18 115070                         /system/lib64/libwebviewchromium_loader.so
+7f69800000-7f69824000 r--s 00000000 b3:18 155661                         /system/usr/hyphen-data/hyph-nn.hyb
+7f69824000-7f69848000 r--s 00000000 b3:18 155659                         /system/usr/hyphen-data/hyph-nb.hyb
+7f69848000-7f69896000 r--s 00000000 b3:18 155655                         /system/usr/hyphen-data/hyph-hu.hyb
+7f69896000-7f69897000 r-xp 00000000 b3:18 114904                         /system/lib64/libjnigraphics.so
+7f69897000-7f698a6000 ---p 00000000 00:00 0 
+7f698a6000-7f698a7000 r--p 00000000 b3:18 114904                         /system/lib64/libjnigraphics.so
+7f698a7000-7f698a8000 rw-p 00001000 b3:18 114904                         /system/lib64/libjnigraphics.so
+7f698a8000-7f698c3000 r-xp 00000000 b3:18 114815                         /system/lib64/libcompiler_rt.so
+7f698c3000-7f698d2000 ---p 00000000 00:00 0 
+7f698d2000-7f698d3000 r--p 0001a000 b3:18 114815                         /system/lib64/libcompiler_rt.so
+7f698d3000-7f698d4000 rw-p 0001b000 b3:18 114815                         /system/lib64/libcompiler_rt.so
+7f698d4000-7f6993d000 rw-p 00000000 00:00 0 
+7f6993d000-7f69950000 r-xp 00000000 b3:18 114768                         /system/lib64/libandroid.so
+7f69950000-7f6995f000 ---p 00000000 00:00 0 
+7f6995f000-7f69962000 r--p 00014000 b3:18 114768                         /system/lib64/libandroid.so
+7f69962000-7f69963000 rw-p 00017000 b3:18 114768                         /system/lib64/libandroid.so
+7f69963000-7f6996c000 r-xp 00000000 b3:18 114979                         /system/lib64/libqservice.so
+7f6996c000-7f6997b000 ---p 00000000 00:00 0 
+7f6997b000-7f6997f000 r--p 0000b000 b3:18 114979                         /system/lib64/libqservice.so
+7f6997f000-7f69980000 rw-p 0000f000 b3:18 114979                         /system/lib64/libqservice.so
+7f69980000-7f6998c000 r-xp 00000000 b3:18 114977                         /system/lib64/libqdutils.so
+7f6998c000-7f6999b000 ---p 00000000 00:00 0 
+7f6999b000-7f6999c000 r--p 0000b000 b3:18 114977                         /system/lib64/libqdutils.so
+7f6999c000-7f6999d000 rw-p 0000c000 b3:18 114977                         /system/lib64/libqdutils.so
+7f6999d000-7f6999f000 r-xp 00000000 b3:18 114976                         /system/lib64/libqdMetaData.so
+7f6999f000-7f699ae000 ---p 00000000 00:00 0 
+7f699ae000-7f699af000 r--p 00001000 b3:18 114976                         /system/lib64/libqdMetaData.so
+7f699af000-7f699b0000 rw-p 00002000 b3:18 114976                         /system/lib64/libqdMetaData.so
+7f699b0000-7f699b6000 r-xp 00000000 b3:18 114925                         /system/lib64/libmemalloc.so
+7f699b6000-7f699c6000 ---p 00000000 00:00 0 
+7f699c6000-7f699c7000 r--p 00006000 b3:18 114925                         /system/lib64/libmemalloc.so
+7f699c7000-7f699c8000 rw-p 00007000 b3:18 114925                         /system/lib64/libmemalloc.so
+7f699c8000-7f699cf000 r-xp 00000000 b3:18 114707                         /system/lib64/hw/gralloc.msm8952.so
+7f699cf000-7f699de000 ---p 00000000 00:00 0 
+7f699de000-7f699df000 r--p 00006000 b3:18 114707                         /system/lib64/hw/gralloc.msm8952.so
+7f699df000-7f699e0000 rw-p 00007000 b3:18 114707                         /system/lib64/hw/gralloc.msm8952.so
+7f699e0000-7f699eb000 r-xp 00000000 b3:18 155759                         /system/vendor/lib64/egl/eglSubDriverAndroid.so
+7f699eb000-7f699fb000 ---p 00000000 00:00 0 
+7f699fb000-7f699fc000 r--p 0000b000 b3:18 155759                         /system/vendor/lib64/egl/eglSubDriverAndroid.so
+7f699fc000-7f699fd000 rw-p 0000c000 b3:18 155759                         /system/vendor/lib64/egl/eglSubDriverAndroid.so
+7f699fd000-7f69a2f000 r-xp 00000000 b3:18 155761                         /system/vendor/lib64/egl/libGLESv1_CM_adreno.so
+7f69a2f000-7f69a3e000 ---p 00000000 00:00 0 
+7f69a3e000-7f69a3f000 r--p 00032000 b3:18 155761                         /system/vendor/lib64/egl/libGLESv1_CM_adreno.so
+7f69a3f000-7f69a40000 rw-p 00033000 b3:18 155761                         /system/vendor/lib64/egl/libGLESv1_CM_adreno.so
+7f69a40000-7f69a80000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f69a87000-7f69a8f000 r--s 00000000 b3:18 155651                         /system/usr/hyphen-data/hyph-en-us.hyb
+7f69a8f000-7f6a632000 r-xp 00000000 b3:18 155880                         /system/vendor/lib64/libllvm-glnext.so
+7f6a632000-7f6a642000 ---p 00000000 00:00 0 
+7f6a642000-7f6a676000 r--p 00ba6000 b3:18 155880                         /system/vendor/lib64/libllvm-glnext.so
+7f6a676000-7f6a67e000 rw-p 00bda000 b3:18 155880                         /system/vendor/lib64/libllvm-glnext.so
+7f6a67e000-7f6a698000 rw-p 00000000 00:00 0 
+7f6a698000-7f6ab11000 r-xp 00000000 b3:18 155762                         /system/vendor/lib64/egl/libGLESv2_adreno.so
+7f6ab11000-7f6ada9000 r--p 00480000 b3:18 155762                         /system/vendor/lib64/egl/libGLESv2_adreno.so
+7f6ada9000-7f6adbc000 rw-p 00718000 b3:18 155762                         /system/vendor/lib64/egl/libGLESv2_adreno.so
+7f6adbc000-7f6adbd000 rw-p 00000000 00:00 0 
+7f6adbd000-7f6ae03000 r-xp 00000000 b3:18 155875                         /system/vendor/lib64/libgsl.so
+7f6ae03000-7f6ae13000 ---p 00000000 00:00 0 
+7f6ae13000-7f6ae14000 r--p 00046000 b3:18 155875                         /system/vendor/lib64/libgsl.so
+7f6ae14000-7f6ae15000 rw-p 00047000 b3:18 155875                         /system/vendor/lib64/libgsl.so
+7f6ae15000-7f6ae16000 rw-p 00000000 00:00 0 
+7f6ae16000-7f6ae2d000 r-xp 00000000 b3:18 155760                         /system/vendor/lib64/egl/libEGL_adreno.so
+7f6ae2d000-7f6ae3d000 ---p 00000000 00:00 0 
+7f6ae3d000-7f6ae3e000 r--p 00018000 b3:18 155760                         /system/vendor/lib64/egl/libEGL_adreno.so
+7f6ae3e000-7f6ae3f000 rw-p 00019000 b3:18 155760                         /system/vendor/lib64/egl/libEGL_adreno.so
+7f6ae3f000-7f6ae40000 rw-p 00000000 00:00 0 
+7f6ae40000-7f6b280000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f6b282000-7f6b287000 r-xp 00000000 b3:18 155835                         /system/vendor/lib64/libadreno_utils.so
+7f6b287000-7f6b297000 ---p 00000000 00:00 0 
+7f6b297000-7f6b298000 r--p 00005000 b3:18 155835                         /system/vendor/lib64/libadreno_utils.so
+7f6b298000-7f6b299000 rw-p 00006000 b3:18 155835                         /system/vendor/lib64/libadreno_utils.so
+7f6b299000-7f6b29b000 rw-p 00000000 00:00 0 
+7f6b29b000-7f6b3a8000 r-xp 00000000 b3:18 114750                         /system/lib64/libPowerStretch.so
+7f6b3a8000-7f6b3b8000 ---p 00000000 00:00 0 
+7f6b3b8000-7f6b3bc000 r--p 00115000 b3:18 114750                         /system/lib64/libPowerStretch.so
+7f6b3bc000-7f6b3be000 rw-p 00119000 b3:18 114750                         /system/lib64/libPowerStretch.so
+7f6b3be000-7f6b3c0000 rw-p 00000000 00:00 0 
+7f6b3c0000-7f6b4c0000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f6b4c3000-7f6b4e6000 r-xp 00000000 b3:18 114906                         /system/lib64/libkeymaster1.so
+7f6b4e6000-7f6b4f5000 ---p 00000000 00:00 0 
+7f6b4f5000-7f6b4f8000 r--p 00024000 b3:18 114906                         /system/lib64/libkeymaster1.so
+7f6b4f8000-7f6b4f9000 rw-p 00027000 b3:18 114906                         /system/lib64/libkeymaster1.so
+7f6b4f9000-7f6b504000 r-xp 00000000 b3:18 114907                         /system/lib64/libkeymaster_messages.so
+7f6b504000-7f6b514000 ---p 00000000 00:00 0 
+7f6b514000-7f6b515000 r--p 0000b000 b3:18 114907                         /system/lib64/libkeymaster_messages.so
+7f6b515000-7f6b516000 rw-p 0000c000 b3:18 114907                         /system/lib64/libkeymaster_messages.so
+7f6b516000-7f6b532000 r-xp 00000000 b3:18 115001                         /system/lib64/libsoftkeymasterdevice.so
+7f6b532000-7f6b542000 ---p 00000000 00:00 0 
+7f6b542000-7f6b544000 r--p 0001e000 b3:18 115001                         /system/lib64/libsoftkeymasterdevice.so
+7f6b544000-7f6b545000 rw-p 00020000 b3:18 115001                         /system/lib64/libsoftkeymasterdevice.so
+7f6b545000-7f6b552000 r-xp 00000000 b3:18 114909                         /system/lib64/libkeystore_binder.so
+7f6b552000-7f6b562000 ---p 00000000 00:00 0 
+7f6b562000-7f6b564000 r--p 0000f000 b3:18 114909                         /system/lib64/libkeystore_binder.so
+7f6b564000-7f6b565000 rw-p 00011000 b3:18 114909                         /system/lib64/libkeystore_binder.so
+7f6b565000-7f6b568000 r-xp 00000000 b3:18 114908                         /system/lib64/libkeystore-engine.so
+7f6b568000-7f6b577000 ---p 00000000 00:00 0 
+7f6b577000-7f6b578000 r--p 00002000 b3:18 114908                         /system/lib64/libkeystore-engine.so
+7f6b578000-7f6b579000 rw-p 00003000 b3:18 114908                         /system/lib64/libkeystore-engine.so
+7f6b579000-7f6b59d000 r-xp 00000000 b3:18 114900                         /system/lib64/libjavacrypto.so
+7f6b59d000-7f6b5ac000 ---p 00000000 00:00 0 
+7f6b5ac000-7f6b5ae000 r--p 00026000 b3:18 114900                         /system/lib64/libjavacrypto.so
+7f6b5ae000-7f6b5b0000 rw-p 00028000 b3:18 114900                         /system/lib64/libjavacrypto.so
+7f6b5b0000-7f6b5b3000 r-xp 00000000 b3:18 114863                         /system/lib64/libextmedia_jni.so
+7f6b5b3000-7f6b5c2000 ---p 00000000 00:00 0 
+7f6b5c2000-7f6b5c4000 r--p 00002000 b3:18 114863                         /system/lib64/libextmedia_jni.so
+7f6b5c4000-7f6b5c5000 rw-p 00004000 b3:18 114863                         /system/lib64/libextmedia_jni.so
+7f6b5c5000-7f6b5ea000 r-xp 00000000 b3:18 114853                         /system/lib64/libexif.so
+7f6b5ea000-7f6b5fa000 ---p 00000000 00:00 0 
+7f6b5fa000-7f6b60e000 r--p 0002f000 b3:18 114853                         /system/lib64/libexif.so
+7f6b60e000-7f6b60f000 rw-p 00043000 b3:18 114853                         /system/lib64/libexif.so
+7f6b60f000-7f6b62c000 r-xp 00000000 b3:18 114932                         /system/lib64/libmtp.so
+7f6b62c000-7f6b63b000 ---p 00000000 00:00 0 
+7f6b63b000-7f6b63e000 r--p 0001e000 b3:18 114932                         /system/lib64/libmtp.so
+7f6b63e000-7f6b63f000 rw-p 00021000 b3:18 114932                         /system/lib64/libmtp.so
+7f6b63f000-7f6b6a8000 r-xp 00000000 b3:18 114921                         /system/lib64/libmedia_jni.so
+7f6b6a8000-7f6b6b8000 ---p 00000000 00:00 0 
+7f6b6b8000-7f6b6bd000 r--p 00071000 b3:18 114921                         /system/lib64/libmedia_jni.so
+7f6b6bd000-7f6b6bf000 rw-p 00076000 b3:18 114921                         /system/lib64/libmedia_jni.so
+7f6b6bf000-7f6b6c0000 rw-p 00000000 00:00 0 
+7f6b6c0000-7f6b700000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f6b706000-7f6b77f000 r--s 00000000 b3:18 155725                         /system/usr/share/zoneinfo/tzdata
+7f6b77f000-7f6cd80000 r--s 00000000 b3:18 155666                         /system/usr/icu/icudt55l.dat
+7f6cd80000-7f6cdc0000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f6cdc3000-7f6cdc4000 r--s 00000000 b3:18 155663                         /system/usr/hyphen-data/hyph-und-ethi.hyb
+7f6cdc4000-7f6cdc5000 r--s 00000000 b3:18 155657                         /system/usr/hyphen-data/hyph-hy.hyb
+7f6cdc5000-7f6cdc6000 rw-p 00000000 00:00 0                              [anon:linker_alloc_vector]
+7f6cdc6000-7f6cdc7000 rw-p 00000000 00:00 0                              [anon:linker_alloc_64]
+7f6cdc7000-7f6cdc8000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f6cdc8000-7f6cdc9000 r--s 00000000 b3:18 155653                         /system/usr/hyphen-data/hyph-eu.hyb
+7f6cdc9000-7f6cdcb000 r--p 00000000 00:00 0 
+7f6cdcb000-7f6cdcc000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f6cdcc000-7f6cddc000 r-xp 00000000 b3:18 115013                         /system/lib64/libstagefright_amrnb_common.so
+7f6cddc000-7f6cdeb000 ---p 00000000 00:00 0 
+7f6cdeb000-7f6cdec000 r--p 0000f000 b3:18 115013                         /system/lib64/libstagefright_amrnb_common.so
+7f6cdec000-7f6cded000 rw-p 00010000 b3:18 115013                         /system/lib64/libstagefright_amrnb_common.so
+7f6cded000-7f6cdf7000 r--p 00000000 b3:18 57349                          /system/fonts/CarroisGothicSC-Regular.ttf
+7f6cdf7000-7f6ce14000 r--p 00000000 b3:18 57353                          /system/fonts/DancingScript-Bold.ttf
+7f6ce14000-7f6ce31000 r--p 00000000 b3:18 57354                          /system/fonts/DancingScript-Regular.ttf
+7f6ce31000-7f6ce40000 r--p 00000000 b3:18 57351                          /system/fonts/ComingSoon.ttf
+7f6ce40000-7f6ce80000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f6ce80000-7f6ce81000 r--p 00000000 00:00 0 
+7f6ce81000-7f6ce85000 r--p 00000000 103:0e 2121742                       /data/dalvik-cache/arm64/system@framework@tcmclient.jar@classes.dex
+7f6ce85000-7f6ce87000 r-xp 00004000 103:0e 2121742                       /data/dalvik-cache/arm64/system@framework@tcmclient.jar@classes.dex
+7f6ce87000-7f6ce88000 rw-p 00006000 103:0e 2121742                       /data/dalvik-cache/arm64/system@framework@tcmclient.jar@classes.dex
+7f6ce88000-7f6ce99000 r--p 00000000 b3:18 57352                          /system/fonts/CutiveMono.ttf
+7f6ce99000-7f6ceb4000 r--p 00000000 b3:18 57355                          /system/fonts/DroidSansMono.ttf
+7f6ceb4000-7f6cef5000 r--p 00000000 b3:18 57467                          /system/fonts/NotoSerif-BoldItalic.ttf
+7f6cef5000-7f6cf32000 r--p 00000000 b3:18 57468                          /system/fonts/NotoSerif-Italic.ttf
+7f6cf32000-7f6cf6f000 r--p 00000000 b3:18 57466                          /system/fonts/NotoSerif-Bold.ttf
+7f6cf6f000-7f6cfac000 r--p 00000000 b3:18 57469                          /system/fonts/NotoSerif-Regular.ttf
+7f6cfac000-7f6cff9000 r--p 00000000 b3:18 57483                          /system/fonts/RobotoCondensed-BoldItalic.ttf
+7f6cff9000-7f6d041000 r--p 00000000 b3:18 57482                          /system/fonts/RobotoCondensed-Bold.ttf
+7f6d041000-7f6d08e000 r--p 00000000 b3:18 57484                          /system/fonts/RobotoCondensed-Italic.ttf
+7f6d08e000-7f6d0d7000 r--p 00000000 b3:18 57487                          /system/fonts/RobotoCondensed-Regular.ttf
+7f6d0d7000-7f6d125000 r--p 00000000 b3:18 57486                          /system/fonts/RobotoCondensed-LightItalic.ttf
+7f6d125000-7f6d16d000 r--p 00000000 b3:18 57485                          /system/fonts/RobotoCondensed-Light.ttf
+7f6d16d000-7f6d189000 r--p 00000000 b3:18 57422                          /system/fonts/NotoSansMongolian-Regular.ttf
+7f6d189000-7f6d18c000 r--p 00000000 b3:18 57445                          /system/fonts/NotoSansTaiLe-Regular.ttf
+7f6d18c000-7f6d3fb000 r--p 00000000 b3:18 57356                          /system/fonts/NotoColorEmoji.ttf
+7f6d3fb000-7f6d5bb000 r--p 00000000 b3:18 57399                          /system/fonts/NotoSansKR-Regular.otf
+7f6d5bb000-7f6d8c9000 r--p 00000000 b3:18 57397                          /system/fonts/NotoSansJP-Regular.otf
+7f6d8c9000-7f6dbbd000 r--p 00000000 b3:18 57443                          /system/fonts/NotoSansTC-Regular.otf
+7f6dbbd000-7f6e385000 r--p 00000000 b3:18 57435                          /system/fonts/NotoSansSC-Regular.otf
+7f6e385000-7f6e3c7000 r--p 00000000 b3:18 57441                          /system/fonts/NotoSansSymbols-Regular-Subsetted.ttf
+7f6e3c7000-7f6e3e5000 r--p 00000000 b3:18 57465                          /system/fonts/NotoSansYi-Regular.ttf
+7f6e3e5000-7f6e3f5000 r--p 00000000 b3:18 57464                          /system/fonts/NotoSansVai-Regular.ttf
+7f6e3f5000-7f6e3f9000 r--p 00000000 b3:18 57463                          /system/fonts/NotoSansTifinagh-Regular.ttf
+7f6e3f9000-7f6e45b000 r--p 00000000 b3:18 57462                          /system/fonts/NotoSansTibetan-Regular.ttf
+7f6e45b000-7f6e45f000 r--p 00000000 b3:18 57447                          /system/fonts/NotoSansTaiViet-Regular.ttf
+7f6e45f000-7f6e46b000 r--p 00000000 b3:18 57446                          /system/fonts/NotoSansTaiTham-Regular.ttf
+7f6e46b000-7f6e46d000 r--p 00000000 b3:18 57444                          /system/fonts/NotoSansTagbanwa-Regular.ttf
+7f6e46d000-7f6e479000 r--p 00000000 b3:18 57442                          /system/fonts/NotoSansSyriacEstrangela-Regular.ttf
+7f6e479000-7f6e47d000 r--p 00000000 b3:18 57440                          /system/fonts/NotoSansSylotiNagri-Regular.ttf
+7f6e47d000-7f6e480000 r--p 00000000 b3:18 57439                          /system/fonts/NotoSansSundanese-Regular.ttf
+7f6e480000-7f6e485000 r--p 00000000 b3:18 57436                          /system/fonts/NotoSansSaurashtra-Regular.ttf
+7f6e485000-7f6e487000 r--p 00000000 b3:18 57434                          /system/fonts/NotoSansRejang-Regular.ttf
+7f6e487000-7f6e489000 r--p 00000000 b3:18 57429                          /system/fonts/NotoSansOlChiki-Regular.ttf
+7f6e489000-7f6e48e000 r--p 00000000 b3:18 57427                          /system/fonts/NotoSansNKo-Regular.ttf
+7f6e48e000-7f6e492000 r--p 00000000 b3:18 57428                          /system/fonts/NotoSansNewTaiLue-Regular.ttf
+7f6e492000-7f6e496000 r--p 00000000 b3:18 57421                          /system/fonts/NotoSansMeeteiMayek-Regular.ttf
+7f6e496000-7f6e49a000 r--p 00000000 b3:18 57420                          /system/fonts/NotoSansMandaic-Regular.ttf
+7f6e49a000-7f6e49c000 r--p 00000000 b3:18 57415                          /system/fonts/NotoSansLisu-Regular.ttf
+7f6e49c000-7f6e49f000 r--p 00000000 b3:18 57414                          /system/fonts/NotoSansLimbu-Regular.ttf
+7f6e49f000-7f6e4b8000 r--p 00000000 b3:18 57413                          /system/fonts/NotoSansLepcha-Regular.ttf
+7f6e4b8000-7f6e4c1000 r--p 00000000 b3:18 57398                          /system/fonts/NotoSansJavanese-Regular.ttf
+7f6e4c1000-7f6e4c5000 r--p 00000000 b3:18 57385                          /system/fonts/NotoSansGlagolitic-Regular.ttf
+7f6e4c5000-7f6e4cb000 r--p 00000000 b3:18 57376                          /system/fonts/NotoSansCoptic-Regular.ttf
+7f6e4cb000-7f6e4d4000 r--p 00000000 b3:18 57375                          /system/fonts/NotoSansCherokee-Regular.ttf
+7f6e4d4000-7f6e4e0000 r--p 00000000 b3:18 57372                          /system/fonts/NotoSansCanadianAboriginal-Regular.ttf
+7f6e4e0000-7f6e4e4000 r--p 00000000 b3:18 57365                          /system/fonts/NotoSansBatak-Regular.ttf
+7f6e4e4000-7f6e505000 r--p 00000000 b3:18 57364                          /system/fonts/NotoSansBamum-Regular.ttf
+7f6e505000-7f6e50d000 r--p 00000000 b3:18 57363                          /system/fonts/NotoSansBalinese-Regular.ttf
+7f6e50d000-7f6e527000 r--p 00000000 b3:18 57425                          /system/fonts/NotoSansMyanmarUI-Bold.ttf
+7f6e527000-7f6e540000 r--p 00000000 b3:18 57426                          /system/fonts/NotoSansMyanmarUI-Regular.ttf
+7f6e540000-7f6e580000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f6e580000-7f6e582000 r--p 00000000 b3:18 57404                          /system/fonts/NotoSansKayahLi-Regular.ttf
+7f6e582000-7f6e588000 r--p 00000000 b3:18 57373                          /system/fonts/NotoSansCham-Bold.ttf
+7f6e588000-7f6e58e000 r--p 00000000 b3:18 57374                          /system/fonts/NotoSansCham-Regular.ttf
+7f6e58e000-7f6e592000 r--p 00000000 b3:18 57456                          /system/fonts/NotoSansThaana-Bold.ttf
+7f6e592000-7f6e596000 r--p 00000000 b3:18 57457                          /system/fonts/NotoSansThaana-Regular.ttf
+7f6e596000-7f6e5b1000 r--p 00000000 b3:18 57423                          /system/fonts/NotoSansMyanmar-Bold.ttf
+7f6e5b1000-7f6e5cc000 r--p 00000000 b3:18 57424                          /system/fonts/NotoSansMyanmar-Regular.ttf
+7f6e5cc000-7f6e5d4000 r--p 00000000 b3:18 57411                          /system/fonts/NotoSansLaoUI-Bold.ttf
+7f6e5d4000-7f6e5dc000 r--p 00000000 b3:18 57412                          /system/fonts/NotoSansLaoUI-Regular.ttf
+7f6e5dc000-7f6e5e4000 r--p 00000000 b3:18 57409                          /system/fonts/NotoSansLao-Bold.ttf
+7f6e5e4000-7f6e5ec000 r--p 00000000 b3:18 57410                          /system/fonts/NotoSansLao-Regular.ttf
+7f6e5ec000-7f6e5f5000 r--p 00000000 b3:18 57407                          /system/fonts/NotoSansKhmerUI-Bold.ttf
+7f6e5f5000-7f6e5ff000 r--p 00000000 b3:18 57408                          /system/fonts/NotoSansKhmerUI-Regular.ttf
+7f6e5ff000-7f6e608000 r--p 00000000 b3:18 57405                          /system/fonts/NotoSansKhmer-Bold.ttf
+7f6e608000-7f6e611000 r--p 00000000 b3:18 57406                          /system/fonts/NotoSansKhmer-Regular.ttf
+7f6e611000-7f6e637000 r--p 00000000 b3:18 57437                          /system/fonts/NotoSansSinhala-Bold.ttf
+7f6e637000-7f6e65e000 r--p 00000000 b3:18 57438                          /system/fonts/NotoSansSinhala-Regular.ttf
+7f6e65e000-7f6e672000 r--p 00000000 b3:18 57432                          /system/fonts/NotoSansOriyaUI-Bold.ttf
+7f6e672000-7f6e686000 r--p 00000000 b3:18 57433                          /system/fonts/NotoSansOriyaUI-Regular.ttf
+7f6e686000-7f6e69b000 r--p 00000000 b3:18 57430                          /system/fonts/NotoSansOriya-Bold.ttf
+7f6e69b000-7f6e6b0000 r--p 00000000 b3:18 57431                          /system/fonts/NotoSansOriya-Regular.ttf
+7f6e6b0000-7f6e6c4000 r--p 00000000 b3:18 57402                          /system/fonts/NotoSansKannadaUI-Bold.ttf
+7f6e6c4000-7f6e6d8000 r--p 00000000 b3:18 57403                          /system/fonts/NotoSansKannadaUI-Regular.ttf
+7f6e6d8000-7f6e6ec000 r--p 00000000 b3:18 57400                          /system/fonts/NotoSansKannada-Bold.ttf
+7f6e6ec000-7f6e700000 r--p 00000000 b3:18 57401                          /system/fonts/NotoSansKannada-Regular.ttf
+7f6e700000-7f6e71c000 r--p 00000000 b3:18 57454                          /system/fonts/NotoSansTeluguUI-Bold.ttf
+7f6e71c000-7f6e738000 r--p 00000000 b3:18 57455                          /system/fonts/NotoSansTeluguUI-Regular.ttf
+7f6e738000-7f6e753000 r--p 00000000 b3:18 57452                          /system/fonts/NotoSansTelugu-Bold.ttf
+7f6e753000-7f6e76e000 r--p 00000000 b3:18 57453                          /system/fonts/NotoSansTelugu-Regular.ttf
+7f6e76e000-7f6e788000 r--p 00000000 b3:18 57368                          /system/fonts/NotoSansBengaliUI-Bold.ttf
+7f6e788000-7f6e7a3000 r--p 00000000 b3:18 57369                          /system/fonts/NotoSansBengaliUI-Regular.ttf
+7f6e7a3000-7f6e7bb000 r--p 00000000 b3:18 57366                          /system/fonts/NotoSansBengali-Bold.ttf
+7f6e7bb000-7f6e7d4000 r--p 00000000 b3:18 57367                          /system/fonts/NotoSansBengali-Regular.ttf
+7f6e7d4000-7f6e7e2000 r--p 00000000 b3:18 57418                          /system/fonts/NotoSansMalayalamUI-Bold.ttf
+7f6e7e2000-7f6e7f0000 r--p 00000000 b3:18 57419                          /system/fonts/NotoSansMalayalamUI-Regular.ttf
+7f6e7f0000-7f6e7fe000 r--p 00000000 b3:18 57416                          /system/fonts/NotoSansMalayalam-Bold.ttf
+7f6e7fe000-7f6e80c000 r--p 00000000 b3:18 57417                          /system/fonts/NotoSansMalayalam-Regular.ttf
+7f6e80c000-7f6e815000 r--p 00000000 b3:18 57450                          /system/fonts/NotoSansTamilUI-Bold.ttf
+7f6e815000-7f6e81e000 r--p 00000000 b3:18 57451                          /system/fonts/NotoSansTamilUI-Regular.ttf
+7f6e81e000-7f6e827000 r--p 00000000 b3:18 57448                          /system/fonts/NotoSansTamil-Bold.ttf
+7f6e827000-7f6e830000 r--p 00000000 b3:18 57449                          /system/fonts/NotoSansTamil-Regular.ttf
+7f6e830000-7f6e838000 r--p 00000000 b3:18 57392                          /system/fonts/NotoSansGurmukhiUI-Bold.ttf
+7f6e838000-7f6e840000 r--p 00000000 b3:18 57393                          /system/fonts/NotoSansGurmukhiUI-Regular.ttf
+7f6e840000-7f6e848000 r--p 00000000 b3:18 57390                          /system/fonts/NotoSansGurmukhi-Bold.ttf
+7f6e848000-7f6e850000 r--p 00000000 b3:18 57391                          /system/fonts/NotoSansGurmukhi-Regular.ttf
+7f6e850000-7f6e86c000 r--p 00000000 b3:18 57388                          /system/fonts/NotoSansGujaratiUI-Bold.ttf
+7f6e86c000-7f6e889000 r--p 00000000 b3:18 57389                          /system/fonts/NotoSansGujaratiUI-Regular.ttf
+7f6e889000-7f6e8a6000 r--p 00000000 b3:18 57386                          /system/fonts/NotoSansGujarati-Bold.ttf
+7f6e8a6000-7f6e8c4000 r--p 00000000 b3:18 57387                          /system/fonts/NotoSansGujarati-Regular.ttf
+7f6e8c4000-7f6e8e2000 r--p 00000000 b3:18 57379                          /system/fonts/NotoSansDevanagariUI-Bold.ttf
+7f6e8e2000-7f6e901000 r--p 00000000 b3:18 57380                          /system/fonts/NotoSansDevanagariUI-Regular.ttf
+7f6e901000-7f6e922000 r--p 00000000 b3:18 57377                          /system/fonts/NotoSansDevanagari-Bold.ttf
+7f6e922000-7f6e944000 r--p 00000000 b3:18 57378                          /system/fonts/NotoSansDevanagari-Regular.ttf
+7f6e944000-7f6e949000 r--p 00000000 b3:18 57383                          /system/fonts/NotoSansGeorgian-Bold.ttf
+7f6e949000-7f6e94e000 r--p 00000000 b3:18 57384                          /system/fonts/NotoSansGeorgian-Regular.ttf
+7f6e94e000-7f6e952000 r--p 00000000 b3:18 57361                          /system/fonts/NotoSansArmenian-Bold.ttf
+7f6e952000-7f6e956000 r--p 00000000 b3:18 57362                          /system/fonts/NotoSansArmenian-Regular.ttf
+7f6e956000-7f6e95b000 r--p 00000000 b3:18 57460                          /system/fonts/NotoSansThaiUI-Bold.ttf
+7f6e95b000-7f6e97d000 r--p 00000000 b3:18 57381                          /system/fonts/NotoSansEthiopic-Bold.ttf
+7f6e97d000-7f6e99f000 r--p 00000000 b3:18 57382                          /system/fonts/NotoSansEthiopic-Regular.ttf
+7f6e99f000-7f6e9bc000 r--p 00000000 b3:18 57359                          /system/fonts/NotoNaskhArabicUI-Bold.ttf
+7f6e9bc000-7f6e9d9000 r--p 00000000 b3:18 57360                          /system/fonts/NotoNaskhArabicUI-Regular.ttf
+7f6e9d9000-7f6ea28000 r--p 00000000 b3:18 57473                          /system/fonts/Roboto-BoldItalic.ttf
+7f6ea28000-7f6ea71000 r--p 00000000 b3:18 57472                          /system/fonts/Roboto-Bold.ttf
+7f6ea71000-7f6eabf000 r--p 00000000 b3:18 57471                          /system/fonts/Roboto-BlackItalic.ttf
+7f6eabf000-7f6eb08000 r--p 00000000 b3:18 57470                          /system/fonts/Roboto-Black.ttf
+7f6eb08000-7f6eb56000 r--p 00000000 b3:18 57478                          /system/fonts/Roboto-MediumItalic.ttf
+7f6eb56000-7f6eb9f000 r--p 00000000 b3:18 57477                          /system/fonts/Roboto-Medium.ttf
+7f6eb9f000-7f6ebed000 r--p 00000000 b3:18 57474                          /system/fonts/Roboto-Italic.ttf
+7f6ebed000-7f6ec37000 r--p 00000000 b3:18 57479                          /system/fonts/Roboto-Regular.ttf
+7f6ec37000-7f6ec86000 r--p 00000000 b3:18 57476                          /system/fonts/Roboto-LightItalic.ttf
+7f6ec86000-7f6eccf000 r--p 00000000 b3:18 57475                          /system/fonts/Roboto-Light.ttf
+7f6eccf000-7f6ed1e000 r--p 00000000 b3:18 57481                          /system/fonts/Roboto-ThinItalic.ttf
+7f6ed1e000-7f6ed68000 r--p 00000000 b3:18 57480                          /system/fonts/Roboto-Thin.ttf
+7f6ed68000-7f6f199000 r--p 00000000 103:0e 2122227                       /data/dalvik-cache/arm64/data@app@com.xposed.jd-1@base.apk@classes.dex
+7f6f199000-7f6f4cb000 r-xp 00431000 103:0e 2122227                       /data/dalvik-cache/arm64/data@app@com.xposed.jd-1@base.apk@classes.dex
+7f6f4cb000-7f6f4cc000 rw-p 00763000 103:0e 2122227                       /data/dalvik-cache/arm64/data@app@com.xposed.jd-1@base.apk@classes.dex
+7f6f4cc000-7f6f86c000 r--p 00000000 103:0e 1032633                       /data/app/com.mobile.alixposed-1/oat/arm64/base.odex
+7f6f86c000-7f6fc3f000 r-xp 003a0000 103:0e 1032633                       /data/app/com.mobile.alixposed-1/oat/arm64/base.odex
+7f6fc3f000-7f6fc40000 rw-p 00773000 103:0e 1032633                       /data/app/com.mobile.alixposed-1/oat/arm64/base.odex
+7f6fc40000-7f6fd00000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f6fd00000-7f6fd01000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f6fd01000-7f6fd03000 r--p 00000000 b3:18 57394                          /system/fonts/NotoSansHanunoo-Regular.ttf
+7f6fd03000-7f6fd09000 r--p 00000000 b3:18 57461                          /system/fonts/NotoSansThaiUI-Regular.ttf
+7f6fd09000-7f6fd0f000 r--p 00000000 b3:18 57459                          /system/fonts/NotoSansThai-Regular.ttf
+7f6fd0f000-7f6fd2c000 r--p 00000000 b3:18 57357                          /system/fonts/NotoNaskhArabic-Bold.ttf
+7f6fd2c000-7f6fd56000 r--s 00115000 b3:18 245808                         /system/framework/framework-nubia-res.apk
+7f6fd56000-7f70080000 r--s 009aa000 b3:18 245809                         /system/framework/framework-res.apk
+7f70080000-7f700c0000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f700c0000-7f700c5000 r--p 00000000 b3:18 57458                          /system/fonts/NotoSansThai-Bold.ttf
+7f700c5000-7f700e2000 r--p 00000000 b3:18 57358                          /system/fonts/NotoNaskhArabic-Regular.ttf
+7f700e2000-7f70180000 r--s 00dda000 b3:18 245809                         /system/framework/framework-res.apk
+7f70180000-7f701c0000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f701c0000-7f701c5000 r--p 00000000 b3:18 57395                          /system/fonts/NotoSansHebrew-Bold.ttf
+7f701c5000-7f701ca000 r--p 00000000 b3:18 57396                          /system/fonts/NotoSansHebrew-Regular.ttf
+7f701ca000-7f701d1000 r--p 00000000 103:0e 1032639                       /data/app/just.trust.me-1/oat/arm64/base.odex
+7f701d1000-7f701d3000 r-xp 00007000 103:0e 1032639                       /data/app/just.trust.me-1/oat/arm64/base.odex
+7f701d3000-7f701d4000 rw-p 00009000 103:0e 1032639                       /data/app/just.trust.me-1/oat/arm64/base.odex
+7f701d4000-7f701e1000 r--s 00164000 b3:18 245808                         /system/framework/framework-nubia-res.apk
+7f701e1000-7f701e3000 r-xp 00000000 b3:18 155943                         /system/vendor/lib64/libqti-perfd-client.so
+7f701e3000-7f701f2000 ---p 00000000 00:00 0 
+7f701f2000-7f701f3000 r--p 00001000 b3:18 155943                         /system/vendor/lib64/libqti-perfd-client.so
+7f701f3000-7f701f4000 rw-p 00002000 b3:18 155943                         /system/vendor/lib64/libqti-perfd-client.so
+7f701f4000-7f70344000 r-xp 00000000 b3:18 115076                         /system/lib64/libxml2.so
+7f70344000-7f70354000 ---p 00000000 00:00 0 
+7f70354000-7f7035e000 r--p 00151000 b3:18 115076                         /system/lib64/libxml2.so
+7f7035e000-7f70360000 rw-p 0015b000 b3:18 115076                         /system/lib64/libxml2.so
+7f70360000-7f70361000 rw-p 00000000 00:00 0 
+7f70361000-7f70365000 r-xp 00000000 b3:18 155942                         /system/vendor/lib64/libqti-gt.so
+7f70365000-7f70374000 ---p 00000000 00:00 0 
+7f70374000-7f70375000 r--p 00003000 b3:18 155942                         /system/vendor/lib64/libqti-gt.so
+7f70375000-7f70376000 rw-p 00004000 b3:18 155942                         /system/vendor/lib64/libqti-gt.so
+7f703c0000-7f70580000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f70580000-7f705c0000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f705c0000-7f705c2000 r--p 00000000 b3:18 57371                          /system/fonts/NotoSansBuhid-Regular.ttf
+7f705c2000-7f705c4000 r--p 00000000 103:0e 2121741                       /data/dalvik-cache/arm64/data@dalvik-cache@xposed_XTypedArraySuperClass.dex
+7f705c4000-7f705c5000 rw-p 00002000 103:0e 2121741                       /data/dalvik-cache/arm64/data@dalvik-cache@xposed_XTypedArraySuperClass.dex
+7f705c5000-7f705c7000 r--p 00000000 103:0e 2121740                       /data/dalvik-cache/arm64/data@dalvik-cache@xposed_XResourcesSuperClass.dex
+7f705c7000-7f705c8000 rw-p 00002000 103:0e 2121740                       /data/dalvik-cache/arm64/data@dalvik-cache@xposed_XResourcesSuperClass.dex
+7f705c8000-7f705ca000 r-xp 00000000 b3:18 155941                         /system/vendor/lib64/libqti-at.so
+7f705ca000-7f705d9000 ---p 00000000 00:00 0 
+7f705d9000-7f705da000 r--p 00001000 b3:18 155941                         /system/vendor/lib64/libqti-at.so
+7f705da000-7f705db000 rw-p 00002000 b3:18 155941                         /system/vendor/lib64/libqti-at.so
+7f705db000-7f705fb000 rw-p 00000000 00:04 5383135                        /dev/ashmem/dalvik-LinearAlloc (deleted)
+7f70640000-7f707c0000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f707e5000-7f70805000 rw-p 00000000 00:04 5413915                        /dev/ashmem/dalvik-rosalloc page map (deleted)
+7f70805000-7f7085e000 r--p 00000000 103:0e 2121737                       /data/dalvik-cache/arm64/system@framework@XposedBridge.jar@classes.dex
+7f7085e000-7f708bf000 r-xp 00059000 103:0e 2121737                       /data/dalvik-cache/arm64/system@framework@XposedBridge.jar@classes.dex
+7f708bf000-7f708c0000 rw-p 000ba000 103:0e 2121737                       /data/dalvik-cache/arm64/system@framework@XposedBridge.jar@classes.dex
+7f708c0000-7f70900000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f70900000-7f70902000 r--p 00000000 b3:18 57370                          /system/fonts/NotoSansBuginese-Regular.ttf
+7f70902000-7f70903000 r-xp 00000000 b3:18 114713                         /system/lib64/hw/memtrack.msm8952.so
+7f70903000-7f70913000 ---p 00000000 00:00 0 
+7f70913000-7f70914000 r--p 00001000 b3:18 114713                         /system/lib64/hw/memtrack.msm8952.so
+7f70914000-7f70915000 rw-p 00002000 b3:18 114713                         /system/lib64/hw/memtrack.msm8952.so
+7f70915000-7f70923000 r-xp 00000000 b3:18 115096                         /system/lib64/libxposed_art.so
+7f70923000-7f70933000 ---p 00000000 00:00 0 
+7f70933000-7f70934000 r--p 0000f000 b3:18 115096                         /system/lib64/libxposed_art.so
+7f70934000-7f70935000 rw-p 00010000 b3:18 115096                         /system/lib64/libxposed_art.so
+7f70935000-7f71f36000 r--s 00000000 b3:18 155666                         /system/usr/icu/icudt55l.dat
+7f71f36000-7f71f56000 rw-p 00000000 00:04 5401599                        /dev/ashmem/dalvik-LinearAlloc (deleted)
+7f71f56000-7f71fa7000 r-xp 00000000 b3:18 114899                         /system/lib64/libjavacore.so
+7f71fa7000-7f71fb7000 ---p 00000000 00:00 0 
+7f71fb7000-7f71fba000 r--p 00058000 b3:18 114899                         /system/lib64/libjavacore.so
+7f71fba000-7f71fbd000 rw-p 0005b000 b3:18 114899                         /system/lib64/libjavacore.so
+7f71fbd000-7f71fbe000 rw-p 00000000 00:00 0 
+7f71fbe000-7f72086000 rw-p 00000000 00:04 5401595                        /dev/ashmem/dalvik-indirect ref table (deleted)
+7f72086000-7f7214e000 rw-p 00000000 00:04 5401594                        /dev/ashmem/dalvik-indirect ref table (deleted)
+7f7214e000-7f7294f000 rw-p 00000000 00:04 5401590                        /dev/ashmem/dalvik-live stack (deleted)
+7f7294f000-7f73150000 rw-p 00000000 00:04 5401589                        /dev/ashmem/dalvik-allocation stack (deleted)
+7f73150000-7f73190000 rw-p 00000000 00:04 5401588                        /dev/ashmem/dalvik-mark stack (deleted)
+7f73190000-7f73e40000 rw-p 00000000 00:04 5401587                        /dev/ashmem/dalvik-card table (deleted)
+7f73e40000-7f73f40000 rw-p 00000000 00:04 5401586                        /dev/ashmem/dalvik-large object free list space allocation info map (deleted)
+7f73f40000-7f73f60000 rw-p 00000000 00:04 5401585                        /dev/ashmem/dalvik-large marked objects (deleted)
+7f73f60000-7f73f80000 rw-p 00000000 00:04 5401584                        /dev/ashmem/dalvik-large live objects (deleted)
+7f73f80000-7f74780000 rw-p 00000000 00:04 5401582                        /dev/ashmem/dalvik-allocspace main rosalloc space 1 mark-bitmap 2 (deleted)
+7f74780000-7f74f80000 rw-p 00000000 00:04 5401581                        /dev/ashmem/dalvik-allocspace main rosalloc space 1 live-bitmap 2 (deleted)
+7f74f80000-7f74fa0000 rw-p 00000000 00:04 5401580                        /dev/ashmem/dalvik-rosalloc page map (deleted)
+7f74ff3000-7f7503b000 r-xp 00000000 103:0e 1034095                       /data/app/com.jamesfchen.titan-2/lib/arm64/libguard.so
+7f7503b000-7f7503f000 r--p 00047000 103:0e 1034095                       /data/app/com.jamesfchen.titan-2/lib/arm64/libguard.so
+7f7503f000-7f75040000 rw-p 0004a000 103:0e 1034095                       /data/app/com.jamesfchen.titan-2/lib/arm64/libguard.so
+7f75040000-7f75041000 rw-p 00000000 00:00 0 
+7f75041000-7f75042000 ---p 00000000 00:00 0 
+7f75042000-7f75043000 ---p 00000000 00:00 0 
+7f75043000-7f75140000 rw-p 00000000 00:00 0                              [stack:22264]
+7f75140000-7f751c0000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f751db000-7f75240000 r--s 0003f000 103:0e 1034072                       /data/app/com.jamesfchen.titan-2/base.apk
+7f75240000-7f75280000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f75286000-7f75287000 ---p 00000000 00:00 0 
+7f75287000-7f75288000 ---p 00000000 00:00 0 
+7f75288000-7f75385000 rw-p 00000000 00:00 0                              [stack:22227]
+7f75385000-7f75386000 ---p 00000000 00:00 0 
+7f75386000-7f75387000 ---p 00000000 00:00 0 
+7f75387000-7f75484000 rw-p 00000000 00:00 0                              [stack:22226]
+7f75484000-7f75682000 r--p 00000000 00:0b 11679                          /dev/binder
+7f75682000-7f75683000 ---p 00000000 00:00 0 
+7f75683000-7f75684000 ---p 00000000 00:00 0 
+7f75684000-7f75787000 rw-p 00000000 00:00 0                              [stack:22225]
+7f75787000-7f75788000 ---p 00000000 00:00 0 
+7f75788000-7f75789000 ---p 00000000 00:00 0 
+7f75789000-7f7588c000 rw-p 00000000 00:00 0                              [stack:22224]
+7f7588c000-7f7588d000 ---p 00000000 00:00 0 
+7f7588d000-7f7588e000 ---p 00000000 00:00 0 
+7f7588e000-7f75991000 rw-p 00000000 00:00 0                              [stack:22223]
+7f75991000-7f75992000 r-xp 00000000 00:00 0 
+7f75992000-7f75993000 rw-p 00000000 00:00 0 
+7f75993000-7f75994000 ---p 00000000 00:00 0 
+7f75994000-7f75996000 rw-p 00000000 00:00 0 
+7f75996000-7f75997000 r-xp 00000000 00:00 0 
+7f75997000-7f75998000 rw-p 00000000 00:00 0 
+7f75998000-7f75999000 ---p 00000000 00:00 0 
+7f75999000-7f7599b000 rw-p 00000000 00:00 0 
+7f7599b000-7f7599c000 r-xp 00000000 00:00 0 
+7f7599c000-7f7599d000 rw-p 00000000 00:00 0 
+7f7599d000-7f7599e000 ---p 00000000 00:00 0 
+7f7599e000-7f759a0000 rw-p 00000000 00:00 0 
+7f759a0000-7f759a1000 r-xp 00000000 00:00 0 
+7f759a1000-7f759a2000 rw-p 00000000 00:00 0 
+7f759a2000-7f759a3000 ---p 00000000 00:00 0 
+7f759a3000-7f759a5000 rw-p 00000000 00:00 0 
+7f759a5000-7f759a6000 rw-s 00000000 00:08 10672                          anon_inode:dmabuf
+7f759a6000-7f759a8000 rw-p 00000000 00:04 7979483                        /dev/ashmem/dalvik-indirect ref table (deleted)
+7f759a8000-7f759aa000 rw-p 00000000 00:04 7982648                        /dev/ashmem/dalvik-indirect ref table (deleted)
+7f759aa000-7f759ab000 r-xp 00000000 00:00 0 
+7f759ab000-7f759ac000 rw-p 00000000 00:00 0 
+7f759ac000-7f759ad000 ---p 00000000 00:00 0 
+7f759ad000-7f759af000 rw-p 00000000 00:00 0 
+7f759af000-7f759b0000 ---p 00000000 00:00 0 
+7f759b0000-7f759b4000 rw-p 00000000 00:00 0                              [anon:thread signal stack]
+7f759b4000-7f759b5000 ---p 00000000 00:00 0 
+7f759b5000-7f759b9000 rw-p 00000000 00:00 0                              [anon:thread signal stack]
+7f759b9000-7f759bb000 r--s f8001000 00:0b 11598                          /dev/kgsl-3d0
+7f759bb000-7f759bc000 ---p 00000000 00:00 0 
+7f759bc000-7f759c0000 rw-p 00000000 00:00 0                              [anon:thread signal stack]
+7f759c0000-7f75a40000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f75a40000-7f75a41000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f75a41000-7f75a43000 rw-p 00000000 00:04 7985332                        /dev/ashmem/dalvik-indirect ref table (deleted)
+7f75a43000-7f75a63000 rw-p 00000000 00:04 7980285                        /dev/ashmem/dalvik-LinearAlloc (deleted)
+7f75a63000-7f75a66000 r-xp 00000000 103:0e 1034084                       /data/app/com.jamesfchen.titan-2/lib/arm64/libyahfa.so
+7f75a66000-7f75a67000 r--p 00002000 103:0e 1034084                       /data/app/com.jamesfchen.titan-2/lib/arm64/libyahfa.so
+7f75a67000-7f75a68000 rw-p 00002000 103:0e 1034084                       /data/app/com.jamesfchen.titan-2/lib/arm64/libyahfa.so
+7f75a68000-7f75a74000 r--s 00716000 103:0e 1034072                       /data/app/com.jamesfchen.titan-2/base.apk
+7f75a74000-7f75a76000 rw-p 00000000 00:04 7983658                        /dev/ashmem/dalvik-indirect ref table (deleted)
+7f75a76000-7f75a77000 ---p 00000000 00:00 0 
+7f75a77000-7f75a7b000 rw-p 00000000 00:00 0                              [anon:thread signal stack]
+7f75a7b000-7f75a7c000 r-xp 00000000 00:00 0 
+7f75a7c000-7f75a7d000 rw-p 00000000 00:00 0 
+7f75a7d000-7f75a7e000 ---p 00000000 00:00 0 
+7f75a7e000-7f75a80000 rw-p 00000000 00:00 0 
+7f75a80000-7f75a81000 ---p 00000000 00:00 0 
+7f75a81000-7f75a85000 rw-p 00000000 00:00 0                              [anon:thread signal stack]
+7f75a85000-7f75a86000 ---p 00000000 00:00 0 
+7f75a86000-7f75a8a000 rw-p 00000000 00:00 0                              [anon:thread signal stack]
+7f75a8a000-7f75a8b000 r-xp 00000000 00:00 0 
+7f75a8b000-7f75a8c000 rw-p 00000000 00:00 0 
+7f75a8c000-7f75a8d000 ---p 00000000 00:00 0 
+7f75a8d000-7f75a8f000 rw-p 00000000 00:00 0 
+7f75a8f000-7f75a90000 rw-s 00000000 00:08 10672                          anon_inode:dmabuf
+7f75a90000-7f75a92000 rw-p 00000000 00:04 7981794                        /dev/ashmem/dalvik-indirect ref table (deleted)
+7f75a92000-7f75a94000 rw-p 00000000 00:04 7979429                        /dev/ashmem/dalvik-indirect ref table (deleted)
+7f75a94000-7f75a95000 ---p 00000000 00:00 0 
+7f75a95000-7f75a99000 rw-p 00000000 00:00 0                              [anon:thread signal stack]
+7f75a99000-7f75a9a000 ---p 00000000 00:00 0 
+7f75a9a000-7f75a9e000 rw-p 00000000 00:00 0                              [anon:thread signal stack]
+7f75a9e000-7f75a9f000 ---p 00000000 00:00 0 
+7f75a9f000-7f75aa3000 rw-p 00000000 00:00 0                              [anon:thread signal stack]
+7f75aa3000-7f75aa5000 rw-p 00000000 00:04 7980255                        /dev/ashmem/dalvik-indirect ref table (deleted)
+7f75aa5000-7f75aa7000 rw-p 00000000 00:04 7980254                        /dev/ashmem/dalvik-indirect ref table (deleted)
+7f75aa7000-7f75aa8000 ---p 00000000 00:00 0 
+7f75aa8000-7f75aa9000 ---p 00000000 00:00 0 
+7f75aa9000-7f75bac000 rw-p 00000000 00:00 0                              [stack:22222]
+7f75bac000-7f75bad000 ---p 00000000 00:00 0 
+7f75bad000-7f75bb1000 rw-p 00000000 00:00 0                              [anon:thread signal stack]
+7f75bb1000-7f75bb2000 ---p 00000000 00:00 0 
+7f75bb2000-7f75bb3000 ---p 00000000 00:00 0 
+7f75bb3000-7f75cb0000 rw-p 00000000 00:00 0                              [stack:22221]
+7f75cb0000-7f75cb1000 ---p 00000000 00:00 0 
+7f75cb1000-7f75cb2000 ---p 00000000 00:00 0 
+7f75cb2000-7f75daf000 rw-p 00000000 00:00 0                              [stack:22220]
+7f75daf000-7f75db0000 r-xp 00000000 00:00 0 
+7f75db0000-7f75db1000 rw-p 00000000 00:00 0 
+7f75db1000-7f75db2000 ---p 00000000 00:00 0 
+7f75db2000-7f75db4000 rw-p 00000000 00:00 0 
+7f75db4000-7f75db5000 r-xp 00000000 00:00 0 
+7f75db5000-7f75db6000 rw-p 00000000 00:00 0 
+7f75db6000-7f75db7000 ---p 00000000 00:00 0 
+7f75db7000-7f75db9000 rw-p 00000000 00:00 0 
+7f75db9000-7f75dba000 r-xp 00000000 00:00 0 
+7f75dba000-7f75dbb000 rw-p 00000000 00:00 0 
+7f75dbb000-7f75dbc000 ---p 00000000 00:00 0 
+7f75dbc000-7f75dbe000 rw-p 00000000 00:00 0 
+7f75dbe000-7f75dbf000 r-xp 00000000 00:00 0 
+7f75dbf000-7f75dc0000 rw-p 00000000 00:00 0 
+7f75dc0000-7f75dc1000 ---p 00000000 00:00 0 
+7f75dc1000-7f75dc3000 rw-p 00000000 00:00 0 
+7f75dc3000-7f75dc4000 r-xp 00000000 00:00 0 
+7f75dc4000-7f75dc5000 rw-p 00000000 00:00 0 
+7f75dc5000-7f75dc6000 ---p 00000000 00:00 0 
+7f75dc6000-7f75dc8000 rw-p 00000000 00:00 0 
+7f75dc8000-7f75ec4000 rw-p 00000000 00:04 5413920                        /dev/ashmem/dalvik-allocspace non moving space mark-bitmap 4 (deleted)
+7f75ec4000-7f75fc0000 rw-p 00000000 00:04 5413919                        /dev/ashmem/dalvik-allocspace non moving space live-bitmap 4 (deleted)
+7f75fc0000-7f760c0000 rw-p 00000000 00:04 5401576                        /dev/ashmem/dalvik-allocspace zygote / non moving space mark-bitmap 0 (deleted)
+7f760c0000-7f761c0000 rw-p 00000000 00:04 5401575                        /dev/ashmem/dalvik-allocspace zygote / non moving space live-bitmap 0 (deleted)
+7f761c0000-7f76200000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f76200000-7f76202000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f76202000-7f76204000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f76204000-7f76206000 rw-p 00000000 00:04 7980253                        /dev/ashmem/dalvik-indirect ref table (deleted)
+7f76206000-7f76207000 r-xp 00000000 00:00 0 
+7f76207000-7f76208000 rw-p 00000000 00:00 0 
+7f76208000-7f76209000 ---p 00000000 00:00 0 
+7f76209000-7f7620b000 rw-p 00000000 00:00 0 
+7f7620b000-7f76233000 r--p 00d7b000 103:0e 2121734                       /data/dalvik-cache/arm64/system@framework@boot.art
+7f76233000-7f76819000 r-xp 00000000 b3:18 115092                         /system/lib64/libart.so
+7f76819000-7f76828000 ---p 00000000 00:00 0 
+7f76828000-7f7683b000 r--p 005f0000 b3:18 115092                         /system/lib64/libart.so
+7f7683b000-7f7683d000 rw-p 00603000 b3:18 115092                         /system/lib64/libart.so
+7f7683d000-7f76840000 rw-p 00000000 00:00 0 
+7f76840000-7f768c0000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f768c0000-7f768c1000 r-xp 00000000 00:00 0 
+7f768c1000-7f768c2000 rw-p 00000000 00:00 0 
+7f768c2000-7f768c3000 ---p 00000000 00:00 0 
+7f768c3000-7f768c5000 rw-p 00000000 00:00 0 
+7f768c5000-7f768c6000 r-xp 00000000 00:00 0 
+7f768c6000-7f768c7000 rw-p 00000000 00:00 0 
+7f768c7000-7f768c8000 ---p 00000000 00:00 0 
+7f768c8000-7f768ca000 rw-p 00000000 00:00 0 
+7f768ca000-7f768cb000 r-xp 00000000 00:00 0 
+7f768cb000-7f768cc000 rw-p 00000000 00:00 0 
+7f768cc000-7f768cd000 ---p 00000000 00:00 0 
+7f768cd000-7f768cf000 rw-p 00000000 00:00 0 
+7f768cf000-7f768d0000 r-xp 00000000 00:00 0 
+7f768d0000-7f768d1000 rw-p 00000000 00:00 0 
+7f768d1000-7f768d2000 ---p 00000000 00:00 0 
+7f768d2000-7f768d4000 rw-p 00000000 00:00 0 
+7f768d4000-7f768d5000 rw-p 00000000 00:04 5413921                        /dev/ashmem/dalvik-mod union bitmap (deleted)
+7f768d5000-7f768d7000 rw-p 00000000 00:04 5401597                        /dev/ashmem/dalvik-indirect ref table (deleted)
+7f768d7000-7f768d9000 rw-p 00000000 00:04 5401593                        /dev/ashmem/dalvik-mark sweep sweep array free buffer (deleted)
+7f768d9000-7f768da000 r-xp 00000000 b3:18 115095                         /system/lib64/libsigchain.so
+7f768da000-7f768e9000 ---p 00000000 00:00 0 
+7f768e9000-7f768ea000 r--p 00000000 b3:18 115095                         /system/lib64/libsigchain.so
+7f768ea000-7f768eb000 rw-p 00001000 b3:18 115095                         /system/lib64/libsigchain.so
+7f768eb000-7f76916000 r-xp 00000000 b3:18 114820                         /system/lib64/libdashplayer.so
+7f76916000-7f76925000 ---p 00000000 00:00 0 
+7f76925000-7f76927000 r--p 0002b000 b3:18 114820                         /system/lib64/libdashplayer.so
+7f76927000-7f76928000 rw-p 0002d000 b3:18 114820                         /system/lib64/libdashplayer.so
+7f76928000-7f76929000 r-xp 00000000 b3:18 155796                         /system/vendor/lib64/libExtendedExtractor.so
+7f76929000-7f76939000 ---p 00000000 00:00 0 
+7f76939000-7f7693a000 r--p 00001000 b3:18 155796                         /system/vendor/lib64/libExtendedExtractor.so
+7f7693a000-7f7693b000 rw-p 00002000 b3:18 155796                         /system/vendor/lib64/libExtendedExtractor.so
+7f7693b000-7f7696f000 r-xp 00000000 b3:18 115041                         /system/lib64/libstagefright_wfd.so
+7f7696f000-7f7697f000 ---p 00000000 00:00 0 
+7f7697f000-7f76982000 r--p 00036000 b3:18 115041                         /system/lib64/libstagefright_wfd.so
+7f76982000-7f76983000 rw-p 00039000 b3:18 115041                         /system/lib64/libstagefright_wfd.so
+7f76983000-7f76a38000 r-xp 00000000 b3:18 114923                         /system/lib64/libmediaplayerservice.so
+7f76a38000-7f76a48000 ---p 00000000 00:00 0 
+7f76a48000-7f76a56000 r--p 000bb000 b3:18 114923                         /system/lib64/libmediaplayerservice.so
+7f76a56000-7f76a57000 rw-p 000c9000 b3:18 114923                         /system/lib64/libmediaplayerservice.so
+7f76a57000-7f76a82000 r-xp 00000000 b3:18 115018                         /system/lib64/libstagefright_httplive.so
+7f76a82000-7f76a91000 ---p 00000000 00:00 0 
+7f76a91000-7f76a94000 r--p 0002a000 b3:18 115018                         /system/lib64/libstagefright_httplive.so
+7f76a94000-7f76a95000 rw-p 0002d000 b3:18 115018                         /system/lib64/libstagefright_httplive.so
+7f76a95000-7f76aea000 r-xp 00000000 b3:18 155845                         /system/vendor/lib64/libavenhancements.so
+7f76aea000-7f76afa000 ---p 00000000 00:00 0 
+7f76afa000-7f76aff000 r--p 0005a000 b3:18 155845                         /system/vendor/lib64/libavenhancements.so
+7f76aff000-7f76b00000 rw-p 0005f000 b3:18 155845                         /system/vendor/lib64/libavenhancements.so
+7f76b00000-7f76b40000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f76b40000-7f76b41000 rw-p 00000000 00:00 0                              [anon:linker_alloc_128]
+7f76b41000-7f76b43000 rw-p 00000000 00:04 5401592                        /dev/ashmem/dalvik-mark sweep sweep array free buffer (deleted)
+7f76b43000-7f76b45000 rw-p 00000000 00:04 5401591                        /dev/ashmem/dalvik-mark sweep sweep array free buffer (deleted)
+7f76b45000-7f76b46000 rw-s 00000000 00:04 7983675                        /dev/ashmem/GFXStats-10143 (deleted)
+7f76b46000-7f76b48000 rw-p 00000000 00:04 7982585                        /dev/ashmem/dalvik-indirect ref table (deleted)
+7f76b48000-7f76b4a000 rw-p 00000000 00:04 7979428                        /dev/ashmem/dalvik-indirect ref table (deleted)
+7f76b4a000-7f76b4b000 ---p 00000000 00:00 0 
+7f76b4b000-7f76b4f000 rw-p 00000000 00:00 0                              [anon:thread signal stack]
+7f76b4f000-7f76b51000 r--p 00000000 00:00 0 
+7f76b51000-7f76b52000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f76b52000-7f76b53000 r--p 00000000 00:00 0 
+7f76b53000-7f76b58000 r-xp 00000000 b3:18 155974                         /system/vendor/lib64/libvendorconn.so
+7f76b58000-7f76b67000 ---p 00000000 00:00 0 
+7f76b67000-7f76b68000 r--p 00004000 b3:18 155974                         /system/vendor/lib64/libvendorconn.so
+7f76b68000-7f76b69000 rw-p 00005000 b3:18 155974                         /system/vendor/lib64/libvendorconn.so
+7f76b69000-7f76b6d000 r-xp 00000000 b3:18 155855                         /system/vendor/lib64/libcneconn.so
+7f76b6d000-7f76b7d000 ---p 00000000 00:00 0 
+7f76b7d000-7f76b7e000 r--p 00004000 b3:18 155855                         /system/vendor/lib64/libcneconn.so
+7f76b7e000-7f76b7f000 rw-p 00005000 b3:18 155855                         /system/vendor/lib64/libcneconn.so
+7f76b7f000-7f76b80000 r--p 00000000 00:00 0 
+7f76b80000-7f76d80000 rw-p 00000000 00:00 0                              [anon:libc_malloc]
+7f76d80000-7f76da0000 r--s 00000000 00:0b 11532                          /dev/__properties__
+7f76da0000-7f76da1000 rw-p 00000000 00:00 0                              [anon:linker_alloc_vector]
+7f76da1000-7f76da2000 r--p 00000000 00:00 0 
+7f76da2000-7f76da3000 rw-p 00000000 00:00 0                              [anon:linker_alloc_vector]
+7f76da3000-7f76da5000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f76da5000-7f77cbc000 r-xp 00000000 b3:18 114735                         /system/lib64/libLLVM.so
+7f77cbc000-7f77ccc000 ---p 00000000 00:00 0 
+7f77ccc000-7f77d67000 r--p 00f24000 b3:18 114735                         /system/lib64/libLLVM.so
+7f77d67000-7f77d6b000 rw-p 00fbf000 b3:18 114735                         /system/lib64/libLLVM.so
+7f77d6b000-7f77d79000 rw-p 00000000 00:00 0 
+7f77d79000-7f77dc3000 r-xp 00000000 b3:18 114798                         /system/lib64/libbcinfo.so
+7f77dc3000-7f77dd3000 ---p 00000000 00:00 0 
+7f77dd3000-7f77dd4000 r--p 0004a000 b3:18 114798                         /system/lib64/libbcinfo.so
+7f77dd4000-7f77dd5000 rw-p 0004b000 b3:18 114798                         /system/lib64/libbcinfo.so
+7f77dd5000-7f77e36000 r-xp 00000000 b3:18 114797                         /system/lib64/libbcc.so
+7f77e36000-7f77e45000 ---p 00000000 00:00 0 
+7f77e45000-7f77e47000 r--p 00061000 b3:18 114797                         /system/lib64/libbcc.so
+7f77e47000-7f77e48000 rw-p 00063000 b3:18 114797                         /system/lib64/libbcc.so
+7f77e48000-7f77e54000 r-xp 00000000 b3:18 114814                         /system/lib64/libcommon_time_client.so
+7f77e54000-7f77e63000 ---p 00000000 00:00 0 
+7f77e63000-7f77e68000 r--p 0000f000 b3:18 114814                         /system/lib64/libcommon_time_client.so
+7f77e68000-7f77e69000 rw-p 00014000 b3:18 114814                         /system/lib64/libcommon_time_client.so
+7f77e69000-7f77e8c000 r-xp 00000000 b3:18 114973                         /system/lib64/libprotobuf-cpp-lite.so
+7f77e8c000-7f77e9c000 ---p 00000000 00:00 0 
+7f77e9c000-7f77e9d000 r--p 00023000 b3:18 114973                         /system/lib64/libprotobuf-cpp-lite.so
+7f77e9d000-7f77e9e000 rw-p 00024000 b3:18 114973                         /system/lib64/libprotobuf-cpp-lite.so
+7f77e9e000-7f77ea8000 r-xp 00000000 b3:18 115014                         /system/lib64/libstagefright_avc_common.so
+7f77ea8000-7f77eb7000 ---p 00000000 00:00 0 
+7f77eb7000-7f77eb8000 r--p 00009000 b3:18 115014                         /system/lib64/libstagefright_avc_common.so
+7f77eb8000-7f77eb9000 rw-p 0000a000 b3:18 115014                         /system/lib64/libstagefright_avc_common.so
+7f77eb9000-7f77eba000 r-xp 00000000 b3:18 115015                         /system/lib64/libstagefright_enc_common.so
+7f77eba000-7f77ec9000 ---p 00000000 00:00 0 
+7f77ec9000-7f77eca000 r--p 00000000 b3:18 115015                         /system/lib64/libstagefright_enc_common.so
+7f77eca000-7f77ecb000 rw-p 00001000 b3:18 115015                         /system/lib64/libstagefright_enc_common.so
+7f77ecb000-7f77ecc000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f77ecc000-7f77ecf000 r-xp 00000000 b3:18 114968                         /system/lib64/libpowermanager.so
+7f77ecf000-7f77edf000 ---p 00000000 00:00 0 
+7f77edf000-7f77ee0000 r--p 00003000 b3:18 114968                         /system/lib64/libpowermanager.so
+7f77ee0000-7f77ee1000 rw-p 00004000 b3:18 114968                         /system/lib64/libpowermanager.so
+7f77ee1000-7f77efe000 r-xp 00000000 b3:18 115067                         /system/lib64/libvorbisidec.so
+7f77efe000-7f77f0d000 ---p 00000000 00:00 0 
+7f77f0d000-7f77f0e000 r--p 0001c000 b3:18 115067                         /system/lib64/libvorbisidec.so
+7f77f0e000-7f77f0f000 rw-p 0001d000 b3:18 115067                         /system/lib64/libvorbisidec.so
+7f77f0f000-7f77f12000 r-xp 00000000 b3:18 115042                         /system/lib64/libstagefright_yuv.so
+7f77f12000-7f77f21000 ---p 00000000 00:00 0 
+7f77f21000-7f77f22000 r--p 00002000 b3:18 115042                         /system/lib64/libstagefright_yuv.so
+7f77f22000-7f77f23000 rw-p 00003000 b3:18 115042                         /system/lib64/libstagefright_yuv.so
+7f77f23000-7f77f59000 r-xp 00000000 b3:18 115019                         /system/lib64/libstagefright_omx.so
+7f77f59000-7f77f68000 ---p 00000000 00:00 0 
+7f77f68000-7f77f6d000 r--p 0003b000 b3:18 115019                         /system/lib64/libstagefright_omx.so
+7f77f6d000-7f77f6e000 rw-p 00040000 b3:18 115019                         /system/lib64/libstagefright_omx.so
+7f77f6e000-7f77fb9000 r-xp 00000000 b3:18 114956                         /system/lib64/libopus.so
+7f77fb9000-7f77fc9000 ---p 00000000 00:00 0 
+7f77fc9000-7f77fca000 r--p 0004b000 b3:18 114956                         /system/lib64/libopus.so
+7f77fca000-7f77fcb000 rw-p 0004c000 b3:18 114956                         /system/lib64/libopus.so
+7f77fcb000-7f77fd2000 r-xp 00000000 b3:18 114924                         /system/lib64/libmediautils.so
+7f77fd2000-7f77fe1000 ---p 00000000 00:00 0 
+7f77fe1000-7f77fe3000 r--p 00007000 b3:18 114924                         /system/lib64/libmediautils.so
+7f77fe3000-7f77fe4000 rw-p 00009000 b3:18 114924                         /system/lib64/libmediautils.so
+7f77fe4000-7f78002000 r-xp 00000000 b3:18 114827                         /system/lib64/libdrmframework.so
+7f78002000-7f78011000 ---p 00000000 00:00 0 
+7f78011000-7f78016000 r--p 00023000 b3:18 114827                         /system/lib64/libdrmframework.so
+7f78016000-7f78017000 rw-p 00028000 b3:18 114827                         /system/lib64/libdrmframework.so
+7f78017000-7f78040000 r-xp 00000000 b3:18 114757                         /system/lib64/libRScpp.so
+7f78040000-7f78050000 ---p 00000000 00:00 0 
+7f78050000-7f78051000 r--p 00029000 b3:18 114757                         /system/lib64/libRScpp.so
+7f78051000-7f78052000 rw-p 0002a000 b3:18 114757                         /system/lib64/libRScpp.so
+7f78052000-7f780a5000 r-xp 00000000 b3:18 114754                         /system/lib64/libRS.so
+7f780a5000-7f780b4000 ---p 00000000 00:00 0 
+7f780b4000-7f780b7000 r--p 00055000 b3:18 114754                         /system/lib64/libRS.so
+7f780b7000-7f780b8000 rw-p 00058000 b3:18 114754                         /system/lib64/libRS.so
+7f780b8000-7f780bb000 r-xp 00000000 b3:18 115008                         /system/lib64/libspeexresampler.so
+7f780bb000-7f780ca000 ---p 00000000 00:00 0 
+7f780ca000-7f780cb000 r--p 00002000 b3:18 115008                         /system/lib64/libspeexresampler.so
+7f780cb000-7f780cc000 rw-p 00003000 b3:18 115008                         /system/lib64/libspeexresampler.so
+7f780cc000-7f780d7000 r-xp 00000000 b3:18 114936                         /system/lib64/libnbaio.so
+7f780d7000-7f780e7000 ---p 00000000 00:00 0 
+7f780e7000-7f780e8000 r--p 0000b000 b3:18 114936                         /system/lib64/libnbaio.so
+7f780e8000-7f780e9000 rw-p 0000c000 b3:18 114936                         /system/lib64/libnbaio.so
+7f780e9000-7f780ed000 r-xp 00000000 b3:18 115075                         /system/lib64/libwpa_client.so
+7f780ed000-7f780fc000 ---p 00000000 00:00 0 
+7f780fc000-7f780fd000 r--p 00003000 b3:18 115075                         /system/lib64/libwpa_client.so
+7f780fd000-7f780fe000 rw-p 00004000 b3:18 115075                         /system/lib64/libwpa_client.so
+7f780fe000-7f781cb000 r-xp 00000000 b3:18 114730                         /system/lib64/libGLES_trace.so
+7f781cb000-7f781cc000 r--p 000d0000 b3:18 114730                         /system/lib64/libGLES_trace.so
+7f781cc000-7f781ce000 rw-p 000d1000 b3:18 114730                         /system/lib64/libGLES_trace.so
+7f781ce000-7f78207000 r-xp 00000000 b3:18 155927                         /system/vendor/lib64/libqc-opt.so
+7f78207000-7f78217000 ---p 00000000 00:00 0 
+7f78217000-7f78219000 r--p 00039000 b3:18 155927                         /system/vendor/lib64/libqc-opt.so
+7f78219000-7f7821a000 rw-p 0003b000 b3:18 155927                         /system/vendor/lib64/libqc-opt.so
+7f7821a000-7f7821e000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f7821e000-7f7821f000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f7821f000-7f7828a000 r-xp 00000000 b3:18 114871                         /system/lib64/libft2.so
+7f7828a000-7f78299000 ---p 00000000 00:00 0 
+7f78299000-7f7829c000 r--p 0006c000 b3:18 114871                         /system/lib64/libft2.so
+7f7829c000-7f7829d000 rw-p 0006f000 b3:18 114871                         /system/lib64/libft2.so
+7f7829d000-7f782cf000 r-xp 00000000 b3:18 114965                         /system/lib64/libpng.so
+7f782cf000-7f782de000 ---p 00000000 00:00 0 
+7f782de000-7f782df000 r--p 00031000 b3:18 114965                         /system/lib64/libpng.so
+7f782df000-7f782e0000 rw-p 00032000 b3:18 114965                         /system/lib64/libpng.so
+7f782e0000-7f782e1000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f782e1000-7f782e2000 r-xp 00000000 b3:18 115050                         /system/lib64/libsync.so
+7f782e2000-7f782f1000 ---p 00000000 00:00 0 
+7f782f1000-7f782f2000 r--p 00000000 b3:18 115050                         /system/lib64/libsync.so
+7f782f2000-7f782f3000 rw-p 00001000 b3:18 115050                         /system/lib64/libsync.so
+7f782f3000-7f782f6000 r-xp 00000000 b3:18 115044                         /system/lib64/libstdc++.so
+7f782f6000-7f78305000 ---p 00000000 00:00 0 
+7f78305000-7f78306000 r--p 00002000 b3:18 115044                         /system/lib64/libstdc++.so
+7f78306000-7f78307000 rw-p 00003000 b3:18 115044                         /system/lib64/libstdc++.so
+7f78307000-7f78308000 rw-p 00000000 00:00 0                              [anon:linker_alloc_64]
+7f78308000-7f78323000 r-xp 00000000 b3:18 115061                         /system/lib64/libunwind.so
+7f78323000-7f78332000 ---p 00000000 00:00 0 
+7f78332000-7f78333000 r--p 0001a000 b3:18 115061                         /system/lib64/libunwind.so
+7f78333000-7f78334000 rw-p 0001b000 b3:18 115061                         /system/lib64/libunwind.so
+7f78334000-7f7839d000 rw-p 00000000 00:00 0 
+7f7839d000-7f783a6000 r-xp 00000000 b3:18 114796                         /system/lib64/libbase.so
+7f783a6000-7f783b5000 ---p 00000000 00:00 0 
+7f783b5000-7f783b6000 r--p 00008000 b3:18 114796                         /system/lib64/libbase.so
+7f783b6000-7f783b7000 rw-p 00009000 b3:18 114796                         /system/lib64/libbase.so
+7f783b7000-7f783bb000 r-xp 00000000 b3:18 114852                         /system/lib64/libeffects.so
+7f783bb000-7f783ca000 ---p 00000000 00:00 0 
+7f783ca000-7f783cb000 r--p 00003000 b3:18 114852                         /system/lib64/libeffects.so
+7f783cb000-7f783cc000 rw-p 00004000 b3:18 114852                         /system/lib64/libeffects.so
+7f783cc000-7f783ce000 r-xp 00000000 b3:18 115017                         /system/lib64/libstagefright_http_support.so
+7f783ce000-7f783dd000 ---p 00000000 00:00 0 
+7f783dd000-7f783de000 r--p 00001000 b3:18 115017                         /system/lib64/libstagefright_http_support.so
+7f783de000-7f783df000 rw-p 00002000 b3:18 115017                         /system/lib64/libstagefright_http_support.so
+7f783df000-7f783fd000 r-xp 00000000 b3:18 115016                         /system/lib64/libstagefright_foundation.so
+7f783fd000-7f7840d000 ---p 00000000 00:00 0 
+7f7840d000-7f78410000 r--p 0001f000 b3:18 115016                         /system/lib64/libstagefright_foundation.so
+7f78410000-7f78411000 rw-p 00022000 b3:18 115016                         /system/lib64/libstagefright_foundation.so
+7f78411000-7f785c3000 r-xp 00000000 b3:18 115012                         /system/lib64/libstagefright.so
+7f785c3000-7f785d3000 ---p 00000000 00:00 0 
+7f785d3000-7f785e7000 r--p 001be000 b3:18 115012                         /system/lib64/libstagefright.so
+7f785e7000-7f785e8000 rw-p 001d2000 b3:18 115012                         /system/lib64/libstagefright.so
+7f785e8000-7f785e9000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f785e9000-7f78603000 r-xp 00000000 b3:18 114960                         /system/lib64/libpcre.so
+7f78603000-7f78612000 ---p 00000000 00:00 0 
+7f78612000-7f78613000 r--p 00019000 b3:18 114960                         /system/lib64/libpcre.so
+7f78613000-7f78614000 rw-p 0001a000 b3:18 114960                         /system/lib64/libpcre.so
+7f78614000-7f7861c000 r-xp 00000000 b3:18 114964                         /system/lib64/libpmfunc.so
+7f7861c000-7f7862b000 ---p 00000000 00:00 0 
+7f7862b000-7f7862c000 r--p 00007000 b3:18 114964                         /system/lib64/libpmfunc.so
+7f7862c000-7f7862d000 rw-p 00008000 b3:18 114964                         /system/lib64/libpmfunc.so
+7f7862d000-7f7862e000 rw-p 00000000 00:00 0                              [anon:linker_alloc]
+7f7862e000-7f78630000 r-xp 00000000 b3:18 114998                         /system/lib64/libsmartinstance_zygote.so
+7f78630000-7f7863f000 ---p 00000000 00:00 0 
+7f7863f000-7f78640000 r--p 00001000 b3:18 114998                         /system/lib64/libsmartinstance_zygote.so
+7f78640000-7f78641000 rw-p 00002000 b3:18 114998                         /system/lib64/libsmartinstance_zygote.so
+7f78641000-7f78643000 r-xp 00000000 b3:18 114985                         /system/lib64/libregionalization.so
+7f78643000-7f78652000 ---p 00000000 00:00 0 
+7f78652000-7f78653000 r--p 00001000 b3:18 114985                         /system/lib64/libregionalization.so
+7f78653000-7f78654000 rw-p 00002000 b3:18 114985                         /system/lib64/libregionalization.so
+7f78654000-7f786ea000 r-xp 00000000 b3:18 114888                         /system/lib64/libhwui.so
+7f786ea000-7f786f9000 ---p 00000000 00:00 0 
+7f786f9000-7f786ff000 r--p 0009c000 b3:18 114888                         /system/lib64/libhwui.so
+7f786ff000-7f78700000 rw-p 000a2000 b3:18 114888                         /system/lib64/libhwui.so
+7f78700000-7f78702000 r-xp 00000000 b3:18 114982                         /system/lib64/libradio_metadata.so
+7f78702000-7f78711000 ---p 00000000 00:00 0 
+7f78711000-7f78712000 r--p 00001000 b3:18 114982                         /system/lib64/libradio_metadata.so
+7f78712000-7f78713000 rw-p 00002000 b3:18 114982                         /system/lib64/libradio_metadata.so
+7f78713000-7f78716000 r-xp 00000000 b3:18 114934                         /system/lib64/libnativebridge.so
+7f78716000-7f78725000 ---p 00000000 00:00 0 
+7f78725000-7f78726000 r--p 00002000 b3:18 114934                         /system/lib64/libnativebridge.so
+7f78726000-7f78727000 rw-p 00003000 b3:18 114934                         /system/lib64/libnativebridge.so
+7f78727000-7f78729000 r-xp 00000000 b3:18 114971                         /system/lib64/libprocessgroup.so
+7f78729000-7f78738000 ---p 00000000 00:00 0 
+7f78738000-7f78739000 r--p 00001000 b3:18 114971                         /system/lib64/libprocessgroup.so
+7f78739000-7f7873a000 rw-p 00002000 b3:18 114971                         /system/lib64/libprocessgroup.so
+7f7873a000-7f7873b000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f7873b000-7f78750000 r-xp 00000000 b3:18 114927                         /system/lib64/libminikin.so
+7f78750000-7f78760000 ---p 00000000 00:00 0 
+7f78760000-7f78762000 r--p 00015000 b3:18 114927                         /system/lib64/libminikin.so
+7f78762000-7f78763000 rw-p 00017000 b3:18 114927                         /system/lib64/libminikin.so
+7f78763000-7f7876d000 r-xp 00000000 b3:18 115005                         /system/lib64/libsoundtrigger.so
+7f7876d000-7f7877c000 ---p 00000000 00:00 0 
+7f7877c000-7f78781000 r--p 0000d000 b3:18 115005                         /system/lib64/libsoundtrigger.so
+7f78781000-7f78782000 rw-p 00012000 b3:18 115005                         /system/lib64/libsoundtrigger.so
+7f78782000-7f7878c000 r-xp 00000000 b3:18 114981                         /system/lib64/libradio.so
+7f7878c000-7f7879b000 ---p 00000000 00:00 0 
+7f7879b000-7f7879f000 r--p 0000d000 b3:18 114981                         /system/lib64/libradio.so
+7f7879f000-7f787a0000 rw-p 00011000 b3:18 114981                         /system/lib64/libradio.so
+7f787a0000-7f787a2000 r-xp 00000000 b3:18 114937                         /system/lib64/libnetd_client.so
+7f787a2000-7f787b1000 ---p 00000000 00:00 0 
+7f787b1000-7f787b2000 r--p 00001000 b3:18 114937                         /system/lib64/libnetd_client.so
+7f787b2000-7f787b3000 rw-p 00002000 b3:18 114937                         /system/lib64/libnetd_client.so
+7f787b3000-7f787c5000 r-xp 00000000 b3:18 114891                         /system/lib64/libimg_utils.so
+7f787c5000-7f787d4000 ---p 00000000 00:00 0 
+7f787d4000-7f787d7000 r--p 00012000 b3:18 114891                         /system/lib64/libimg_utils.so
+7f787d7000-7f787d8000 rw-p 00015000 b3:18 114891                         /system/lib64/libimg_utils.so
+7f787d8000-7f78bfc000 r-xp 00000000 b3:18 114961                         /system/lib64/libpdfium.so
+7f78bfc000-7f78c0b000 ---p 00000000 00:00 0 
+7f78c0b000-7f78c1c000 r--p 00428000 b3:18 114961                         /system/lib64/libpdfium.so
+7f78c1c000-7f78c21000 rw-p 00439000 b3:18 114961                         /system/lib64/libpdfium.so
+7f78c21000-7f78c22000 rw-p 00000000 00:00 0 
+7f78c22000-7f78c2d000 r-xp 00000000 b3:18 114790                         /system/lib64/libaudioutils.so
+7f78c2d000-7f78c3c000 ---p 00000000 00:00 0 
+7f78c3c000-7f78c3d000 r--p 0000a000 b3:18 114790                         /system/lib64/libaudioutils.so
+7f78c3d000-7f78c3e000 rw-p 0000b000 b3:18 114790                         /system/lib64/libaudioutils.so
+7f78c3e000-7f78c5a000 r-xp 00000000 b3:18 115077                         /system/lib64/libz.so
+7f78c5a000-7f78c69000 ---p 00000000 00:00 0 
+7f78c69000-7f78c6a000 r--p 0001b000 b3:18 115077                         /system/lib64/libz.so
+7f78c6a000-7f78c6b000 rw-p 0001c000 b3:18 115077                         /system/lib64/libz.so
+7f78c6b000-7f78c6c000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f78c6c000-7f78cbb000 r-xp 00000000 b3:18 114884                         /system/lib64/libharfbuzz_ng.so
+7f78cbb000-7f78ccb000 ---p 00000000 00:00 0 
+7f78ccb000-7f78ccc000 r--p 0004f000 b3:18 114884                         /system/lib64/libharfbuzz_ng.so
+7f78ccc000-7f78ccd000 rw-p 00050000 b3:18 114884                         /system/lib64/libharfbuzz_ng.so
+7f78ccd000-7f78cd1000 r-xp 00000000 b3:18 115064                         /system/lib64/libusbhost.so
+7f78cd1000-7f78ce0000 ---p 00000000 00:00 0 
+7f78ce0000-7f78ce1000 r--p 00003000 b3:18 115064                         /system/lib64/libusbhost.so
+7f78ce1000-7f78ce2000 rw-p 00004000 b3:18 115064                         /system/lib64/libusbhost.so
+7f78ce2000-7f78d18000 r-xp 00000000 b3:18 114905                         /system/lib64/libjpeg.so
+7f78d18000-7f78d28000 ---p 00000000 00:00 0 
+7f78d28000-7f78d29000 r--p 00036000 b3:18 114905                         /system/lib64/libjpeg.so
+7f78d29000-7f78d2a000 rw-p 00037000 b3:18 114905                         /system/lib64/libjpeg.so
+7f78d2a000-7f78d2b000 rw-p 00000000 00:00 0                              [anon:linker_alloc]
+7f78d2b000-7f78df1000 r-xp 00000000 b3:18 114920                         /system/lib64/libmedia.so
+7f78df1000-7f78e01000 ---p 00000000 00:00 0 
+7f78e01000-7f78e36000 r--p 000cf000 b3:18 114920                         /system/lib64/libmedia.so
+7f78e36000-7f78e37000 rw-p 00104000 b3:18 114920                         /system/lib64/libmedia.so
+7f78e37000-7f79053000 r-xp 00000000 b3:18 114889                         /system/lib64/libicui18n.so
+7f79053000-7f79063000 ---p 00000000 00:00 0 
+7f79063000-7f79077000 r--p 00226000 b3:18 114889                         /system/lib64/libicui18n.so
+7f79077000-7f79078000 rw-p 0023a000 b3:18 114889                         /system/lib64/libicui18n.so
+7f79078000-7f791fb000 r-xp 00000000 b3:18 114890                         /system/lib64/libicuuc.so
+7f791fb000-7f7920b000 ---p 00000000 00:00 0 
+7f7920b000-7f7921d000 r--p 0018c000 b3:18 114890                         /system/lib64/libicuuc.so
+7f7921d000-7f7921e000 rw-p 0019e000 b3:18 114890                         /system/lib64/libicuuc.so
+7f7921e000-7f79222000 rw-p 00000000 00:00 0 
+7f79222000-7f7925b000 r-xp 00000000 b3:18 115011                         /system/lib64/libssl.so
+7f7925b000-7f7926b000 ---p 00000000 00:00 0 
+7f7926b000-7f7926d000 r--p 00039000 b3:18 115011                         /system/lib64/libssl.so
+7f7926d000-7f7926e000 rw-p 0003b000 b3:18 115011                         /system/lib64/libssl.so
+7f7926e000-7f79370000 r-xp 00000000 b3:18 114817                         /system/lib64/libcrypto.so
+7f79370000-7f7937f000 ---p 00000000 00:00 0 
+7f7937f000-7f79393000 r--p 00101000 b3:18 114817                         /system/lib64/libcrypto.so
+7f79393000-7f79394000 rw-p 00115000 b3:18 114817                         /system/lib64/libcrypto.so
+7f79394000-7f79395000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f79395000-7f793ed000 r-xp 00000000 b3:18 115003                         /system/lib64/libsonivox.so
+7f793ed000-7f793fd000 ---p 00000000 00:00 0 
+7f793fd000-7f793fe000 r--p 00058000 b3:18 115003                         /system/lib64/libsonivox.so
+7f793fe000-7f793ff000 rw-p 00059000 b3:18 115003                         /system/lib64/libsonivox.so
+7f793ff000-7f79400000 rw-p 00000000 00:00 0 
+7f79400000-7f79408000 r-xp 00000000 b3:18 114883                         /system/lib64/libhardware_legacy.so
+7f79408000-7f79417000 ---p 00000000 00:00 0 
+7f79417000-7f79418000 r--p 00007000 b3:18 114883                         /system/lib64/libhardware_legacy.so
+7f79418000-7f79419000 rw-p 00008000 b3:18 114883                         /system/lib64/libhardware_legacy.so
+7f79419000-7f7941a000 rw-p 00000000 00:00 0 
+7f7941a000-7f7941c000 r-xp 00000000 b3:18 114882                         /system/lib64/libhardware.so
+7f7941c000-7f7942b000 ---p 00000000 00:00 0 
+7f7942b000-7f7942d000 r--p 00001000 b3:18 114882                         /system/lib64/libhardware.so
+7f7942d000-7f7942e000 rw-p 00003000 b3:18 114882                         /system/lib64/libhardware.so
+7f7942e000-7f79431000 r-xp 00000000 b3:18 114728                         /system/lib64/libETC1.so
+7f79431000-7f79441000 ---p 00000000 00:00 0 
+7f79441000-7f79442000 r--p 00003000 b3:18 114728                         /system/lib64/libETC1.so
+7f79442000-7f79443000 rw-p 00004000 b3:18 114728                         /system/lib64/libETC1.so
+7f79443000-7f79472000 r-xp 00000000 b3:18 114732                         /system/lib64/libGLESv2.so
+7f79472000-7f79482000 ---p 00000000 00:00 0 
+7f79482000-7f79483000 r--p 0002f000 b3:18 114732                         /system/lib64/libGLESv2.so
+7f79483000-7f79484000 rw-p 00030000 b3:18 114732                         /system/lib64/libGLESv2.so
+7f79484000-7f7949b000 r-xp 00000000 b3:18 114731                         /system/lib64/libGLESv1_CM.so
+7f7949b000-7f794aa000 ---p 00000000 00:00 0 
+7f794aa000-7f794ab000 r--p 00016000 b3:18 114731                         /system/lib64/libGLESv1_CM.so
+7f794ab000-7f794ac000 rw-p 00017000 b3:18 114731                         /system/lib64/libGLESv1_CM.so
+7f794ac000-7f79575000 r-xp 00000000 b3:18 114727                         /system/lib64/libEGL.so
+7f79575000-7f79584000 ---p 00000000 00:00 0 
+7f79584000-7f79588000 r--p 000d1000 b3:18 114727                         /system/lib64/libEGL.so
+7f79588000-7f79594000 rw-p 000d5000 b3:18 114727                         /system/lib64/libEGL.so
+7f79594000-7f7959a000 rw-p 00000000 00:00 0 
+7f7959a000-7f79654000 r-xp 00000000 b3:18 115009                         /system/lib64/libsqlite.so
+7f79654000-7f79664000 ---p 00000000 00:00 0 
+7f79664000-7f79666000 r--p 000bd000 b3:18 115009                         /system/lib64/libsqlite.so
+7f79666000-7f79668000 rw-p 000bf000 b3:18 115009                         /system/lib64/libsqlite.so
+7f79668000-7f79669000 rw-p 00000000 00:00 0 
+7f79669000-7f7966a000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f7966a000-7f79b10000 r-xp 00000000 b3:18 114995                         /system/lib64/libskia.so
+7f79b10000-7f79b1f000 ---p 00000000 00:00 0 
+7f79b1f000-7f79b50000 r--p 004a6000 b3:18 114995                         /system/lib64/libskia.so
+7f79b50000-7f79b52000 rw-p 004d7000 b3:18 114995                         /system/lib64/libskia.so
+7f79b52000-7f79b5b000 rw-p 00000000 00:00 0 
+7f79b5b000-7f79b63000 r-xp 00000000 b3:18 114810                         /system/lib64/libcamera_metadata.so
+7f79b63000-7f79b72000 ---p 00000000 00:00 0 
+7f79b72000-7f79b73000 r--p 00008000 b3:18 114810                         /system/lib64/libcamera_metadata.so
+7f79b73000-7f79b74000 rw-p 00009000 b3:18 114810                         /system/lib64/libcamera_metadata.so
+7f79b74000-7f79b75000 rw-p 00000000 00:00 0 
+7f79b75000-7f79ba8000 r-xp 00000000 b3:18 114809                         /system/lib64/libcamera_client.so
+7f79ba8000-7f79bb7000 ---p 00000000 00:00 0 
+7f79bb7000-7f79bc2000 r--p 0003f000 b3:18 114809                         /system/lib64/libcamera_client.so
+7f79bc2000-7f79bc3000 rw-p 0004a000 b3:18 114809                         /system/lib64/libcamera_client.so
+7f79bc3000-7f79c1e000 r-xp 00000000 b3:18 114895                         /system/lib64/libinputflinger.so
+7f79c1e000-7f79c2d000 ---p 00000000 00:00 0 
+7f79c2d000-7f79c33000 r--p 0005f000 b3:18 114895                         /system/lib64/libinputflinger.so
+7f79c33000-7f79c34000 rw-p 00065000 b3:18 114895                         /system/lib64/libinputflinger.so
+7f79c34000-7f79c58000 r-xp 00000000 b3:18 114894                         /system/lib64/libinput.so
+7f79c58000-7f79c68000 ---p 00000000 00:00 0 
+7f79c68000-7f79c6e000 r--p 0002a000 b3:18 114894                         /system/lib64/libinput.so
+7f79c6e000-7f79c6f000 rw-p 00030000 b3:18 114894                         /system/lib64/libinput.so
+7f79c6f000-7f79c70000 rw-p 00000000 00:00 0                              [anon:linker_alloc]
+7f79c70000-7f79cd9000 r-xp 00000000 b3:18 114881                         /system/lib64/libgui.so
+7f79cd9000-7f79ce8000 ---p 00000000 00:00 0 
+7f79ce8000-7f79cfe000 r--p 0006b000 b3:18 114881                         /system/lib64/libgui.so
+7f79cfe000-7f79cff000 rw-p 00081000 b3:18 114881                         /system/lib64/libgui.so
+7f79cff000-7f79d0f000 r-xp 00000000 b3:18 115060                         /system/lib64/libui.so
+7f79d0f000-7f79d10000 r--p 00010000 b3:18 115060                         /system/lib64/libui.so
+7f79d10000-7f79d11000 rw-p 00011000 b3:18 115060                         /system/lib64/libui.so
+7f79d11000-7f79d18000 r-xp 00000000 b3:18 114940                         /system/lib64/libnetutils.so
+7f79d18000-7f79d28000 ---p 00000000 00:00 0 
+7f79d28000-7f79d29000 r--p 00007000 b3:18 114940                         /system/lib64/libnetutils.so
+7f79d29000-7f79d2a000 rw-p 00008000 b3:18 114940                         /system/lib64/libnetutils.so
+7f79d2a000-7f79d2b000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f79d2b000-7f79d33000 r-xp 00000000 b3:18 114935                         /system/lib64/libnativehelper.so
+7f79d33000-7f79d42000 ---p 00000000 00:00 0 
+7f79d42000-7f79d43000 r--p 00007000 b3:18 114935                         /system/lib64/libnativehelper.so
+7f79d43000-7f79d44000 rw-p 00008000 b3:18 114935                         /system/lib64/libnativehelper.so
+7f79d44000-7f79d65000 r-xp 00000000 b3:18 114854                         /system/lib64/libexpat.so
+7f79d65000-7f79d75000 ---p 00000000 00:00 0 
+7f79d75000-7f79d78000 r--p 00021000 b3:18 114854                         /system/lib64/libexpat.so
+7f79d78000-7f79d79000 rw-p 00024000 b3:18 114854                         /system/lib64/libexpat.so
+7f79d79000-7f79db4000 r-xp 00000000 b3:18 114771                         /system/lib64/libandroidfw.so
+7f79db4000-7f79dc3000 ---p 00000000 00:00 0 
+7f79dc3000-7f79dc5000 r--p 0003b000 b3:18 114771                         /system/lib64/libandroidfw.so
+7f79dc5000-7f79dc6000 rw-p 0003d000 b3:18 114771                         /system/lib64/libandroidfw.so
+7f79dc6000-7f79dc7000 r-xp 00000000 b3:18 114926                         /system/lib64/libmemtrack.so
+7f79dc7000-7f79dd7000 ---p 00000000 00:00 0 
+7f79dd7000-7f79dd8000 r--p 00001000 b3:18 114926                         /system/lib64/libmemtrack.so
+7f79dd8000-7f79dd9000 rw-p 00002000 b3:18 114926                         /system/lib64/libmemtrack.so
+7f79dd9000-7f79de4000 r-xp 00000000 b3:18 114795                         /system/lib64/libbacktrace.so
+7f79de4000-7f79df3000 ---p 00000000 00:00 0 
+7f79df3000-7f79df5000 r--p 0000a000 b3:18 114795                         /system/lib64/libbacktrace.so
+7f79df5000-7f79df6000 rw-p 0000c000 b3:18 114795                         /system/lib64/libbacktrace.so
+7f79df6000-7f79e2e000 r-xp 00000000 b3:18 114917                         /system/lib64/libm.so
+7f79e2e000-7f79e3e000 ---p 00000000 00:00 0 
+7f79e3e000-7f79e3f000 r--p 00038000 b3:18 114917                         /system/lib64/libm.so
+7f79e3f000-7f79e40000 rw-p 00039000 b3:18 114917                         /system/lib64/libm.so
+7f79e40000-7f79e5a000 r-xp 00000000 b3:18 114807                         /system/lib64/libc.so
+7f79e5a000-7f79e5c000 rwxp 0001a000 b3:18 114807                         /system/lib64/libc.so
+7f79e5c000-7f79e5d000 r-xp 0001c000 b3:18 114807                         /system/lib64/libc.so
+7f79e5d000-7f79e60000 rwxp 0001d000 b3:18 114807                         /system/lib64/libc.so
+7f79e60000-7f79e64000 r-xp 00020000 b3:18 114807                         /system/lib64/libc.so
+7f79e64000-7f79e65000 rwxp 00024000 b3:18 114807                         /system/lib64/libc.so
+7f79e65000-7f79ea8000 r-xp 00025000 b3:18 114807                         /system/lib64/libc.so
+7f79ea8000-7f79ea9000 rwxp 00068000 b3:18 114807                         /system/lib64/libc.so
+7f79ea9000-7f79f02000 r-xp 00069000 b3:18 114807                         /system/lib64/libc.so
+7f79f02000-7f79f11000 ---p 00000000 00:00 0 
+7f79f11000-7f79f17000 r--p 000c1000 b3:18 114807                         /system/lib64/libc.so
+7f79f17000-7f79f1a000 rw-p 000c7000 b3:18 114807                         /system/lib64/libc.so
+7f79f1a000-7f79f28000 rw-p 00000000 00:00 0 
+7f79f28000-7f79fff000 r-xp 00000000 b3:18 114806                         /system/lib64/libc++.so
+7f79fff000-7f7a00e000 ---p 00000000 00:00 0 
+7f7a00e000-7f7a015000 r--p 000df000 b3:18 114806                         /system/lib64/libc++.so
+7f7a015000-7f7a016000 rw-p 000e6000 b3:18 114806                         /system/lib64/libc++.so
+7f7a016000-7f7a019000 rw-p 00000000 00:00 0 
+7f7a019000-7f7a01a000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f7a01a000-7f7a056000 r-xp 00000000 b3:18 115074                         /system/lib64/libwilhelm.so
+7f7a056000-7f7a065000 ---p 00000000 00:00 0 
+7f7a065000-7f7a06a000 r--p 00040000 b3:18 115074                         /system/lib64/libwilhelm.so
+7f7a06a000-7f7a06b000 rw-p 00045000 b3:18 115074                         /system/lib64/libwilhelm.so
+7f7a06b000-7f7a080000 r-xp 00000000 b3:18 114991                         /system/lib64/libselinux.so
+7f7a080000-7f7a090000 ---p 00000000 00:00 0 
+7f7a090000-7f7a091000 r--p 00015000 b3:18 114991                         /system/lib64/libselinux.so
+7f7a091000-7f7a092000 rw-p 00016000 b3:18 114991                         /system/lib64/libselinux.so
+7f7a092000-7f7a093000 rw-p 00000000 00:00 0 
+7f7a093000-7f7a14c000 r-xp 00000000 b3:18 114769                         /system/lib64/libandroid_runtime.so
+7f7a14c000-7f7a14d000 rwxp 000b9000 b3:18 114769                         /system/lib64/libandroid_runtime.so
+7f7a14d000-7f7a1f7000 r-xp 000ba000 b3:18 114769                         /system/lib64/libandroid_runtime.so
+7f7a1f7000-7f7a206000 ---p 00000000 00:00 0 
+7f7a206000-7f7a211000 r--p 00170000 b3:18 114769                         /system/lib64/libandroid_runtime.so
+7f7a211000-7f7a220000 rw-p 0017b000 b3:18 114769                         /system/lib64/libandroid_runtime.so
+7f7a220000-7f7a222000 rw-p 00000000 00:00 0 
+7f7a222000-7f7a259000 r-xp 00000000 b3:18 114799                         /system/lib64/libbinder.so
+7f7a259000-7f7a268000 ---p 00000000 00:00 0 
+7f7a268000-7f7a273000 r--p 00043000 b3:18 114799                         /system/lib64/libbinder.so
+7f7a273000-7f7a274000 rw-p 0004e000 b3:18 114799                         /system/lib64/libbinder.so
+7f7a274000-7f7a27d000 r-xp 00000000 b3:18 114915                         /system/lib64/liblog.so
+7f7a27d000-7f7a28d000 ---p 00000000 00:00 0 
+7f7a28d000-7f7a28e000 r--p 00009000 b3:18 114915                         /system/lib64/liblog.so
+7f7a28e000-7f7a28f000 rw-p 0000a000 b3:18 114915                         /system/lib64/liblog.so
+7f7a28f000-7f7a2b3000 r-xp 00000000 b3:18 115065                         /system/lib64/libutils.so
+7f7a2b3000-7f7a2c2000 ---p 00000000 00:00 0 
+7f7a2c2000-7f7a2c4000 r--p 00023000 b3:18 115065                         /system/lib64/libutils.so
+7f7a2c4000-7f7a2c5000 rw-p 00025000 b3:18 115065                         /system/lib64/libutils.so
+7f7a2c5000-7f7a2db000 r-xp 00000000 b3:18 114819                         /system/lib64/libcutils.so
+7f7a2db000-7f7a2eb000 ---p 00000000 00:00 0 
+7f7a2eb000-7f7a2ed000 r--p 00016000 b3:18 114819                         /system/lib64/libcutils.so
+7f7a2ed000-7f7a2ee000 rw-p 00018000 b3:18 114819                         /system/lib64/libcutils.so
+7f7a2ee000-7f7a2ef000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f7a2ef000-7f7a2f0000 rw-p 00000000 00:00 0                              [anon:linker_alloc_vector]
+7f7a2f0000-7f7a2f2000 r-xp 00000000 b3:18 155810                         /system/vendor/lib64/libNimsWrap.so
+7f7a2f2000-7f7a301000 ---p 00000000 00:00 0 
+7f7a301000-7f7a302000 r--p 00001000 b3:18 155810                         /system/vendor/lib64/libNimsWrap.so
+7f7a302000-7f7a303000 rw-p 00002000 b3:18 155810                         /system/vendor/lib64/libNimsWrap.so
+7f7a303000-7f7a323000 r--s 00000000 00:0b 11532                          /dev/__properties__
+7f7a323000-7f7a355000 r-xp 00000000 b3:18 131178                         /system/bin/linker64
+7f7a355000-7f7a356000 rw-p 00000000 00:00 0                              [anon:linker_alloc_16]
+7f7a356000-7f7a357000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f7a357000-7f7a358000 rw-p 00000000 00:00 0                              [anon:linker_alloc]
+7f7a358000-7f7a359000 rw-p 00000000 00:00 0                              [anon:linker_alloc_vector]
+7f7a359000-7f7a35a000 rw-p 00000000 00:00 0                              [anon:linker_alloc_32]
+7f7a35a000-7f7a35b000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f7a35b000-7f7a35c000 rw-p 00000000 00:00 0                              [anon:linker_alloc_64]
+7f7a35c000-7f7a35d000 r--p 00000000 00:00 0                              [anon:linker_alloc]
+7f7a35d000-7f7a35e000 r--p 00000000 00:00 0 
+7f7a35e000-7f7a35f000 ---p 00000000 00:00 0 
+7f7a35f000-7f7a363000 rw-p 00000000 00:00 0                              [anon:thread signal stack]
+7f7a363000-7f7a365000 r-xp 00000000 00:00 0                              [vdso]
+7f7a365000-7f7a366000 r--p 00032000 b3:18 131178                         /system/bin/linker64
+7f7a366000-7f7a368000 rw-p 00033000 b3:18 131178                         /system/bin/linker64
+7f7a368000-7f7a36c000 rw-p 00000000 00:00 0 
+7fd2d31000-7fd2d31000 rw-p 00000000 00:00 0 
+7fd2d31000-7fd2d32000 ---p 00000000 00:00 0 
+7fd2d32000-7fd3531000 rw-p 00000000 00:00 0                              [stack]
