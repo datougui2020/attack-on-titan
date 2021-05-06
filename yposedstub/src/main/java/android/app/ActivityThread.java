@@ -6,7 +6,6 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.IPackageManager;
 import android.content.pm.ProviderInfo;
-import android.content.pm.ServiceInfo;
 import android.content.res.CompatibilityInfo;
 import android.os.Handler;
 import android.os.IBinder;
@@ -33,6 +32,7 @@ public final class ActivityThread {
 
     static final class ActivityClientRecord { IBinder token;}
     final class ProviderClientRecord {}
+    //framework层的ContentProviderRecord
     private static final class ProviderKey{}
     static final class ReceiverData{}
     static final class CreateServiceData{IBinder token;}

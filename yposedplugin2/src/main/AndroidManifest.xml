@@ -20,7 +20,10 @@
         <provider
             android:name=".MyContentProvider"
             android:authorities="com.jamesfchen.yposedplugin2.my_provider"
-            android:exported="true" />
+            android:exported="true"
+            android:grantUriPermissions="true"
+            >
+        </provider>
     </application>
 
 </manifest>

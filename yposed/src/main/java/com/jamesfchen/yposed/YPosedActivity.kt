@@ -2,6 +2,7 @@ package com.jamesfchen.yposed
 
 import android.app.Activity
 import android.content.*
+import android.database.Cursor
 import android.net.Uri
 import android.os.*
 import android.util.Log
@@ -57,12 +58,14 @@ class YPosedActivity : Activity() {
                     )
                 )
             )
-            startActivity(Intent().setComponent(
-                ComponentName(
-                    "com.jamesfchen.titan",
-                    "com.jamesfchen.yposed.YPosedActivity"
+            startActivity(
+                Intent().setComponent(
+                    ComponentName(
+                        "com.jamesfchen.titan",
+                        "com.jamesfchen.yposed.YPosedActivity"
+                    )
                 )
-            ))
+            )
 //            startActivity(Intent().setComponent(
 //                ComponentName(
 //                    "com.jamesfchen.yposedplugin2",
