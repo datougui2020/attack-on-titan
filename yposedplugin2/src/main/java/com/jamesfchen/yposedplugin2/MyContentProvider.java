@@ -2,6 +2,8 @@ package com.jamesfchen.yposedplugin2;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.pm.ProviderInfo;
 import android.database.Cursor;
 import android.net.Uri;
 import android.util.Log;
