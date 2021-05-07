@@ -38,12 +38,12 @@ public class App extends Application {
         AsyncTask.execute(() -> {
             try {
                 Utils.extractAssets(base, "yposedplugin2-debug.apk");
-                Utils.extractAssets(base, "yposedplugin3-debug.apk");
+//                Utils.extractAssets(base, "yposedplugin3-debug.apk");
 
                 File dexFile = getFileStreamPath("yposedplugin2-debug.apk");
                 File optDexFile = getFileStreamPath("yposedplugin2-debug.dex");
                 Loader.loadDex(getClassLoader(), dexFile, optDexFile);
-                Loader.loadApk(getClassLoader(), getFileStreamPath("yposedplugin3-debug.apk"));
+//                Loader.loadApk(getClassLoader(), getFileStreamPath("yposedplugin3-debug.apk"));
 
                 ProviderHelper.installProviders(base, getFileStreamPath("yposedplugin2-debug.apk"));
 //                ProviderHelper.installProviders(base, getFileStreamPath("yposedplugin3-debug.apk"));

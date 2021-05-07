@@ -21,7 +21,7 @@ public class ProviderHelper {
             PackageHelper.parseProviders(apkFile, outputs, (cmp, info) -> {
                 info.applicationInfo.packageName = ctx.getPackageName();
                 ProviderInfo providerInfo = (ProviderInfo) info;
-                Log.e("cjf_attack", providerInfo.authority + " " + providerInfo.packageName + " " + providerInfo.name);
+                Log.e("cjf_attack", "installProviders:"+providerInfo.authority + " " + providerInfo.packageName + " " + providerInfo.name);
             });
             ActivityThread activityThread = ActivityThread.currentActivityThread();
             Reflector.with(activityThread).method("installContentProviders", Context.class, List.class).call(ctx, outputs);

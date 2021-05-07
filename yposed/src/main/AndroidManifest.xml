@@ -17,10 +17,9 @@
         <service android:name=".TestService" />
 
         <provider
-            android:multiprocess="true"
-            android:process=".stub_provider"
             android:name="com.jamesfchen.plugin.StubContentProvider"
             android:authorities="com.jamesfchen.yposed.stub_provider"
-            android:exported="true" />
+            android:exported="false"
+            />
     </application>
 </manifest>

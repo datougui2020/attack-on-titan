@@ -1,9 +1,12 @@
 package com.jamesfchen.yposedplugin3;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.Nullable;
 
@@ -19,10 +22,18 @@ public class MyActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TextView textView = new TextView(this);
+        Button textView = new Button(this);
 //        textView.setTextColor(Color.WHITE);
         textView.setText("my activity 3");
-        textView.setBackgroundColor(Color.WHITE);
+        textView.setBackgroundColor(Color.BLUE);
         setContentView(textView);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("content://com.jamesfchen.yposedplugin3.my_provider");
+                H.a(uri, MyActivity.this, "yposedplugin3");
+                startActivity(new Intent(MyActivity.this,MyActivity2.class));
+            }
+        });
     }
 }

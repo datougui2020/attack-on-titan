@@ -56,7 +56,7 @@ fun isMainProcess(context: Context): Boolean {
     return packageName == processName
 }
 
-private fun getProcessName(context: Context, i: Int): String? {
+public fun getProcessName(context: Context, i: Int): String? {
     val activityManager = context.getSystemService(Context.ACTIVITY_SERVICE) as? ActivityManager
     if (activityManager == null || activityManager.runningAppProcesses == null) {
         return null

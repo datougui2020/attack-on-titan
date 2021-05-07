@@ -3,11 +3,9 @@ package com.jamesfchen.plugin;
 import android.app.IActivityManager;
 import android.content.ComponentName;
 import android.content.Intent;
-import android.util.Log;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import java.util.Arrays;
 
 /**
  * Copyright ® $ 2021
@@ -28,7 +26,7 @@ public class IActivityManagerProxy implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        Log.e("cjf_attack", method.getName()+" " + Arrays.toString(args));
+//        Log.e("cjf_attack", method.getName()+" " + Arrays.toString(args));
         if ("startActivity".equals(method.getName())) {
             //    int startActivity(in IApplicationThread caller, in String callingPackage, in Intent intent,
             //            in String resolvedType, in IBinder resultTo, in String resultWho, int requestCode,

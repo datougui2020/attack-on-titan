@@ -1,4 +1,4 @@
-package com.jamesfchen.yposed;
+package com.jamesfchen.yposedplugin3;
 
 import android.content.ContentValues;
 import android.content.Context;

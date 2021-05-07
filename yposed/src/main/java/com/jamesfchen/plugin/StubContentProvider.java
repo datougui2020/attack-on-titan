@@ -13,16 +13,6 @@ import androidx.annotation.Nullable;
 
 /**
  *
- *  public boolean canRunHere(ProcessRecord app) {
- *         return (info.multiprocess || info.processName.equals(app.processName))
- *                 && uid == app.info.uid;
- *     }
- *  ContentProvider配置的multiprocess为true or 调用者进程 等于 ContentProvider所在进程 and  调用者进程uid 等于 ContentProvider所在进程的uid
- *
- *  如果ContentProvider multiprocess为false 并且没有设置独立进程，那么同一App下的各个Activity都是持有同一个ContentProvider对象，仅为同一App单例
- *  如果ContentProvider 设置独立进程，同一个App下的Activity与不同App下持有一个ContentProvider，各个App单例
- *  如果ContentProvider的multiprocess为true 并且设置独立进程，那么同一个App下 各个Activity都是不同的ContentProvider
- *
  */
 public class StubContentProvider extends ContentProvider {
     @Override

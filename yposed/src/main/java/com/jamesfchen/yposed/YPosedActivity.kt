@@ -77,29 +77,29 @@ class YPosedActivity : Activity() {
         startService(Intent(this, TestService::class.java))
         findViewById<Button>(R.id.bt_send).setOnClickListener {
             var uri = Uri.parse("content://com.jamesfchen.yposedplugin2.my_provider")
-            H.a(uri, this@YPosedActivity, "yposedplugin2")
-//            uri = Uri.parse("content://com.jamesfchen.yposedplugin3.my_provider")
-//            H.a(uri, this@YPosedActivity, "yposedplugin3")
+//            H.a(uri, this@YPosedActivity, "yposedplugin2")
+            uri = Uri.parse("content://com.jamesfchen.yposedplugin3.my_provider")
+            H.a(uri, this@YPosedActivity, "yposedplugin3")
             sendBroadcast(Intent("com.jamesfchen.yposedplugin2.MyReceiver"))
 
-            NetClient.getInstance().sendRequest()
-            stopService(Intent(this, TestService::class.java))
-            stopService(
-                Intent().setComponent(
-                    ComponentName(
-                        "com.jamesfchen.yposedplugin2",
-                        "com.jamesfchen.yposedplugin2.MyService"
-                    )
-                )
-            )
-            stopService(
-                Intent().setComponent(
-                    ComponentName(
-                        "com.jamesfchen.yposedplugin2",
-                        "com.jamesfchen.yposedplugin2.MyService"
-                    )
-                )
-            )
+//            NetClient.getInstance().sendRequest()
+//            stopService(Intent(this, TestService::class.java))
+//            stopService(
+//                Intent().setComponent(
+//                    ComponentName(
+//                        "com.jamesfchen.yposedplugin2",
+//                        "com.jamesfchen.yposedplugin2.MyService"
+//                    )
+//                )
+//            )
+//            stopService(
+//                Intent().setComponent(
+//                    ComponentName(
+//                        "com.jamesfchen.yposedplugin2",
+//                        "com.jamesfchen.yposedplugin2.MyService"
+//                    )
+//                )
+//            )
         }
         plthook_init()
         ReceiverHelper.parseReceivers(this, getFileStreamPath("yposedplugin2-debug.apk"))

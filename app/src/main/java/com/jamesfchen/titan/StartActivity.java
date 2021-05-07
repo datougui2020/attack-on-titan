@@ -7,7 +7,6 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 
-import com.jamesfchen.guard.TestGuardActivity;
 import com.jamesfchen.yposed.YPosedActivity;
 
 /**
@@ -35,8 +34,8 @@ public class StartActivity extends AbsPermissionsActivity {
 
     @Override
     protected void onRequestPermissionsResult() {
-        startActivity(new Intent(this, TestGuardActivity.class));
-//        startActivity(new Intent(this, YPosedActivity.class));
+//        startActivity(new Intent(this, TestGuardActivity.class));
+        startActivity(new Intent(this, YPosedActivity.class));
     }
 
     @Override
