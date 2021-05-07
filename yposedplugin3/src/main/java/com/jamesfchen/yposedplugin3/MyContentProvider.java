@@ -26,7 +26,7 @@ import java.util.Objects;
 
 /**
  * 当ContentProvider同时配置multiprocess和process时，ContentProvider并不会跟随app系统启动，而是在调用者进程实例化一个对象，然后在调用者进程完成生命周期，那么它有什么用处呢？
- * 如果只是配置了multiprocess，那么ContentProvider在每个进程都会有一个对象
+ * 如果只是配置了multiprocess，那么ContentProvider在每个进程都会有一个对象。使用了multiprocess会增加每个进程的内存占用量，但可以减少进程通信带来的性能问题
  */
 public class MyContentProvider extends ContentProvider {
     static final String AUTHORITY = "com.jamesfchen.yposedplugin3.my_provider";
