@@ -26,6 +26,7 @@
             android:name=".MyContentProvider"
             android:exported="false"
             android:multiprocess="true"
+            android:process=".my_provider"
             android:authorities="com.jamesfchen.yposedplugin3.my_provider" />
     </application>
 
