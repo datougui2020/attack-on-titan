@@ -1,57 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <com.jamesfchen.yposedplugin3.MyViewGroup
+    <com.jamesfchen.yposedplugin3.B
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+<!--        android:visibility="gone"-->
+
+        <com.jamesfchen.yposedplugin3.BB
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--            <com.jamesfchen.yposedplugin3.MyView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="400dp"-->
+            <!--                android:text="afdadsfasdfa" />-->
+
+            <!--            <com.jamesfchen.yposedplugin3.MyView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="400dp"-->
+            <!--                android:text="afdadsfasdfa" />-->
+
+            <!--            <com.jamesfchen.yposedplugin3.MyView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="400dp"-->
+            <!--                android:text="afdadsfasdfa" />-->
+
+            <!--            <com.jamesfchen.yposedplugin3.MyView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="400dp"-->
+            <!--                android:text="afdadsfasdfa" />-->
+
+            <!--            <com.jamesfchen.yposedplugin3.MyView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="400dp"-->
+            <!--                android:text="afdadsfasdfa" />-->
+            <!--            <com.jamesfchen.yposedplugin3.MyView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="400dp"-->
+            <!--                android:text="afdadsfasdfa" />-->
+            <!--            <com.jamesfchen.yposedplugin3.MyView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="400dp"-->
+            <!--                android:text="afdadsfasdfa" />-->
+
+            <!--            <com.jamesfchen.yposedplugin3.MyView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="400dp"-->
+            <!--                android:text="afdadsfasdfa" />-->
+
+
+        </com.jamesfchen.yposedplugin3.BB>
+    </com.jamesfchen.yposedplugin3.B>
+
+    <com.jamesfchen.yposedplugin3.A
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.jamesfchen.yposedplugin3.MyViewGroup2
+        <com.jamesfchen.yposedplugin3.AA
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
-
-            <com.jamesfchen.yposedplugin3.MyView
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:text="afdadsfasdfa" />
-
-            <com.jamesfchen.yposedplugin3.MyView
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:text="afdadsfasdfa" />
-
-            <com.jamesfchen.yposedplugin3.MyView
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:text="afdadsfasdfa" />
-
-            <com.jamesfchen.yposedplugin3.MyView
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:text="afdadsfasdfa" />
-
-            <com.jamesfchen.yposedplugin3.MyView
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:text="afdadsfasdfa" />
-            <com.jamesfchen.yposedplugin3.MyView
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:text="afdadsfasdfa" />
-            <com.jamesfchen.yposedplugin3.MyView
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:text="afdadsfasdfa" />
-
-            <com.jamesfchen.yposedplugin3.MyView
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:text="afdadsfasdfa" />
-
-
-        </com.jamesfchen.yposedplugin3.MyViewGroup2>
-    </com.jamesfchen.yposedplugin3.MyViewGroup>
+            android:layout_height="match_parent"
+            android:orientation="vertical"></com.jamesfchen.yposedplugin3.AA>
+    </com.jamesfchen.yposedplugin3.A>
 
 </LinearLayout>
