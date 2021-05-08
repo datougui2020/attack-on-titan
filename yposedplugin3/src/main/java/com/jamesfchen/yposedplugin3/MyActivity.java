@@ -26,7 +26,7 @@ public class MyActivity extends Activity {
 //        textView.setTextColor(Color.WHITE);
         textView.setText("my activity 3");
         textView.setBackgroundColor(Color.BLUE);
-        setContentView(textView);
+        setContentView(R.layout.layout);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
