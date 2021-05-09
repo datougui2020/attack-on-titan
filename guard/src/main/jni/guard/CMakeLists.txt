@@ -8,6 +8,7 @@ add_library(
         so_protector.cpp
         guard.cpp
         event.cpp
+        mmap_ext.cpp
 )
 find_library(
         log-lib

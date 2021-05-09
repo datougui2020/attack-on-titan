@@ -67,8 +67,7 @@ void *genTrampoline(void *hookMethod) {
     void *targetAddr;
 
     targetAddr = trampolineCode + trampolineSize * hookCount;
-    memcpy(targetAddr, trampoline,
-           sizeof(trampoline)); // do not use trampolineSize since it's a rounded size
+    memcpy(targetAddr, trampoline,sizeof(trampoline)); // do not use trampolineSize since it's a rounded size
 
     // replace with the actual ArtMethod addr
 #if defined(__i386__)

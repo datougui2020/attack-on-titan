@@ -228,7 +228,6 @@ JNIEXPORT JNICALL
 jboolean entry(JNIEnv *env, jobject caller, jobject contextObject) {
     so_protector::entry();
     jamesfchen_event::entry();
-
     return JNI_TRUE;
 
 }
